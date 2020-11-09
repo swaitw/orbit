@@ -2,6 +2,8 @@
 /*
   DOCUMENTATION: https://orbit.kiwi/components/textarea/
 */
+import * as React from "react";
+
 import type { Globals, Translation, Ref, TranslationString } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
