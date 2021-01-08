@@ -309,15 +309,9 @@ const InputGroup = ({
                 label: undefined,
                 help: item.props.help,
                 error: item.props.error,
-                onChange: ev => {
-                  handleChange(ev, item.props.onChange);
-                },
-                onBlur: ev => {
-                  handleBlur(ev, item.props.onBlur);
-                },
-                onFocus: ev => {
-                  handleFocus(ev, item.props.onFocus);
-                },
+                onChange: ev => handleChange(ev, item.props.onChange),
+                onBlur: ev => handleBlur(ev, item.props.onBlur),
+                onFocus: ev => handleFocus(ev, item.props.onFocus),
                 insideInputGroup: true,
               })}
             </StyledChild>

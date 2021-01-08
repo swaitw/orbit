@@ -5,6 +5,7 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { text, array, select } from "@storybook/addon-knobs";
 
+import Stack from "../Stack";
 import InputField from "../InputField";
 import Select from "../Select";
 import { SIZE_OPTIONS } from "./consts";
@@ -166,7 +167,7 @@ storiesOf("InputGroup", module)
       const helpSingleField = text("Help inside element", undefined);
 
       return (
-        <div>
+        <Stack>
           <InputGroup
             label="Events and states on group"
             onChange={action("onChange Group a+b")}
@@ -179,7 +180,7 @@ storiesOf("InputGroup", module)
             <InputField placeholder="b" maxLength={11} value={inputValue} />
           </InputGroup>
 
-          <InputGroup label="Events andd states on children" error={errorGroup}>
+          <InputGroup label="Events and states on children" error={errorGroup}>
             <InputField
               placeholder="c"
               maxLength={11}
@@ -201,7 +202,7 @@ storiesOf("InputGroup", module)
               onBlur={action("onBlur d")}
             />
           </InputGroup>
-        </div>
+        </Stack>
       );
     },
     {
@@ -214,7 +215,7 @@ storiesOf("InputGroup", module)
       const inputValue = text("Input Value", undefined);
 
       return (
-        <div>
+        <Stack>
           <InputGroup label="Change in group" onChange={action("onChange a+b")}>
             <InputField placeholder="a" maxLength={11} value={inputValue} />
             <InputField placeholder="b" maxLength={11} value={inputValue} />
@@ -234,7 +235,7 @@ storiesOf("InputGroup", module)
               onChange={action("onChange d")}
             />
           </InputGroup>
-        </div>
+        </Stack>
       );
     },
     {

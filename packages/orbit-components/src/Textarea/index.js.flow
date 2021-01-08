@@ -4,13 +4,12 @@
 */
 import * as React from "react";
 
-import type { Globals, Translation, Ref, TranslationString } from "../common/common.js.flow";
+import type { Globals, Translation, TranslationString } from "../common/common.js.flow";
 import type { spaceAfter } from "../common/getSpacingToken/index";
 
 export type Props = {|
   ...Globals,
   ...spaceAfter,
-  ...Ref,
   +size?: "small" | "normal",
   +name?: string,
   +rows?: number,
@@ -31,4 +30,4 @@ export type Props = {|
   +onBlur?: (ev: SyntheticInputEvent<HTMLTextAreaElement>) => void | Promise<any>,
 |};
 
-declare export default React.ComponentType<Props>;
+declare export default React.AbstractComponent<Props, HTMLTextAreaElement>;

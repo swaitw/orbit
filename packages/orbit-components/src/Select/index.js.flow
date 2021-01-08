@@ -31,7 +31,7 @@ export type Props = {|
   +name?: string,
   +error?: React.Node,
   +help?: React.Node,
-  insideInputGroup?: boolean,
+  +insideInputGroup?: boolean,
   +tabIndex?: string | number,
   +onChange?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,
   +onFocus?: (ev: SyntheticInputEvent<HTMLSelectElement>) => void | Promise<any>,

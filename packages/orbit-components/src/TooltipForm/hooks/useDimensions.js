@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import boundingClientRect from "../../utils/boundingClientRect";
 import type { UseDimensions } from "./useDimensions";
+import debounce from "../../utils/debounce";
 
 const defaultPositions = {
   bottom: 0,
@@ -37,11 +38,12 @@ const useDimensions: UseDimensions = ({ iconBoundingRef }) => {
 
     calculateDimensions();
 
-    window.addEventListener("resize", calculateDimensions);
+    window.addEventListener("resize", debounce(calculateDimensions, 100));
     return () => {
       window.removeEventListener("resize", calculateDimensions);
     };
-  }, [iconBoundingRef]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return dimensions;
 };

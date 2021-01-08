@@ -175,11 +175,7 @@ StyledSelect.defaultProps = {
   theme: defaultTheme,
 };
 
-export const SelectContainer = styled(({ className, children, labelRef }) => (
-  <div ref={labelRef} className={className}>
-    {children}
-  </div>
-))`
+export const SelectContainer = styled.div`
   position: relative;
   display: flex;
   align-items: center;
@@ -193,9 +189,7 @@ SelectContainer.defaultProps = {
   theme: defaultTheme,
 };
 
-const SelectPrefix = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
-))`
+const SelectPrefix = styled.div`
   display: flex;
   align-items: center;
   position: absolute;
@@ -210,9 +204,7 @@ SelectPrefix.defaultProps = {
   theme: defaultTheme,
 };
 
-const SelectSuffix = styled(({ children, className }) => (
-  <div className={className}>{children}</div>
-))`
+const SelectSuffix = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
@@ -314,7 +306,7 @@ const Select = React.forwardRef<Props, HTMLSelectElement>((props, ref) => {
           {label}
         </FormLabel>
       )}
-      <SelectContainer disabled={disabled} labelRef={label ? null : labelRef}>
+      <SelectContainer ref={label ? null : labelRef}>
         {prefix && (
           <SelectPrefix prefix={prefix} size={size}>
             {prefix}
