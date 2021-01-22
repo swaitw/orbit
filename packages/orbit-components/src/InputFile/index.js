@@ -164,7 +164,13 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
         </FormLabel>
       )}
       <FakeInput error={error}>
-        <Button type="secondary" size="small" iconLeft={<Attachment />} asComponent="div">
+        <Button
+          type="secondary"
+          size="small"
+          iconLeft={<Attachment />}
+          asComponent="div"
+          role="button"
+        >
           {buttonLabel}
         </Button>
         <StyledFileInput fileName={fileName} error={error}>
