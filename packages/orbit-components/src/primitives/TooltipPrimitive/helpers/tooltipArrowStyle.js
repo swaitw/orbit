@@ -5,7 +5,7 @@ import type { Props, ResolveColor } from "./tooltipArrowStyle";
 
 export const resolveColor: ResolveColor = ({ error, help, theme }) => {
   if (error) return theme.orbit.paletteRedNormal;
-  if (help) return theme.orbit.paletteBlueDark;
+  if (help) return theme.orbit.paletteBlueNormal;
   return theme.orbit.paletteInkNormal;
 };
 

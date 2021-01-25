@@ -4,6 +4,7 @@ import type { Interpolation } from "styled-components";
 import type { Align, Dimensions, Position } from "../index";
 
 export type Props = {|
+  +customArrowAlign?: number,
   ...Dimensions,
   ...Align,
   ...Position,

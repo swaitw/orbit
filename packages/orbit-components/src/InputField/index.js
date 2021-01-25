@@ -142,7 +142,10 @@ const StyledInlineLabel = styled.div`
   align-items: center;
   pointer-events: none;
   justify-content: center;
-  padding: ${({ theme }) => rtlSpacing(`0 0 0 ${theme.orbit.spaceSmall}`)};
+  padding: ${({ theme, size }) =>
+    rtlSpacing(
+      `0 0 0 ${size === SIZE_OPTIONS.SMALL ? theme.orbit.spaceXXSmall : theme.orbit.spaceSmall}`,
+    )};
 
   ${FormLabel} {
     margin-bottom: 0;

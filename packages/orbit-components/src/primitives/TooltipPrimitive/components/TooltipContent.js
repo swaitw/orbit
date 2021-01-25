@@ -111,6 +111,9 @@ const TooltipContent = ({
   onClose,
   onCloseMobile,
   onEnter,
+  customArrowAlign,
+  customContainerOffset,
+  customContainerPos,
   preferredPosition,
   preferredAlign,
   containerRef,
@@ -162,6 +165,9 @@ const TooltipContent = ({
         tooltipHeight={dimensions.tooltipHeight}
         tooltipWidth={dimensions.tooltipWidth}
         contentHeight={dimensions.contentHeight}
+        customArrowAlign={customArrowAlign}
+        customContainerOffset={customContainerOffset}
+        customContainerPos={customContainerPos}
         role="tooltip"
         aria-hidden={!shown}
         onMouseEnter={onEnter}

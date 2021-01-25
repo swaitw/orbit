@@ -1,4 +1,4 @@
-export type Dimensions = {
+export interface Dimensions {
   top: number;
   right: number;
   bottom: number;
@@ -9,7 +9,7 @@ export type Dimensions = {
   pureLeft: number;
   pureRight: number;
   pureBottom: number;
-};
+}
 
 declare const BoundingClientRect: (
   ref: { current: HTMLElement } | null | undefined,

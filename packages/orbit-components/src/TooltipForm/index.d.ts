@@ -11,10 +11,10 @@ type Align = "center" | "start" | "end";
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly error?: React.ReactNode;
   readonly help?: React.ReactNode;
-  readonly prefferedPosition: Position;
-  readonly prefferdAlign: Align;
+  readonly isInline?: boolean;
+  readonly preferredPosition?: Position;
+  readonly preferredAlign?: Align;
   readonly iconRef?: Common.Ref;
-  readonly inlineLabel?: boolean;
 }
 
 export interface Dimensions {

@@ -6,6 +6,7 @@ import TooltipPrimitive from "../primitives/TooltipPrimitive";
 import defaultTheme from "../defaultTheme";
 import resolveTooltipPosition from "./helpers/resolveTooltipPosition";
 import useDimensions from "./hooks/useDimensions";
+import resolveCustomPosition from "./helpers/resovleCustomPosition";
 
 import type { Props } from "./index";
 
@@ -21,16 +22,16 @@ StyledFormFeedbackTooltip.defaultProps = {
 const TooltipForm = ({
   iconRef,
   tooltipShown,
-  prefferedPosition = "top",
-  prefferedAlign,
+  preferredPosition = "top",
+  preferredAlign = "start",
   dataTest,
   error,
   help,
   inlineLabel,
 }: Props) => {
   const contentRef = useRef(null);
-
   const { iconBounding } = useDimensions({ iconBoundingRef: iconRef }, inlineLabel);
+  const getPos = resolveCustomPosition(preferredAlign, Boolean(iconBounding), inlineLabel);
 
   return (
     <StyledFormFeedbackTooltip
@@ -43,19 +44,25 @@ const TooltipForm = ({
     >
       {help && !error && (
         <TooltipPrimitive
-          preferredPosition={prefferedPosition}
-          preferredAlign={prefferedAlign}
+          preferredPosition={preferredPosition}
+          preferredAlign={preferredAlign}
           content={help}
           help={!!help}
+          customContainerPos={getPos.pos}
+          customContainerOffset={getPos.offset}
+          customArrowAlign={getPos.arrow}
           tooltipShown={tooltipShown}
         />
       )}
       {error && (
         <TooltipPrimitive
-          preferredPosition={prefferedPosition}
-          preferredAlign={prefferedAlign}
+          preferredPosition={preferredPosition}
+          preferredAlign={preferredAlign}
           content={error}
           error={!!error}
+          customContainerPos={getPos.pos}
+          customContainerOffset={getPos.offset}
+          customArrowAlign={getPos.arrow}
           tooltipShown={tooltipShown}
         />
       )}
