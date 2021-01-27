@@ -51,9 +51,6 @@ export type Props = {|
   +preferredAlign?: Aligns,
   +tooltipShown?: boolean,
   +enabled?: boolean,
-  +customArrowAlign?: number,
-  +customContainerOffset?: number,
-  +customContainerPos?: number,
   +tabIndex?: string | number,
   +removeUnderlinedText?: boolean,
 |};

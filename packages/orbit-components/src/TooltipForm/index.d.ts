@@ -1,7 +1,7 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
-
 import * as React from "react";
+
 import * as Common from "../common/common";
 import { Dimensions as PositionRaw } from "../utils/boundingClientRect";
 
@@ -11,6 +11,7 @@ type Align = "center" | "start" | "end";
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly error?: React.ReactNode;
   readonly help?: React.ReactNode;
+  readonly inputRef?: Common.Ref;
   readonly isInline?: boolean;
   readonly preferredPosition?: Position;
   readonly preferredAlign?: Align;

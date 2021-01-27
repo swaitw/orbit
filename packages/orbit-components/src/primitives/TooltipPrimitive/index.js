@@ -45,9 +45,6 @@ const TooltipPrimitive = ({
   help,
   preferredPosition,
   preferredAlign,
-  customArrowAlign,
-  customContainerOffset,
-  customContainerPos,
   stopPropagation = false,
   removeUnderlinedText,
 }: Props) => {
@@ -122,9 +119,6 @@ const TooltipPrimitive = ({
             help={help}
             tooltipId={tooltipId}
             onClose={handleOut}
-            customArrowAlign={customArrowAlign}
-            customContainerOffset={customContainerOffset}
-            customContainerPos={customContainerPos}
             onCloseMobile={handleOutMobile}
             onEnter={handleIn}
             preferredPosition={preferredPosition}

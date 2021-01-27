@@ -12,6 +12,7 @@ export type Props = {|
   +preferredPosition?: Positions,
   +preferredAlign?: Aligns,
   +iconRef?: RefType,
+  +inputRef?: RefType,
   +inlineLabel?: boolean,
   ...Globals,
 |};
@@ -19,6 +20,7 @@ export type Props = {|
 export type Dimensions = {|
   set: boolean,
   iconBounding: ?PositionRaw,
+  inputBounding: ?PositionRaw,
 |};
 
 declare export default React.ComponentType<Props>;

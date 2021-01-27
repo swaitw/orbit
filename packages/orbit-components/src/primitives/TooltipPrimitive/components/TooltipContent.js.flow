@@ -17,9 +17,6 @@ export type Props = {|
   onEnter: () => void,
   preferredPosition: ?Positions,
   preferredAlign: ?Aligns,
-  customArrowAlign?: number,
-  customContainerOffset?: number,
-  customContainerPos?: number,
   containerRef: React.ElementRef<*>,
   ...Globals,
 |};

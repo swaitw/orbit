@@ -18,10 +18,13 @@ const defaultPositions = {
   pureBottom: 0,
 };
 
-const useDimensions: UseDimensions = ({ iconBoundingRef }) => {
+const useDimensions: UseDimensions = ({ iconBoundingRef, inputRef }) => {
   const [dimensions, setDimensions] = useState({
     set: false,
     iconBounding: {
+      ...defaultPositions,
+    },
+    inputBounding: {
       ...defaultPositions,
     },
   });
@@ -29,10 +32,12 @@ const useDimensions: UseDimensions = ({ iconBoundingRef }) => {
   useEffect(() => {
     const calculateDimensions = () => {
       const iconBounding = boundingClientRect(iconBoundingRef);
+      const inputBounding = boundingClientRect(inputRef);
 
       setDimensions({
         set: true,
         iconBounding,
+        inputBounding,
       });
     };
 

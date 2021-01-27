@@ -47,7 +47,7 @@ storiesOf("FormErrors Kitchensink", module)
       return (
         <Stack>
           <InputField
-            size={size}
+            size={SIZE_OPTIONS.NORMAL}
             error={error}
             label={label}
             value={value}

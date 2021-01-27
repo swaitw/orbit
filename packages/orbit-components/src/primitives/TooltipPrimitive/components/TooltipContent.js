@@ -2,13 +2,14 @@
 import React, { useRef, useMemo, useCallback } from "react";
 import styled from "styled-components";
 
+import { useTooltipForm } from "../../../TooltipForm/TooltipFormContext";
 import useTheme from "../../../hooks/useTheme";
 import resolveContainerPosition from "../helpers/resolveContainerPosition";
 import resolveTooltipArrowAlign from "../helpers/resolveTooltipArrowAlign";
 import resolveTooltipArrowPosition from "../helpers/resolveTooltipArrowPosition";
+import resolveWidth from "../helpers/resolveWidth";
 import { StyledText } from "../../../Text/index";
 import { Item } from "../../../List/ListItem/index";
-import tooltipSize from "../helpers/tooltipSize";
 import resolveContainerAlign from "../helpers/resolveContainerAlign";
 import resolveBackgroundColor from "../helpers/resolveBackgroundColor";
 import tooltipArrowStyle from "../helpers/tooltipArrowStyle";
@@ -30,8 +31,7 @@ const StyledTooltip = styled.div`
 const StyledTooltipWrapper = styled.div`
   display: block;
   position: absolute;
-  width: auto;
-  max-width: ${tooltipSize};
+  ${resolveWidth};
   box-sizing: border-box;
   border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
   background-color: ${resolveBackgroundColor};
@@ -50,9 +50,9 @@ const StyledTooltipWrapper = styled.div`
 
   // prevent position, IEs don't have initial YAY
   top: auto;
-  right: auto;
   bottom: auto;
   left: auto;
+  right: auto;
 
   // tooltip positions
   ${resolveContainerPosition};
@@ -111,9 +111,6 @@ const TooltipContent = ({
   onClose,
   onCloseMobile,
   onEnter,
-  customArrowAlign,
-  customContainerOffset,
-  customContainerPos,
   preferredPosition,
   preferredAlign,
   containerRef,
@@ -122,6 +119,13 @@ const TooltipContent = ({
   const theme = useTheme();
   const tooltip = useRef(null);
   const content = useRef(null);
+  const {
+    inputWidth,
+    customArrowAlign,
+    customContainerOffset,
+    customContainerPos,
+  } = useTooltipForm();
+
   const [positions, aligns] = useMemo(
     () => sortPositionsAndAligns(preferredPosition, preferredAlign, theme),
     [preferredAlign, preferredPosition, theme],
@@ -148,6 +152,7 @@ const TooltipContent = ({
     },
     [onClose, onCloseMobile],
   );
+
   return (
     <StyledTooltip role="tooltip" id={tooltipId} data-test={dataTest}>
       <StyledTooltipWrapper
@@ -169,6 +174,8 @@ const TooltipContent = ({
         customContainerOffset={customContainerOffset}
         customContainerPos={customContainerPos}
         role="tooltip"
+        inputWidth={inputWidth}
+        contentWidth={content.current?.clientWidth}
         aria-hidden={!shown}
         onMouseEnter={onEnter}
         onMouseLeave={onClose}

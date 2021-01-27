@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 
+import { TooltipFormContextProvider } from "./TooltipFormContext";
 import TooltipPrimitive from "../primitives/TooltipPrimitive";
 import defaultTheme from "../defaultTheme";
 import resolveTooltipPosition from "./helpers/resolveTooltipPosition";
@@ -21,6 +22,7 @@ StyledFormFeedbackTooltip.defaultProps = {
 
 const TooltipForm = ({
   iconRef,
+  inputRef,
   tooltipShown,
   preferredPosition = "top",
   preferredAlign = "start",
@@ -30,8 +32,17 @@ const TooltipForm = ({
   inlineLabel,
 }: Props) => {
   const contentRef = useRef(null);
-  const { iconBounding } = useDimensions({ iconBoundingRef: iconRef }, inlineLabel);
-  const getPos = resolveCustomPosition(preferredAlign, Boolean(iconBounding), inlineLabel);
+  const { iconBounding, inputBounding: input } = useDimensions(
+    { iconBoundingRef: iconRef, inputRef },
+    inlineLabel,
+  );
+
+  const getPos = resolveCustomPosition(
+    preferredAlign,
+    Boolean(iconBounding),
+    inlineLabel,
+    input?.height,
+  );
 
   return (
     <StyledFormFeedbackTooltip
@@ -42,30 +53,26 @@ const TooltipForm = ({
       position="top"
       aria-live="polite"
     >
-      {help && !error && (
-        <TooltipPrimitive
-          preferredPosition={preferredPosition}
-          preferredAlign={preferredAlign}
-          content={help}
-          help={!!help}
-          customContainerPos={getPos.pos}
-          customContainerOffset={getPos.offset}
-          customArrowAlign={getPos.arrow}
-          tooltipShown={tooltipShown}
-        />
-      )}
-      {error && (
-        <TooltipPrimitive
-          preferredPosition={preferredPosition}
-          preferredAlign={preferredAlign}
-          content={error}
-          error={!!error}
-          customContainerPos={getPos.pos}
-          customContainerOffset={getPos.offset}
-          customArrowAlign={getPos.arrow}
-          tooltipShown={tooltipShown}
-        />
-      )}
+      <TooltipFormContextProvider {...getPos} inputWidth={input?.width}>
+        {help && !error && (
+          <TooltipPrimitive
+            preferredPosition={preferredPosition}
+            preferredAlign={preferredAlign}
+            content={help}
+            help={!!help}
+            tooltipShown={tooltipShown}
+          />
+        )}
+        {error && (
+          <TooltipPrimitive
+            preferredPosition={preferredPosition}
+            preferredAlign={preferredAlign}
+            content={error}
+            error={!!error}
+            tooltipShown={tooltipShown}
+          />
+        )}
+      </TooltipFormContextProvider>
     </StyledFormFeedbackTooltip>
   );
 };

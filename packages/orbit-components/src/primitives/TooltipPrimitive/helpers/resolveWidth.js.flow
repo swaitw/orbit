@@ -1,0 +1,12 @@
+// @flow
+import type { Interpolation } from "styled-components";
+
+import type { Size } from "../index";
+
+export type ResolveWidth = ({|
+  inputWidth: number,
+  contentWidth: number,
+  size: Size,
+|}) => Interpolation;
+
+declare export default ResolveWidth;

@@ -15,6 +15,7 @@ import getFieldDataState from "../common/getFieldDataState";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
 import mq from "../utils/mediaQuery";
+import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from "./index";
 
@@ -131,6 +132,8 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     handleBlur,
   } = useErrorTooltip({ onFocus, onBlur });
 
+  const inputRef = React.useRef(null);
+
   return (
     <Field spaceAfter={spaceAfter} ref={label ? null : labelRef}>
       <Input
@@ -147,7 +150,6 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
         onFocus={handleFocus}
         onBlur={handleBlur}
         accept={allowedFileTypes}
-        ref={ref}
         tabIndex={tabIndex}
       />
       {label && (
@@ -173,7 +175,7 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
         >
           {buttonLabel}
         </Button>
-        <StyledFileInput fileName={fileName} error={error}>
+        <StyledFileInput fileName={fileName} error={error} ref={mergeRefs([inputRef, ref])}>
           {fileName || placeholder}
         </StyledFileInput>
         {fileName && (
@@ -195,6 +197,7 @@ const InputFile = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
           help={help}
           error={error}
           iconRef={iconRef}
+          inputRef={inputRef}
           tooltipShown={tooltipShown || tooltipShownHover}
         />
       )}

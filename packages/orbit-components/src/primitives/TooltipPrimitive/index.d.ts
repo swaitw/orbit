@@ -23,9 +23,6 @@ interface Props extends Common.Global {
   readonly enabled?: boolean;
   readonly tabIndex?: string | number;
   readonly tooltipShown?: boolean;
-  readonly customArrowAlign?: number;
-  readonly customContainerOffset?: number;
-  readonly customContainerPos?: number;
   readonly removeUnderlinedText?: boolean;
 }
 

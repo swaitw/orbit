@@ -13,6 +13,7 @@ import getFieldDataState from "../common/getFieldDataState";
 import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
+import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from "./index";
 
@@ -289,6 +290,8 @@ const Select = React.forwardRef<Props, HTMLSelectElement>((props, ref) => {
     handleBlur,
   } = useErrorTooltip({ onFocus, onBlur });
 
+  const inputRef = React.useRef(null);
+
   return (
     <Label spaceAfter={spaceAfter}>
       {label && (
@@ -334,7 +337,7 @@ const Select = React.forwardRef<Props, HTMLSelectElement>((props, ref) => {
           id={id}
           readOnly={readOnly}
           required={required}
-          ref={ref}
+          ref={mergeRefs([inputRef, ref])}
           dataAttrs={dataAttrs}
         >
           {placeholder && (
@@ -361,6 +364,7 @@ const Select = React.forwardRef<Props, HTMLSelectElement>((props, ref) => {
           help={help}
           error={error}
           iconRef={iconRef}
+          inputRef={inputRef}
           tooltipShown={tooltipShown || tooltipShownHover}
         />
       )}

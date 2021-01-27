@@ -1,10 +1,21 @@
 // @flow
-const resolveCustomPositions = (align?: string, isIcon?: boolean, isInline?: boolean) => {
+const resolveCustomPositions = (
+  align?: string,
+  isIcon?: boolean,
+  isInline?: boolean,
+  inputHeight?: number,
+) => {
   if (align === "start") {
-    return { pos: !isIcon ? 4 : 0, offset: !isInline ? 10 : 0, arrow: !isInline ? 2 : 0 };
+    const arrowInlineSize = inputHeight === 44 ? 12 : 11;
+
+    return {
+      customContainerPos: !isIcon ? 4 : 0,
+      customContainerOffset: !isInline ? 10 : 0,
+      customArrowAlign: !isInline ? 2 : arrowInlineSize,
+    };
   }
 
-  return { pos: 0, offset: 0, arrow: 0 };
+  return { customContainerPos: 0, customContainerOffset: 0, customArrowAlign: 0 };
 };
 
 export default resolveCustomPositions;

@@ -18,6 +18,7 @@ import useErrorTooltip from "../TooltipForm/hooks/useErrorTooltip";
 import formElementFocus from "./helpers/formElementFocus";
 import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitive/components/ButtonPrimitiveIconContainer";
 import mq from "../utils/mediaQuery";
+import mergeRefs from "../utils/mergeRefs";
 
 import type { Props } from ".";
 
@@ -340,6 +341,8 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
     label,
   ]);
 
+  const inputRef = React.useRef<HTMLElement | null>(null);
+
   const {
     tooltipShown,
     tooltipShownHover,
@@ -433,7 +436,7 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
             maxLength={maxLength}
             size={size}
             error={insideInputGroup ? undefined : error}
-            ref={ref}
+            ref={mergeRefs([ref, inputRef])}
             tabIndex={tabIndex}
             inlineLabel={inlineLabel}
             readOnly={readOnly}
@@ -450,6 +453,7 @@ const InputField = React.forwardRef<Props, HTMLInputElement>((props, ref) => {
           <TooltipForm
             help={help}
             error={error}
+            inputRef={inputRef}
             iconRef={iconRef}
             tooltipShown={tooltipShown || tooltipShownHover}
             inlineLabel={inlineLabel}

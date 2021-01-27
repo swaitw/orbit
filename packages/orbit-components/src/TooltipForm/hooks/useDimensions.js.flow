@@ -6,6 +6,7 @@ import type { Dimensions } from "../index";
 export type UseDimensions = (
   {|
     iconBoundingRef: ?React.ElementRef<*>,
+    inputRef: ?React.ElementRef<*>,
   |},
   inlineLabel: ?boolean,
 ) => Dimensions;
