@@ -29,6 +29,8 @@ const pathOverwrites = {
   Icons: "icons",
   IllustrationPrimitive: "primitives/IllustrationPrimitive",
   InputStepperStateless: "InputStepper/InputStepperStateless",
+  ItineraryPart: "Itinerary/ItineraryPart",
+  ItineraryLinedContent: "Itinerary/ItineraryLinedContent",
   LayoutColumn: "Layout/LayoutColumn",
   ListItem: "List/ListItem",
   mediaQueries: "utils/mediaQuery",
