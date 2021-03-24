@@ -13,7 +13,7 @@ import { TYPE_OPTIONS } from "./consts";
 import type { Props } from "./index";
 
 const SocialButton = React.forwardRef<Props, HTMLButtonElement>(
-  ({ type = TYPE_OPTIONS.APPLE, disabled = false, ...props }, ref) => {
+  ({ type = TYPE_OPTIONS.APPLE, disabled = false, size, ...props }, ref) => {
     const theme = useTheme();
     const propsWithTheme = { theme, ...props };
     const commonProps = getCommonProps(propsWithTheme);

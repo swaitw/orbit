@@ -7,7 +7,6 @@ import { action } from "@storybook/addon-actions";
 import ButtonPrimitive from "./ButtonPrimitive";
 import * as Icons from "../icons";
 import { SIZE_OPTIONS } from "./IllustrationPrimitive/consts";
-import { SIZE_OPTIONS as BUTTON_SIZES } from "./ButtonPrimitive/common/consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import BadgePrimitive from "./BadgePrimitive";
 import Illustration from "./IllustrationPrimitive";
@@ -92,7 +91,6 @@ storiesOf("Primitives", module)
     const loading = boolean("loading", false);
     const padding = text("padding", "0 10px 0 10px");
     const role = text("role", null);
-    const size = select("Size", Object.values(BUTTON_SIZES), BUTTON_SIZES.NORMAL);
     const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)]);
     const submit = boolean("submit", false);
     const title = text("title", null);
@@ -132,7 +130,6 @@ storiesOf("Primitives", module)
         onClick={action("onClick")}
         padding={padding}
         role={role}
-        size={size}
         spaceAfter={spaceAfter}
         submit={submit}
         title={title}
