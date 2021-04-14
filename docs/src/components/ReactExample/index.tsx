@@ -2,14 +2,13 @@ import React from "react";
 import { LiveProvider, LivePreview, LiveEditor } from "react-live";
 import { useStaticQuery, graphql } from "gatsby";
 import styled, { css } from "styled-components";
-import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
+import dracula from "prism-react-renderer/themes/dracula";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import * as Components from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/icons";
-import dracula from "prism-react-renderer/themes/dracula";
-
+import * as Icons from "@kiwicom/orbit-components/lib/icons";
 import Copy from "../../images/copy.svg";
 import { copyTimeout } from "../../utils/common";
+import Frame from "./Frame";
 
 interface Props {
   exampleId: string;
@@ -28,7 +27,7 @@ const StyledEditor = styled(LiveEditor)`
   `};
 `;
 
-const StyledPreviewWrapper = styled(LivePreview)`
+const StyledPreview = styled(LivePreview)`
   padding: ${({ theme }) => theme.orbit.spaceXLarge};
 `;
 
@@ -42,7 +41,6 @@ const StyledBoard = styled.div`
 
 const ReactExample = ({ exampleId }: Props) => {
   const { ButtonLink, Stack, Text, Tooltip } = Components;
-  const { ChevronUp, ChevronDown } = Icons;
   const [isOpened, setOpenEditor] = React.useState(false);
   const [isCopied, setCopied] = React.useState(false);
 
@@ -93,17 +91,18 @@ const ReactExample = ({ exampleId }: Props) => {
   }, {});
 
   const scopeOutput = fields.scope
-    .map(({ path, name: moduleName }) => `import { ${moduleName} } from ${path}`)
+    .map(({ path, name: moduleName, default: isDefault }) => {
+      if (isDefault) return `import ${moduleName} from ${path}`;
+      return `import { ${moduleName} }  from ${path}`;
+    })
     .join("\n");
 
   return (
-    <LiveProvider
-      code={fields.example}
-      scope={{ ...modules, Icons, defaultTheme, styled, css }}
-      theme={dracula}
-    >
+    <LiveProvider code={fields.example} scope={{ ...modules, styled, css }} theme={dracula}>
       <StyledExampleWrapper>
-        <StyledPreviewWrapper />
+        <Frame>
+          <StyledPreview />
+        </Frame>
         <StyledBoard>
           <Stack flex justify="between" align="center">
             <Stack inline>
@@ -111,7 +110,7 @@ const ReactExample = ({ exampleId }: Props) => {
                 onClick={() => setOpenEditor(prev => !prev)}
                 type="secondary"
                 ariaExpanded={isOpened}
-                iconRight={isOpened ? <ChevronUp /> : <ChevronDown />}
+                iconRight={isOpened ? <Icons.ChevronUp /> : <Icons.ChevronDown />}
               >
                 Code
               </ButtonLink>
@@ -119,7 +118,7 @@ const ReactExample = ({ exampleId }: Props) => {
                 onClick={() => setOpenEditor(prev => !prev)}
                 type="secondary"
                 ariaExpanded={isOpened}
-                iconRight={isOpened ? <ChevronUp /> : <ChevronDown />}
+                iconRight={isOpened ? <Icons.ChevronUp /> : <Icons.ChevronDown />}
               >
                 Playground
               </ButtonLink>
