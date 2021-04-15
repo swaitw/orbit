@@ -5,15 +5,23 @@ import styled, { css } from "styled-components";
 import dracula from "prism-react-renderer/themes/dracula";
 import * as Components from "@kiwicom/orbit-components";
 import * as Icons from "@kiwicom/orbit-components/lib/icons";
+import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
+
 import Board from "./Board";
 import Preview from "./Preview";
-import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
 interface Scope {
   name: string;
   path: string;
   default: boolean;
 }
+
+const StyledWrapper = styled.div`
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 100%;
+`;
 
 interface Props {
   data: {
@@ -62,15 +70,17 @@ export default function Example({ data }: Props) {
 
   return (
     <Components.ThemeProvider theme={defaultTheme}>
-      <LiveProvider code={fields.example} scope={{ ...modules, styled, css }} theme={dracula}>
-        <Preview />
-        <Board
-          isEditorOpened={isEditorOpened}
-          onOpenEditor={() => setOpenEditor(!isEditorOpened)}
-          code={[scopeOutput, fields.example].join("\n\n")}
-        />
-        {isEditorOpened && <StyledEditor />}
-      </LiveProvider>
+      <StyledWrapper>
+        <LiveProvider code={fields.example} scope={{ ...modules, styled, css }} theme={dracula}>
+          <Preview />
+          <Board
+            isEditorOpened={isEditorOpened}
+            onOpenEditor={() => setOpenEditor(!isEditorOpened)}
+            code={[scopeOutput, fields.example].join("\n\n")}
+          />
+          {isEditorOpened && <StyledEditor />}
+        </LiveProvider>
+      </StyledWrapper>
     </Components.ThemeProvider>
   );
 }

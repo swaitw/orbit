@@ -3,6 +3,7 @@ import { Stack, ButtonLink, Tooltip } from "@kiwicom/orbit-components";
 import { ChevronUp, ChevronDown } from "@kiwicom/orbit-components/icons";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import styled from "styled-components";
+
 import Copy from "../../images/copy.svg";
 import { copyTimeout } from "../../utils/common";
 

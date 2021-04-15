@@ -1,6 +1,4 @@
 import * as React from "react";
-import Frame, { FrameContextConsumer } from "react-frame-component";
-import { StyleSheetManager } from "styled-components";
 import styled, { css } from "styled-components";
 import { LivePreview } from "react-live";
 
@@ -9,7 +7,7 @@ interface Props {
   background?: BgType;
 }
 
-const getBackground = (type: BgType) => ({ theme }) => {
+const getBackground = (type?: BgType) => ({ theme }) => {
   if (type === "grid") {
     return `
       background:
@@ -40,7 +38,7 @@ const getBackground = (type: BgType) => ({ theme }) => {
   return `background: ${theme.orbit.paletteWhite}`;
 };
 
-const StyledFrame = styled(Frame)`
+const StyledWrapper = styled.div<Props>`
   ${({ background }) => css`
     width: 100%;
     height: 100%;
@@ -55,17 +53,9 @@ const StyledPreview = styled(LivePreview)`
 
 const Preview = ({ background = "white" }: Props) => {
   return (
-    <StyledFrame background={background}>
-      <FrameContextConsumer>
-        {({ document }) => {
-          return (
-            <StyleSheetManager target={document.head}>
-              <StyledPreview />
-            </StyleSheetManager>
-          );
-        }}
-      </FrameContextConsumer>
-    </StyledFrame>
+    <StyledWrapper background={background}>
+      <StyledPreview />
+    </StyledWrapper>
   );
 };
 

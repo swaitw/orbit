@@ -1,5 +1,9 @@
-const { getScope, omitTypes } = require("./helpers");
 const path = require("path");
+const { unlinkSync } = require("fs");
+const LoadablePlugin = require("@loadable/webpack-plugin");
+
+const { getScope, omitTypes } = require("./helpers");
+const { statsFile } = require("./consts");
 
 exports.onCreateNode = async ({ node, actions, loadNodeContent }) => {
   if (node.sourceInstanceName === "examples" && node.internal.type === "File") {
@@ -59,7 +63,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  result.data.allFile.nodes.forEach(({ id, fields, relativePath }) => {
+  result.data.allFile.nodes.forEach(({ id, fields }) => {
     createPage({
       path: `examples/${fields.example_id}`.toLowerCase(),
       component: path.resolve(path.resolve(__dirname, "../../src/templates/Example/index.tsx")),
@@ -69,4 +73,20 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
+};
+
+exports.onCreateWebpackConfig = ({ actions, stage }) => {
+  if (stage === "build-javascript") {
+    actions.setWebpackConfig({
+      plugins: [new LoadablePlugin()],
+    });
+  }
+};
+
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({ name: "@loadable/babel-plugin" });
+};
+
+exports.onPostBuild = () => {
+  unlinkSync(statsFile);
 };
