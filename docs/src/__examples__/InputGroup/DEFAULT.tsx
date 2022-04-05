@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { InputGroup, Select, InputField } from "@kiwicom/orbit-components";
 
 export default {
@@ -73,15 +73,22 @@ export default {
         <InputField
           label="This text is not displayed"
           placeholder="YYYY"
-          minValue={2020}
+          minValue={new Date().getFullYear()}
           type="number"
         />
       </InputGroup>
     );
   },
-  info: {
-    title: "Default input group",
-    description:
-      "Input groups associate related fields and provide a single label for all (overriding any values for individual fields).",
-  },
+  exampleKnobs: [
+    {
+      component: "InputGroup",
+      knobs: [
+        { name: "error", type: "text", defaultValue: "" },
+        { name: "help", type: "text", defaultValue: "" },
+        { name: "label", type: "text", defaultValue: "" },
+        { name: "disabled", type: "boolean", defaultValue: false },
+        { name: "size", type: "select", options: ["small", "normal"], defaultValue: "normal" },
+      ],
+    },
+  ],
 };

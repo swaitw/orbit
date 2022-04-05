@@ -47,13 +47,18 @@ Table below contains all types of the props available in Illustration component.
 | `"CompassEmailPromotedCaptain"` |
 | `"CompassEmailScout"`           |
 | `"CompassPoints"`               |
+| `"Chatbot"`                     |
 | `"CompassTravelPlan"`           |
 | `"CompassSaveOnBooking"`        |
 | `"DesktopSearch"`               |
 | `"EnjoyApp"`                    |
+| `"EVisa"`                       |
 | `"Error"`                       |
 | `"Error404"`                    |
 | `"FastTrack"`                   |
+| `"FareLock"`                    |
+| `"FareLockSuccess"`             |
+| `"FastTrackMan"`                |
 | `"Feedback"`                    |
 | `"Help"`                        |
 | `"Improve"`                     |
@@ -84,6 +89,7 @@ Table below contains all types of the props available in Illustration component.
 | `"PlaceholderHotel"`            |
 | `"PlaceholderTours"`            |
 | `"PlaneAndMoney"`               |
+| `"PlaneDelayed"`                |
 | `"PriorityBoarding"`            |
 | `"Rating"`                      |
 | `"ReferAFriend"`                |

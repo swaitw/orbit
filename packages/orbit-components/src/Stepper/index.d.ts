@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Stepper";
-
 type Title = string | ((param?: any) => string);
 // InputEvent
 export type Event = Common.Event<React.SyntheticEvent<HTMLInputElement>>;
@@ -16,6 +14,7 @@ export interface SharedProps extends Common.Global {
   readonly disabled?: boolean;
   readonly maxValue?: number;
   readonly minValue?: number;
+  readonly size?: "small" | "normal";
   // Deviation from other stepper properties
   readonly titleIncrement?: Title;
   readonly titleDecrement?: Title;
@@ -32,4 +31,4 @@ export interface Props extends SharedProps {
 
 declare const Stepper: React.FunctionComponent<Props>;
 export { Stepper, Stepper as default };
-export { StepperStateless } from "./StepperStateless/index";
+export { StepperStateless } from "./StepperStateless";

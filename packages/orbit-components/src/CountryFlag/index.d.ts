@@ -5,10 +5,8 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/CountryFlag";
-
 export interface Props extends Common.Global {
-  readonly code?: string | null;
+  readonly code?: string;
   readonly name?: string;
   readonly size?: "small" | "medium";
 }

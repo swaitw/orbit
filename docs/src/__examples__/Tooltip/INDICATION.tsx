@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Heading, Stack, Text, Tooltip, Alert } from "@kiwicom/orbit-components";
 import { CheckCircle, Visa } from "@kiwicom/orbit-components/icons";
 
@@ -65,9 +65,4 @@ export default {
       </Text>
     </Stack>
   ),
-  info: {
-    title: "Indication",
-    description:
-      "When the child of a tooltip is a Text component, it is underlined to indicate that the tooltip is present. The color of the underlining automatically adjusts in cases like inside alerts. You can hide the underlining using the removeUnderlinedText prop.",
-  },
 };

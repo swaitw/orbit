@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Tile, TileGroup } from "@kiwicom/orbit-components";
 import { BaggageChecked30, Child, Meal } from "@kiwicom/orbit-components/icons";
 
@@ -28,9 +28,4 @@ export default {
       />
     </TileGroup>
   ),
-  info: {
-    title: "Default tile group",
-    description:
-      "Tile groups can contain many things. To keep the proper styling, don't include any DOM elements other than tiles.",
-  },
 };

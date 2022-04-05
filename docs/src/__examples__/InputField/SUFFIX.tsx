@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { InputField, ButtonLink, Stack } from "@kiwicom/orbit-components";
 import { Visibility, VisibilityOff } from "@kiwicom/orbit-components/icons";
 
@@ -32,10 +32,5 @@ export default {
         />
       </Stack>
     );
-  },
-  info: {
-    title: "Suffixes",
-    description:
-      "You can add context to an input field with a text suffix. To add an action, use a button link as the suffix.",
   },
 };

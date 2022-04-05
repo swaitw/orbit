@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 import { Button, Stack, ModalSection, Modal } from "@kiwicom/orbit-components";
 
@@ -110,9 +110,5 @@ export default {
         </Stack>
       </>
     );
-  },
-  info: {
-    title: "Sizes",
-    description: `Modals can have four sizes: extra small (360px), small (${defaultTheme.orbit.widthModalSmall}), normal (${defaultTheme.orbit.widthModalNormal}, the default), and large (${defaultTheme.orbit.widthModalLarge}). This sets their maximum width on larger screens`,
   },
 };

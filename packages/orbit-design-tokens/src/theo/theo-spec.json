@@ -9,7 +9,7 @@
       }
     },
     "colorTextSecondary": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -73,7 +73,7 @@
       }
     },
     "colorIconSecondary": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -209,7 +209,7 @@
       }
     },
     "colorTextAlertWarning": {
-      "value": "#A25100",
+      "value": "#AE5700",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -705,7 +705,7 @@
       }
     },
     "colorTextButtonLinkPrimaryHover": {
-      "value": "#009882",
+      "value": "#007060",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -713,7 +713,7 @@
       }
     },
     "colorTextButtonLinkPrimaryActive": {
-      "value": "#008F7B",
+      "value": "#006657",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -753,7 +753,7 @@
       }
     },
     "colorTextInputPrefix": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -761,7 +761,7 @@
       }
     },
     "colorTextInputDisabled": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -833,7 +833,7 @@
       }
     },
     "colorTextTable": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -865,7 +865,7 @@
       }
     },
     "colorPlaceholderInput": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -881,7 +881,7 @@
       }
     },
     "colorPlaceholderInputFile": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -905,7 +905,7 @@
       }
     },
     "colorFormLabelFilled": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -913,7 +913,7 @@
       }
     },
     "colorInfoCheckBoxRadio": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -945,7 +945,7 @@
       }
     },
     "colorIconRadioButtonDisabled": {
-      "value": "#BAC7D5",
+      "value": "#697D95",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -953,7 +953,7 @@
       }
     },
     "colorStopoverArrow": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Colors",
       "meta": {
@@ -1224,6 +1224,78 @@
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
       }
     },
+    "backgroundButtonBundleBasic": {
+      "value": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleBasicHover": {
+      "value": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleBasicActive": {
+      "value": "linear-gradient(to top right, #9F1816 0%, #C36802 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleMedium": {
+      "value": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleMediumHover": {
+      "value": "linear-gradient(to top right, #2D1393 0%, #7343AA 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleMediumActive": {
+      "value": "linear-gradient(to top right, #250F79 0%, #5A3485 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleTop": {
+      "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleTopHover": {
+      "value": "linear-gradient(to top right, #171718 0%, #51575C 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundButtonBundleTopActive": {
+      "value": "linear-gradient(to top right, #101011 0%, #51575C)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
     "backgroundButtonBordered": {
       "value": "transparent",
       "type": "string",
@@ -1419,6 +1491,30 @@
     "backgroundBadgeWhite": {
       "value": "#FFFFFF",
       "type": "color",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundBadgeBundleBasic": {
+      "value": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundBadgeBundleMedium": {
+      "value": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)",
+      "type": "string",
+      "category": "Background colors",
+      "meta": {
+        "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
+      }
+    },
+    "backgroundBadgeBundleTop": {
+      "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)",
+      "type": "string",
       "category": "Background colors",
       "meta": {
         "categoryDescription": "Use these tokens for background colors only. Do not use these for border colors or text theme.palette."
@@ -1750,6 +1846,14 @@
     },
     "zIndexSticky": {
       "value": "100",
+      "type": "string",
+      "category": "Z Index",
+      "meta": {
+        "categoryDescription": "Use layers to show depth of page."
+      }
+    },
+    "zIndexDrawer": {
+      "value": "815",
       "type": "string",
       "category": "Z Index",
       "meta": {
@@ -2101,7 +2205,7 @@
       }
     },
     "borderColorInputHover": {
-      "value": "#A6B6C8",
+      "value": "#5D738E",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2109,7 +2213,7 @@
       }
     },
     "borderColorInputActive": {
-      "value": "#94A8BE",
+      "value": "#4A617C",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2405,7 +2509,7 @@
       }
     },
     "borderColorCheckboxRadioHover": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Border color",
       "meta": {
@@ -2877,7 +2981,7 @@
       }
     },
     "paddingTag": {
-      "value": "6px 8px",
+      "value": "8px",
       "type": "size",
       "category": "Spacing",
       "meta": {
@@ -3380,7 +3484,7 @@
         "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
       }
     },
-    "paletteInkLighter": {
+    "paletteCloudDarker": {
       "value": "#BAC7D5",
       "type": "color",
       "category": "Color palette",
@@ -3388,7 +3492,7 @@
         "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
       }
     },
-    "paletteInkLighterHover": {
+    "paletteCloudDarkerHover": {
       "value": "#A6B6C8",
       "type": "color",
       "category": "Color palette",
@@ -3396,7 +3500,7 @@
         "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
       }
     },
-    "paletteInkLighterActive": {
+    "paletteCloudDarkerActive": {
       "value": "#94A8BE",
       "type": "color",
       "category": "Color palette",
@@ -3404,8 +3508,32 @@
         "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
       }
     },
+    "paletteInkLighter": {
+      "value": "#697D95",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteInkLighterHover": {
+      "value": "#5D738E",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteInkLighterActive": {
+      "value": "#4A617C",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
     "paletteInkLight": {
-      "value": "#5F738C",
+      "value": "#4F5E71",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3413,7 +3541,7 @@
       }
     },
     "paletteInkLightHover": {
-      "value": "#52647A",
+      "value": "#3E4E63",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3421,7 +3549,7 @@
       }
     },
     "paletteInkLightActive": {
-      "value": "#465567",
+      "value": "#324256",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3501,7 +3629,7 @@
       }
     },
     "paletteOrangeDark": {
-      "value": "#A25100",
+      "value": "#AE5700",
       "type": "color",
       "category": "Color palette",
       "meta": {
@@ -3702,6 +3830,22 @@
     },
     "paletteBlueLightHover": {
       "value": "#D0E9FB",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteBundleBasic": {
+      "value": "#D7331C",
+      "type": "color",
+      "category": "Color palette",
+      "meta": {
+        "categoryDescription": " Use these tokens as a fallback when you need specific color. It's always preferred to use less abstract design tokens. Don't use Hover and Active shades as base theme.palette."
+      }
+    },
+    "paletteBundleMedium": {
+      "value": "#3B1EB0",
       "type": "color",
       "category": "Color palette",
       "meta": {

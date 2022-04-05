@@ -301,6 +301,12 @@
       "name": "boxShadowRaised"
     },
     {
+      "value": "rgb(148, 168, 190)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteCloudDarkerActive"
+    },
+    {
       "value": "rgb(232, 244, 253)",
       "type": "color",
       "category": "Background colors",
@@ -349,7 +355,7 @@
       "name": "paddingButtonSmall"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextSecondary"
@@ -379,7 +385,7 @@
       "name": "paletteGreenDarkActive"
     },
     {
-      "value": "rgb(166, 182, 200)",
+      "value": "rgb(93, 115, 142)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteInkLighterHover"
@@ -474,6 +480,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonWarningBordered"
+    },
+    {
+      "value": "linear-gradient(to top right, #2D1393 0, #7343AA 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleMediumHover"
     },
     {
       "value": "0px 12px 24px -4px rgba(37, 42, 49, 0.24), 0px 8px 60px 0px rgba(37, 42, 49, 0.32)",
@@ -650,7 +662,7 @@
       "name": "backgroundBadgeWarning"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorInfoCheckBoxRadio"
@@ -782,13 +794,19 @@
       "name": "colorTextBadgeDark"
     },
     {
-      "value": "rgb(166, 182, 200)",
+      "value": "rgb(93, 115, 142)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorInputHover"
     },
     {
-      "value": "6px 8px",
+      "value": "linear-gradient(to top right, #171718 0, #51575C 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleTopHover"
+    },
+    {
+      "value": "8px",
       "type": "size",
       "category": "Spacing",
       "name": "paddingTag"
@@ -828,6 +846,12 @@
       "type": "size",
       "category": "Box shadow",
       "name": "boxShadowFixed"
+    },
+    {
+      "value": "815",
+      "type": "string",
+      "category": "Z Index",
+      "name": "zIndexDrawer"
     },
     {
       "value": "20px",
@@ -987,7 +1011,7 @@
       "name": "backgroundBadgeDark"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteInkLight"
@@ -1125,10 +1149,16 @@
       "name": "colorTextButtonCriticalBordered"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextInputPrefix"
+    },
+    {
+      "value": "linear-gradient(to top right, #3719AB 0, #8539DB 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundBadgeBundleMedium"
     },
     {
       "value": "rgb(233, 131, 5)",
@@ -1149,13 +1179,19 @@
       "name": "fontSizeHeadingTitle2"
     },
     {
+      "value": "linear-gradient(to top right, #E13E3B 0, #E87E09 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleBasic"
+    },
+    {
       "value": "700",
       "type": "string",
       "category": "Font weight",
       "name": "fontWeightBold"
     },
     {
-      "value": "rgb(0, 143, 123)",
+      "value": "rgb(0, 102, 87)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonLinkPrimaryActive"
@@ -1209,7 +1245,7 @@
       "name": "colorFormLabel"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Colors",
       "name": "colorIconRadioButtonDisabled"
@@ -1408,7 +1444,7 @@
       "name": "backgroundButtonLinkPrimaryActive"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorFormLabelFilled"
@@ -1480,10 +1516,16 @@
       "name": "fontSizeHeadingDisplay"
     },
     {
-      "value": "rgb(162, 81, 0)",
+      "value": "rgb(174, 87, 0)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextAlertWarning"
+    },
+    {
+      "value": "linear-gradient(to top right, #BD2825 0, #D67000 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleBasicHover"
     },
     {
       "value": "underline",
@@ -1552,7 +1594,7 @@
       "name": "heightIllustrationSmall"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorStopoverArrow"
@@ -1648,13 +1690,19 @@
       "name": "colorIconRadioButton"
     },
     {
-      "value": "rgb(70, 85, 103)",
+      "value": "rgb(50, 66, 86)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteInkLightActive"
     },
     {
-      "value": "rgb(82, 100, 122)",
+      "value": "rgb(215, 51, 28)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBundleBasic"
+    },
+    {
+      "value": "rgb(62, 78, 99)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteInkLightHover"
@@ -1682,6 +1730,18 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextPrimary"
+    },
+    {
+      "value": "rgb(59, 30, 176)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteBundleMedium"
+    },
+    {
+      "value": "linear-gradient(to top right, #9F1816 0, #C36802 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleBasicActive"
     },
     {
       "value": "rgb(245, 247, 249)",
@@ -1832,6 +1892,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextSuccess"
+    },
+    {
+      "value": "linear-gradient(to top right, #2D2D2E 0, #696E73 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleTop"
     },
     {
       "value": "rgb(186, 199, 213)",
@@ -2050,13 +2116,13 @@
       "name": "paddingInputFile"
     },
     {
-      "value": "rgb(0, 152, 130)",
+      "value": "rgb(0, 112, 96)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextButtonLinkPrimaryHover"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorPlaceholderInputFile"
@@ -2104,7 +2170,7 @@
       "name": "colorTextButtonGoogleBorderedHover"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextInputDisabled"
@@ -2120,6 +2186,12 @@
       "type": "color",
       "category": "Border color",
       "name": "borderColorCheckboxRadioFocus"
+    },
+    {
+      "value": "linear-gradient(to top right, #3719AB 0, #8539DB 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleMedium"
     },
     {
       "value": "14px",
@@ -2174,6 +2246,12 @@
       "type": "color",
       "category": "Colors",
       "name": "colorTextAlertSuccess"
+    },
+    {
+      "value": "linear-gradient(to top right, #E13E3B 0, #E87E09 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundBadgeBundleBasic"
     },
     {
       "value": "0 16px 0 28px",
@@ -2242,13 +2320,13 @@
       "name": "heightInputLarge"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteInkLighter"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorIconSecondary"
@@ -2296,13 +2374,19 @@
       "name": "fontSizeButtonLarge"
     },
     {
+      "value": "linear-gradient(to top right, #101011 0, #51575C)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleTopActive"
+    },
+    {
       "value": "rgb(245, 247, 249)",
       "type": "color",
       "category": "Background colors",
       "name": "backgroundButtonGoogle"
     },
     {
-      "value": "rgb(148, 168, 190)",
+      "value": "rgb(74, 97, 124)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorInputActive"
@@ -2428,7 +2512,7 @@
       "name": "backgroundButtonSecondaryActive"
     },
     {
-      "value": "rgb(186, 199, 213)",
+      "value": "rgb(105, 125, 149)",
       "type": "color",
       "category": "Colors",
       "name": "colorPlaceholderInput"
@@ -2470,7 +2554,7 @@
       "name": "paletteBlueLightHover"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Border color",
       "name": "borderColorCheckboxRadioHover"
@@ -2669,6 +2753,12 @@
       "name": "paddingTable"
     },
     {
+      "value": "linear-gradient(to top right, #250F79 0, #5A3485 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundButtonBundleMediumActive"
+    },
+    {
       "value": "rgb(185, 25, 25)",
       "type": "color",
       "category": "Background colors",
@@ -2679,6 +2769,12 @@
       "type": "number",
       "category": "Breakpoints",
       "name": "widthBreakpointTablet"
+    },
+    {
+      "value": "rgb(186, 199, 213)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteCloudDarker"
     },
     {
       "value": "rgb(11, 12, 15)",
@@ -2729,6 +2825,12 @@
       "name": "textDecorationTextLinkPrimary"
     },
     {
+      "value": "linear-gradient(to top right, #2D2D2E 0, #696E73 1)",
+      "type": "string",
+      "category": "Background colors",
+      "name": "backgroundBadgeBundleTop"
+    },
+    {
       "value": "none",
       "type": "string",
       "category": "Text decoration",
@@ -2747,7 +2849,7 @@
       "name": "paddingButtonLargeWithLeftIcon"
     },
     {
-      "value": "rgb(95, 115, 140)",
+      "value": "rgb(79, 94, 113)",
       "type": "color",
       "category": "Colors",
       "name": "colorTextTable"
@@ -2771,7 +2873,7 @@
       "name": "fontSizeTextLarge"
     },
     {
-      "value": "rgb(148, 168, 190)",
+      "value": "rgb(74, 97, 124)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteInkLighterActive"
@@ -2831,7 +2933,13 @@
       "name": "paletteRedNormalHover"
     },
     {
-      "value": "rgb(162, 81, 0)",
+      "value": "rgb(166, 182, 200)",
+      "type": "color",
+      "category": "Color palette",
+      "name": "paletteCloudDarkerHover"
+    },
+    {
+      "value": "rgb(174, 87, 0)",
       "type": "color",
       "category": "Color palette",
       "name": "paletteOrangeDark"

@@ -28,12 +28,15 @@ Table below contains all types of the props available in the InputFile component
 | name             | `string`                   |                      | The name for the InputFile.                                                                                                                                    |
 | onBlur           | `event => void \| Promise` |                      | Function for handling onBlur event.                                                                                                                            |
 | onChange         | `event => void \| Promise` |                      | Function for handling onChange event.                                                                                                                          |
+| required         | `boolean`                  |                      | If true, the label is displayed as required.                                                                                                                   |
 | onFocus          | `event => void \| Promise` |                      | Function for handling onFocus event.                                                                                                                           |
 | onRemoveFile     | `() => void \| Promise`    |                      | Function for handling file name removing.                                                                                                                      |
 | placeholder      | `TranslationString`        | `"No file selected"` | The placeholder for the InputFile. [See Functional specs](#functional-specs)                                                                                   |
 | ref              | `func`                     |                      | Prop for forwarded ref of the InputFile. [See Functional specs](#functional-specs)                                                                             |
 | spaceAfter       | `enum`                     |                      | Additional `margin-bottom` after component. [See this docs](https://github.com/kiwicom/orbit/tree/master/packages/orbit-components/src/common/getSpacingToken) |
 | tabIndex         | `string \| number`         |                      | Specifies the tab order of an element                                                                                                                          |
+| width            | `string`                   | `100%`               | Specifies width of InputFile                                                                                                                                   |
+| helpClosable     | `boolean`                  | `true`               | Whether to display help as a closable tooltip, or have it open only while the field is focused, same as error.                                                 |
 
 ## Functional specs
 

@@ -3,9 +3,7 @@
 
 import * as React from "react";
 
-import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive/index";
-
-declare module "@kiwicom/orbit-components/lib/Button";
+import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
 
 export type Type = "apple" | "facebook" | "google" | "twitter";
 

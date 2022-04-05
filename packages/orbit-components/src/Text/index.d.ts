@@ -5,9 +5,7 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Text";
-
-type Align = "left" | "center" | "right";
+type Align = "left" | "center" | "right" | "justify";
 type As = "p" | "span" | "div";
 type Type =
   | "primary"
@@ -18,7 +16,7 @@ type Type =
   | "warning"
   | "critical"
   | "white";
-type Weight = "normal" | "bold";
+type Weight = "normal" | "medium" | "bold";
 
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly type?: Type;
@@ -27,6 +25,7 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly align?: Align;
   readonly italic?: boolean;
   readonly uppercase?: boolean;
+  readonly strikeThrough?: boolean;
   readonly as?: As;
   readonly children: React.ReactNode;
   readonly id?: string;

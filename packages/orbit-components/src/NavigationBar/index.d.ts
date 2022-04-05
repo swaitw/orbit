@@ -4,13 +4,12 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/NavigationBar";
-
 export interface Props extends Common.Global {
   readonly onMenuOpen?: Common.Callback;
   readonly onShow?: Common.Callback;
   readonly onHide?: Common.Callback;
   readonly children: React.ReactNode;
+  readonly hideOnScroll?: boolean;
 }
 
 declare const NavigationBar: React.FunctionComponent<Props>;

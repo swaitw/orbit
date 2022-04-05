@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Heading, Stack, Hide, mediaQueries as mq, TextLink } from "@kiwicom/orbit-components";
+import { Heading, Stack, Hide, mediaQueries as mq } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 
+import { boxShadowDefault, boxShadowActive } from "./mixins";
 import ArrowRight from "./ArrowRight";
 import useIsUrlExternal from "../hooks/useIsUrlExternal";
 
@@ -15,12 +16,14 @@ interface Props {
   linkContent?: React.ReactNode;
   href?: string;
   children?: React.ReactNode;
+  isBookmark?: boolean;
 }
 
-function TileTitle({ children }: { children: React.ReactNode }) {
+function TileTitle({ children, alone }: { children: React.ReactNode; alone?: boolean }) {
   return (
     <div
       css={css`
+        ${alone && `min-height: 64px`};
         h3 {
           line-height: ${ICON_SIZE};
         }
@@ -40,37 +43,31 @@ interface StyledContainerProps extends Pick<Props, "fullWidth"> {
 }
 
 const StyledWrapper = styled.div<StyledContainerProps>`
-  ${({ theme, fullWidth, href, to, hasContent }) => `
+  ${({ theme, fullWidth, href, to, hasContent }) => css`
     padding: 2rem;
     border-radius: 1rem;
     background: ${theme.orbit.paletteWhite};
-    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
     transition: box-shadow ${theme.orbit.durationFast};
     display: flex;
-    ${
-      fullWidth &&
-      `
-        width: 100%;
-      `
-    };
-    ${
-      hasContent
-        ? css`
-            flex-direction: column;
-          `
-        : css`
-            align-items: center;
-            justify-content: space-between;
-          `
-    }
-    ${
-      (href || to) &&
-      `
-        &:hover {
-          box-shadow: ${theme.orbit.boxShadowRaised};
-        }
-      `
-    };
+    ${boxShadowDefault};
+    ${fullWidth &&
+    css`
+      width: 100%;
+    `};
+    ${hasContent
+      ? css`
+          flex-direction: column;
+        `
+      : css`
+          align-items: center;
+          justify-content: space-between;
+        `}
+    ${(href || to) &&
+    css`
+      &:hover {
+        ${boxShadowActive};
+      }
+    `};
   `}
 `;
 
@@ -95,8 +92,8 @@ function TileWrapper({ href, ...props }: TileWrapperProps) {
   return <StyledWrapper {...props} />;
 }
 
-const StyledIcon = styled.div`
-  ${({ theme }) => `
+const StyledIcon = styled.div<{ isBookmark?: boolean }>`
+  ${({ theme, isBookmark }) => `
     align-self: start;
     flex-shrink: 0;
     display: grid;
@@ -104,24 +101,24 @@ const StyledIcon = styled.div`
     align-content: center;
     width: ${ICON_SIZE};
     height: ${ICON_SIZE};
-    background: ${theme.orbit.paletteProductLight};
+    background: ${isBookmark ? theme.orbit.paletteOrangeLight : theme.orbit.paletteProductLight};
     border-radius: ${theme.orbit.borderRadiusCircle};
-    color: ${theme.orbit.paletteProductDark};
+    color: ${isBookmark ? theme.orbit.paletteOrangeNormal : theme.orbit.paletteProductDark};
 
     svg {
       width: 20px;
       height: 20px;
-    }
-
-    [stroke] {
       stroke: currentColor;
     }
+
+
   `}
 `;
 
 const StyledEndLinkWrapper = styled.span`
   pointer-events: none;
 `;
+
 const StyledTextLink = styled.span`
   ${({ theme }) => `
     font-weight: ${theme.orbit.fontWeightLinks};
@@ -133,9 +130,11 @@ const StyledTextLink = styled.span`
     }
   `};
 `;
+
 const StyledLinkTextWrapper = styled.div`
   text-align: right;
 `;
+
 const StyledLinkText = styled(StyledTextLink)`
   display: inline-flex;
   align-items: center;
@@ -143,6 +142,7 @@ const StyledLinkText = styled(StyledTextLink)`
     margin-left: 0.25rem;
   }
 `;
+
 const StyledLinkNode = styled.span`
   ${({ theme }) => `
     color: ${theme.orbit.colorTextLinkPrimary};
@@ -185,6 +185,7 @@ export default function Tile({
   title,
   children,
   fullWidth = true,
+  isBookmark,
 }: Props) {
   return (
     <TileWrapper href={href} fullWidth={fullWidth} hasContent={Boolean(children)}>
@@ -192,6 +193,7 @@ export default function Tile({
         css={css`
           flex: 1;
           display: flex;
+          height: 100%;
           ${mq.largeMobile(`
             > * + * {
               margin-left: 0.75rem;
@@ -201,7 +203,7 @@ export default function Tile({
       >
         {icon && (
           <Hide on={["smallMobile", "mediumMobile"]}>
-            <StyledIcon>{icon}</StyledIcon>
+            <StyledIcon isBookmark={isBookmark}>{icon}</StyledIcon>
           </Hide>
         )}
         {children ? (
@@ -209,7 +211,7 @@ export default function Tile({
             <TileTitle>{title}</TileTitle>
             <div
               css={css`
-                margin: 0.5rem 0 ${href ? "1.5rem" : "0"};
+                margin: 0.5rem 0 ${href && linkContent ? "1.5rem" : "0"};
               `}
             >
               {/* wrap plain strings in a p tag and otherwise render children */}
@@ -217,7 +219,7 @@ export default function Tile({
             </div>
           </div>
         ) : (
-          <TileTitle>{title}</TileTitle>
+          <TileTitle alone>{title}</TileTitle>
         )}
       </div>
       {href && (

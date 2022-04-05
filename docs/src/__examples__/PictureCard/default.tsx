@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { PictureCard } from "@kiwicom/orbit-components";
 
 export default {
@@ -20,8 +20,41 @@ export default {
       </PictureCard>
     );
   },
-  info: {
-    title: "Default pagination",
-    description: "By default, all pages up to 7 are displayed as buttons on large screens.",
-  },
+  exampleKnobs: [
+    {
+      component: "PictureCard",
+      knobs: [
+        {
+          name: "height",
+          type: "text",
+          defaultValue: "300",
+        },
+        {
+          name: "width",
+          type: "text",
+          defaultValue: "",
+        },
+        {
+          name: "external",
+          type: "boolean",
+          defaultValue: false,
+        },
+        {
+          name: "label",
+          type: "text",
+          defaultValue: "Activities",
+        },
+        {
+          name: "subTitle",
+          type: "text",
+          defaultValue: "London to",
+        },
+        {
+          name: "title",
+          type: "text",
+          defaultValue: "Moscow",
+        },
+      ],
+    },
+  ],
 };

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Airplane } from "@kiwicom/orbit-components/icons";
 import { Inline, Stack, Text } from "@kiwicom/orbit-components";
 
@@ -10,7 +10,7 @@ export default {
           <Stack>
             <Text>Inherited color</Text>
             <Text type="success">
-              <Inline>
+              <Inline align="center">
                 <Airplane ariaLabel="Airplane" /> Price alerts
               </Inline>
             </Text>
@@ -27,7 +27,7 @@ export default {
           <Airplane color="secondary" ariaLabel="Airplane" />
         </Stack>
         <Stack>
-          <Text>Teriary</Text>
+          <Text>Tertiary</Text>
           <Airplane color="tertiary" ariaLabel="Airplane" />
         </Stack>
         <Stack>
@@ -60,9 +60,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Icon colors",
-    description:
-      "By default, icons inherit the color of their parent. You can also set the color to one of our three ink colors, one of our four status colors, or any other color you want.",
-  },
 };

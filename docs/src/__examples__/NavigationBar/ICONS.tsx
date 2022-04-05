@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { NavigationBar, ButtonLink, Stack, CountryFlag } from "@kiwicom/orbit-components";
 import {
   Accommodation,
@@ -32,8 +32,4 @@ export default {
       </Stack>
     </NavigationBar>
   ),
-  info: {
-    title: "Default drawer",
-    description: "Drawers should appear on a user action and be closable.",
-  },
 };

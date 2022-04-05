@@ -20,18 +20,20 @@ const pathOverwrites = {
   CardContent: "Card/CardContent", // TODO: doesn't exist anymore (?)
   CardHeader: "Card/CardHeader",
   CardSection: "Card/CardSection",
+  ToastRoot: "Toast",
+  createToast: "Toast",
+  createToastPromise: "Toast",
   calculateCountOf: "Slider/utils/calculateCountOf",
   AccordionSection: "Accordion/AccordionSection",
-  DeprecatedCardHeader: "deprecated/Card/CardHeader",
-  DeprecatedCard: "deprecated/Card",
-  DeprecatedSeat: "deprecated/Seat",
-  DeprecatedCardSection: "deprecated/Card/CardSection",
-  DestinationCard: "deprecated/DestinationCard",
-  DestinationHeader: "deprecated/DestinationHeader",
   Grid: "utils/Grid",
   Icons: "icons",
   IllustrationPrimitive: "primitives/IllustrationPrimitive",
   InputStepperStateless: "InputStepper/InputStepperStateless",
+  ItinerarySegment: "Itinerary/ItinerarySegment",
+  ItineraryStatus: "Itinerary/ItineraryStatus",
+  ItineraryBadgeList: "Itinerary/ItineraryBadgeList",
+  ItinerarySegmentDetail: "Itinerary/ItinerarySegment/ItinerarySegmentDetail",
+  ItinerarySegmentStop: "Itinerary/ItinerarySegment/ItinerarySegmentStop",
   LayoutColumn: "Layout/LayoutColumn",
   ListItem: "List/ListItem",
   mediaQueries: "utils/mediaQuery",
@@ -51,14 +53,17 @@ const pathOverwrites = {
   TableFooter: "Table/TableFooter",
   TableHead: "Table/TableHead",
   TableRow: "Table/TableRow",
-  TripDate: "deprecated/TripSector/TripDate",
-  TripLayover: "deprecated/TripSector/TripLayover",
-  TripSector: "deprecated/TripSector",
-  TripSegment: "deprecated/TripSegment",
   TimelineStep: "Timeline/TimelineStep",
   SeatLegend: "Seat/components/SeatLegend",
   WizardStep: "Wizard/WizardStep",
   useMediaQuery: "hooks/useMediaQuery",
+  useTheme: "hooks/useTheme",
+  useInterval: "hooks/useInterval",
+  useLockScrolling: "hooks/useLockScrolling",
+  useRandomId: "hooks/useRandomId",
+  useRandomIdSeed: { path: "hooks/useRandomId", named: true },
+  useFocusTrap: "hooks/useFocusTrap",
+  rtl: { path: `utils/rtl`, namespace: true },
 };
 
 const parsedImportPaths = [
@@ -99,8 +104,19 @@ module.exports = function orbitComponents(babel) {
             }
 
             if (pathOverwrites[importedName] && !isIcon) {
-              // Currently there are only overrides for non icons
-              importedPath += `/${pathOverwrites[importedName]}`;
+              if (pathOverwrites[importedName].named) {
+                spec = t.importSpecifier(
+                  t.identifier(spec.local.name),
+                  t.identifier(spec.local.name),
+                );
+                importedPath += `/${pathOverwrites[importedName].path}`;
+              } else if (pathOverwrites[importedName].namespace) {
+                spec = t.importNamespaceSpecifier(t.identifier(spec.local.name));
+                importedPath += `/${pathOverwrites[importedName].path}`;
+              } else {
+                // Currently there are only overrides for non icons
+                importedPath += `/${pathOverwrites[importedName]}`;
+              }
             } else {
               importedPath += `/${importedName}`;
             }

@@ -1,47 +1,41 @@
 // @noflow
-const path = require("path");
-
 module.exports = {
   root: true,
   reportUnusedDisableDirectives: true,
   extends: [
     "airbnb",
     "plugin:react-hooks/recommended",
-    "plugin:prettier/recommended",
     "plugin:orbit-components/internal",
-    "prettier/react",
+    "plugin:prettier/recommended",
   ],
   plugins: ["babel"],
   rules: {
     "no-console": ["error", { allow: ["warn", "error"] }],
     "no-unused-expressions": "off",
     "babel/no-unused-expressions": "error",
+    "import/no-useless-path-segments": ["error", { noUselessIndex: true }],
     "import/no-extraneous-dependencies": [
       "error",
       {
-        packageDir: [
-          __dirname,
-          path.join(__dirname, "packages/babel-plugin-orbit-components"),
-          path.join(__dirname, "packages/eslint-plugin-orbit-components"),
-          path.join(__dirname, "packages/orbit-components"),
-          path.join(__dirname, "packages/orbit-design-tokens"),
-          path.join(__dirname, "docs/plugins/gatsby-remark-figma-images"),
-          path.join(__dirname, "docs"),
-        ],
         devDependencies: [
-          "**/*.test.js",
+          "**/*.test.*",
           "**/__tests__/**",
           "**/__testfixtures__/**",
-          "**/*.stories.js",
-          "**/*.config.js",
+          "**/__examples__/**",
+          "**/cypress/**",
+          "**/*.stories.*",
+          "**/*.config.*",
           "**/stories/**",
           "**/tasks/**",
           "docs/**",
           "packages/eslint-plugin-orbit-components/**",
+          "packages/orbit-design-tokens/src/theo/**",
           "packages/*/.storybook/**",
           "**/config/**",
           "**/scripts/**",
           "gulpfile.js",
+          "**/.remarkrc.js",
+          "**/.size-limit.js",
         ],
       },
     ],
@@ -49,6 +43,10 @@ module.exports = {
       "error",
       {
         groups: [["builtin", "external"], ["parent", "sibling"], "index"],
+        pathGroups: [
+          { pattern: "@kiwicom/**", group: "external" },
+          { pattern: "eslint-plugin-orbit-components", group: "external" },
+        ],
         "newlines-between": "always",
       },
     ],
@@ -61,7 +59,7 @@ module.exports = {
     "react/no-multi-comp": "off",
     "react/prop-types": "off",
     "react/require-default-props": "off", // Optional props can be undefined.
-    "react/jsx-filename-extension": ["error", { extensions: [".js"] }], // Don't use jsx
+    "react/jsx-filename-extension": ["error", { extensions: [".jsx"] }],
     "react/jsx-props-no-spreading": "off",
     "react/jsx-fragments": ["error", "syntax"],
     "react/state-in-constructor": "off",
@@ -76,8 +74,8 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["*.js", "*.js.flow"],
-      extends: ["plugin:flowtype/recommended", "prettier/flowtype"],
+      files: ["*.js?(x)", "*.js?(x).flow"],
+      extends: ["plugin:flowtype/recommended", "prettier"],
       plugins: ["adeira"],
       rules: {
         "flowtype/require-exact-type": "error",
@@ -91,10 +89,15 @@ module.exports = {
         // disables core ESLint rules which are handled by TypeScript
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "prettier/@typescript-eslint",
+        "prettier",
       ],
       parserOptions: {
-        project: "./tsconfig.json",
+        project: [
+          "./tsconfig.json",
+          "./docs/tsconfig.json",
+          "./packages/orbit-components/cypress/tsconfig.json",
+          "./packages/orbit-tracking/tsconfig.json",
+        ],
         ecmaVersion: 2018,
         sourceType: "module",
       },
@@ -133,7 +136,7 @@ module.exports = {
         // React components
         "**/[A-Z]*.ts?(x)",
         "**/[A-Z]*/index.ts?(x)",
-        "**/__typetests__/*.ts?(x)",
+        "**/__typetests__/**",
         "**/__testfixtures__/**",
         // other
         "docs/**",
@@ -221,12 +224,14 @@ module.exports = {
         // Ignore components added as shortcodes so they don't get marked as undefined
         Callout: false,
         ComponentStatus: false,
+        ComponentStructure: false,
         Do: false,
         Dont: false,
         DoImage: false,
         DontImage: false,
         FancyLink: false,
         FigmaFile: false,
+        FigmaIframe: false,
         GitHubContributors: false,
         GuidelineImages: false,
         Guideline: false,
@@ -234,13 +239,27 @@ module.exports = {
         ImageContainer: false,
         InlineToken: false,
         ReactExample: false,
+        Usage: false,
+        UsageUse: false,
+        UsageDontUse: false,
       },
     },
     // some ESLint rules fail in certain cases, so we're disabling them
     {
       files: ["packages/orbit-components/src/utils/**/*"],
       rules: {
-        "@typescript-eslint/prefer-readonly-parameter-types": "OFF",
+        "@typescript-eslint/prefer-readonly-parameter-types": "off",
+      },
+    },
+    {
+      files: ["packages/orbit-tracking/src/**/*"],
+      rules: {
+        "@typescript-eslint/prefer-readonly-parameter-types": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "no-restricted-syntax": "off",
+        "guard-for-in": "off",
+        "no-console": "off",
       },
     },
     {
@@ -250,19 +269,47 @@ module.exports = {
       },
     },
     {
-      files: ["*.stories.js", "**/__examples__/**", "*.test.js"],
+      files: "**/__examples__/**/*.*",
+      rules: {
+        "import/no-useless-path-segments": ["error", { noUselessIndex: false }],
+      },
+    },
+    {
+      files: ["*.stories.*", "**/__examples__/**", "*.test.*"],
       rules: {
         "orbit-components/unique-id": "off",
       },
     },
     {
       files: [
-        "packages/orbit-components/{src,es,lib}/**/*.js",
-        "packages/orbit-design-tokens/{src,lib}/**/*.js",
-        "*.js.flow",
+        "packages/orbit-components/{src,es,lib}/**/*.js?(x)",
+        "packages/orbit-design-tokens/{src,es,lib}/**/*.js?(x)",
+        "*.js?(x).flow",
       ],
       rules: {
         "flowtype/require-valid-file-annotation": ["error", "always"],
+      },
+    },
+    {
+      files: "**/config/**",
+      globals: {
+        argv: false,
+      },
+      rules: {
+        "no-restricted-syntax": "off",
+        "no-console": "off",
+      },
+    },
+    {
+      files: ["**/*.config.js", "**/.remarkrc.js"],
+      rules: {
+        "global-require": "off",
+      },
+    },
+    {
+      files: "docs/plugins/**",
+      rules: {
+        "import/no-extraneous-dependencies": ["error", { packageDir: `${__dirname}/docs` }],
       },
     },
   ],

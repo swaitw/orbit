@@ -11,7 +11,7 @@ export type DataAttrs = {|
   +dataAttrs?: { [key: string]: ?string | ?boolean },
 |};
 
-export type RefType = { current: null | HTMLElement } | ((null | HTMLElement) => mixed);
+export type RefType = ?{ current: null | HTMLElement } | ((null | HTMLElement) => mixed);
 
 export type Ref = {|
   +ref?: RefType,
@@ -19,6 +19,6 @@ export type Ref = {|
 
 export type Translation = React.Element<React.ComponentType<any>> | string;
 
-export type TranslationString = string;
+export type TranslationString = React.Node;
 
 export type Component = string | (() => React.Element<any>);

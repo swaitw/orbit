@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Button, Stack } from "@kiwicom/orbit-components";
 import getTokens from "@kiwicom/orbit-components/lib/getTokens";
 import ThemeProvider from "@kiwicom/orbit-components/lib/ThemeProvider";
@@ -27,10 +27,5 @@ export default {
         </ThemeProvider>
       </Stack>
     );
-  },
-  info: {
-    title: "Default text link",
-    description:
-      "The default text link is a primary link with its children as its text that inherits its size from its parent.",
   },
 };

@@ -3,16 +3,10 @@
 
 import * as React from "react";
 
-declare module "@kiwicom/orbit-components/lib/ThemeProvider/QueryContext";
+import type { QueryMap } from "../../hooks/useMediaQuery";
 
-export interface Props {
-  readonly isLargeDesktop: boolean | undefined | null;
-  readonly isDesktop: boolean | undefined | null;
-  readonly isLargeMobile: boolean | undefined | null;
-  readonly isMediumMobile: boolean | undefined | null;
-  readonly isTablet: boolean | undefined | null;
-  readonly prefersReducedMotion: boolean | undefined | null;
-}
+export declare const initialValue: QueryMap<null>;
 
-declare const QueryContext: React.Context<Props>;
-export { QueryContext, QueryContext as default };
+declare const QueryContext: React.Context<QueryMap<null | boolean>>;
+
+export default QueryContext;

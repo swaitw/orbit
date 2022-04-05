@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ChoiceGroup, Checkbox, Radio, Stack } from "@kiwicom/orbit-components";
 
 export default {
@@ -26,9 +26,15 @@ export default {
       </Stack>
     );
   },
-  info: {
-    title: "Default choice group",
-    description:
-      "Choice groups handle all changes for their children and present a single label to describe the group.",
-  },
+  exampleKnobs: [
+    {
+      component: "ChoiceGroup",
+      knobs: [
+        { name: "error", type: "text", defaultValue: "" },
+        { name: "filter", type: "boolean", defaultValue: false },
+        { name: "label", type: "text", defaultValue: "Transport to search" },
+        { name: "labelSize", type: "select", options: ["normal", "large"], defaultValue: "normal" },
+      ],
+    },
+  ],
 };

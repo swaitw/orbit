@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Heading } from "@kiwicom/orbit-components";
 
 export default {
@@ -12,9 +12,4 @@ export default {
       <Heading inverted>Inverted heading</Heading>
     </div>
   ),
-  info: {
-    title: "Inverted heading",
-    description:
-      "Inverted headings can be used on very dark backgrounds. This is the only color for headings other than colorHeading (Ink / Normal).",
-  },
 };

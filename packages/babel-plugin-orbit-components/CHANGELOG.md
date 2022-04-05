@@ -3,6 +3,356 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.18](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.17...@kiwicom/babel-plugin-orbit-components@3.4.18) (2022-04-05)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.17](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.16...@kiwicom/babel-plugin-orbit-components@3.4.17) (2022-03-23)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.16](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.15...@kiwicom/babel-plugin-orbit-components@3.4.16) (2022-03-22)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.15](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.14...@kiwicom/babel-plugin-orbit-components@3.4.15) (2022-03-11)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.14](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.13...@kiwicom/babel-plugin-orbit-components@3.4.14) (2022-03-07)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.13](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.12...@kiwicom/babel-plugin-orbit-components@3.4.13) (2022-03-02)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.12](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.11...@kiwicom/babel-plugin-orbit-components@3.4.12) (2022-02-28)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.11](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.10...@kiwicom/babel-plugin-orbit-components@3.4.11) (2022-02-21)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.10](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.9...@kiwicom/babel-plugin-orbit-components@3.4.10) (2022-02-21)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.9](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.8...@kiwicom/babel-plugin-orbit-components@3.4.9) (2022-02-10)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.8](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.7...@kiwicom/babel-plugin-orbit-components@3.4.8) (2022-02-09)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.7](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.6...@kiwicom/babel-plugin-orbit-components@3.4.7) (2022-02-07)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.6](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.5...@kiwicom/babel-plugin-orbit-components@3.4.6) (2022-02-02)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.5](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.4...@kiwicom/babel-plugin-orbit-components@3.4.5) (2022-01-24)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.4](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.3...@kiwicom/babel-plugin-orbit-components@3.4.4) (2022-01-20)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.3](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.2...@kiwicom/babel-plugin-orbit-components@3.4.3) (2022-01-20)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.2](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.1...@kiwicom/babel-plugin-orbit-components@3.4.2) (2022-01-14)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.4.1](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.4.0...@kiwicom/babel-plugin-orbit-components@3.4.1) (2022-01-07)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+# [3.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.3.3...@kiwicom/babel-plugin-orbit-components@3.4.0) (2021-12-22)
+
+
+### Features
+
+* **Toast:** introduce toast component ([#3216](https://github.com/kiwicom/orbit/issues/3216)) ([8157669](https://github.com/kiwicom/orbit/commit/8157669e30b89bf2f207287e410ba952509d6f98))
+
+
+
+
+
+## [3.3.3](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.3.2...@kiwicom/babel-plugin-orbit-components@3.3.3) (2021-12-13)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.3.2](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.3.1...@kiwicom/babel-plugin-orbit-components@3.3.2) (2021-12-07)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.3.0...@kiwicom/babel-plugin-orbit-components@3.3.1) (2021-12-03)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+# [3.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.2.0...@kiwicom/babel-plugin-orbit-components@3.3.0) (2021-12-01)
+
+
+### Bug Fixes
+
+* **useFocusTrap:** export from root ([1df0f8f](https://github.com/kiwicom/orbit/commit/1df0f8f1e034fed20824260dfbb572e7a474a52f))
+
+
+### Features
+
+* export RTL utilities from root as `rtl` ([10f8d1f](https://github.com/kiwicom/orbit/commit/10f8d1f81a6c88a23ac47ee3740d388d3f23e6ff))
+
+
+
+
+
+# [3.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.12...@kiwicom/babel-plugin-orbit-components@3.2.0) (2021-11-23)
+
+
+### Features
+
+* **Itinerary:** init ([3a0d40e](https://github.com/kiwicom/orbit/commit/3a0d40e7bf9f63ed577519dd00535039713ca8c3))
+
+
+
+
+
+## [3.1.12](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.11...@kiwicom/babel-plugin-orbit-components@3.1.12) (2021-11-22)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.1.11](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.10...@kiwicom/babel-plugin-orbit-components@3.1.11) (2021-11-09)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.1.10](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.9...@kiwicom/babel-plugin-orbit-components@3.1.10) (2021-11-09)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.1.9](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.8...@kiwicom/babel-plugin-orbit-components@3.1.9) (2021-11-05)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.1.8](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.7...@kiwicom/babel-plugin-orbit-components@3.1.8) (2021-11-05)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.1.7](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.6...@kiwicom/babel-plugin-orbit-components@3.1.7) (2021-11-03)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.1.6](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.5...@kiwicom/babel-plugin-orbit-components@3.1.6) (2021-11-02)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.1.5](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.4...@kiwicom/babel-plugin-orbit-components@3.1.5) (2021-10-27)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.1.4](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.3...@kiwicom/babel-plugin-orbit-components@3.1.4) (2021-10-27)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.1.3](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.2...@kiwicom/babel-plugin-orbit-components@3.1.3) (2021-10-21)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.1.2](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.1...@kiwicom/babel-plugin-orbit-components@3.1.2) (2021-10-18)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+## [3.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.1.0...@kiwicom/babel-plugin-orbit-components@3.1.1) (2021-10-14)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+# [3.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.0.1...@kiwicom/babel-plugin-orbit-components@3.1.0) (2021-10-01)
+
+
+### Features
+
+* export `useRandomId` and `useRandomIdSeed` from root ([cf4dd14](https://github.com/kiwicom/orbit/commit/cf4dd1477492a908ab49c018250956f1b1ee57c6))
+* export useTheme hook from root ([a622f6d](https://github.com/kiwicom/orbit/commit/a622f6d4bc3f4a5c8b998404a18730a16cac0a2c))
+
+
+
+
+
+## [3.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@3.0.0...@kiwicom/babel-plugin-orbit-components@3.0.1) (2021-09-13)
+
+**Note:** Version bump only for package @kiwicom/babel-plugin-orbit-components
+
+
+
+
+
+# [3.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@2.5.0...@kiwicom/babel-plugin-orbit-components@3.0.0) (2021-09-10)
+
+
+### Code Refactoring
+
+* delete deprecated components ([#3084](https://github.com/kiwicom/orbit/issues/3084)) ([ee75f02](https://github.com/kiwicom/orbit/commit/ee75f0203f5c8afbf389d798db677c4e59d88706))
+
+
+### BREAKING CHANGES
+
+* deletes deprecated components, their usage should be
+replaced with better existing or upcoming alternatives.
+
+
+
+
+
+# [2.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@2.4.0...@kiwicom/babel-plugin-orbit-components@2.5.0) (2021-07-22)
+
+
+### Features
+
+* lock scrolling in components with overlay ([#3036](https://github.com/kiwicom/orbit/issues/3036)) ([b6c87ae](https://github.com/kiwicom/orbit/commit/b6c87aec9e3005fb76752390c9b4f909bc12f087))
+
+
+
+
+
 # [2.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/babel-plugin-orbit-components@2.3.0...@kiwicom/babel-plugin-orbit-components@2.4.0) (2021-05-27)
 
 

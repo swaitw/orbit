@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { InputFile, Stack } from "@kiwicom/orbit-components";
 
 export default {
@@ -32,10 +32,5 @@ export default {
         />
       </Stack>
     );
-  },
-  info: {
-    title: "Button labels",
-    description:
-      "In addition to the overall label, match the label on the upload button to the action users should take using the <code>buttonLabel</code> prop.",
   },
 };

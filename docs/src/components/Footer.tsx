@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { Text, Desktop, Stack, mediaQueries } from "@kiwicom/orbit-components";
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 
 import Switch from "./Switch";
 import GitHub from "../images/logos/github-circle.svg";
@@ -10,25 +10,6 @@ import Twitter from "../images/logos/twitter-circle.svg";
 import orbitHeart from "../images/orbit-heart.png";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
 import useDevMode from "../hooks/useDevMode";
-
-const StyledFooter = styled.footer<{ hasGradient?: boolean }>`
-  position: relative; /* so it's on top of elements like the rocket image and content card shadow */
-
-  ${({ hasGradient }) =>
-    hasGradient &&
-    `
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 52px;
-        top: -52px;
-        pointer-events: none;
-        background-image: linear-gradient(to top, #fff, transparent);
-      }
-  `}
-`;
 
 const StyledContainer = styled.div<{ color: string }>`
   ${({ theme, color }) => `
@@ -84,14 +65,39 @@ function Dot() {
   return <Desktop>·</Desktop>;
 }
 
-interface Props {
-  hasGradient?: boolean;
-}
-
-export default function Footer({ hasGradient }: Props) {
+export default function Footer() {
   const [devMode, setDevMode] = useDevMode();
+
+  const data: {
+    site: {
+      siteMetadata: {
+        version: {
+          components: number;
+          tokens: number;
+        };
+      };
+    };
+  } = useStaticQuery(graphql`
+    query PackageVersions {
+      site {
+        siteMetadata {
+          version {
+            components
+            tokens
+          }
+        }
+      }
+    }
+  `);
+
+  const pkgVersion = data.site.siteMetadata.version;
+
   return (
-    <StyledFooter hasGradient={hasGradient}>
+    <footer
+      css={css`
+        position: relative;
+      `}
+    >
       <StyledContainer color="paletteCloudLight">
         <StyledInner>
           <Stack flex align="center" justify="between">
@@ -105,7 +111,9 @@ export default function Footer({ hasGradient }: Props) {
               <Dot />
               <StyledFooterLink to="/roadmap/">Roadmap</StyledFooterLink>
               <Dot />
-              <StyledFooterLink to="#">Changelog</StyledFooterLink>
+              <StyledFooterLink to="https://kiwicom.github.io/orbit/">Storybook</StyledFooterLink>
+              <Dot />
+              <StyledFooterLink to="/changelog/">Changelog</StyledFooterLink>
             </Stack>
             <Stack
               inline
@@ -147,7 +155,7 @@ export default function Footer({ hasGradient }: Props) {
                   Design tokens
                 </Text>
                 <Text as="div" type="secondary">
-                  v0.11.0
+                  v{pkgVersion.tokens}
                 </Text>
               </Stack>
               <Dot />
@@ -156,7 +164,7 @@ export default function Footer({ hasGradient }: Props) {
                   React components
                 </Text>
                 <Text as="div" type="secondary">
-                  v0.11.0
+                  v{pkgVersion.components}
                 </Text>
               </Stack>
               <Dot />
@@ -200,6 +208,6 @@ export default function Footer({ hasGradient }: Props) {
           </Stack>
         </StyledInner>
       </StyledContainer>
-    </StyledFooter>
+    </footer>
   );
 }

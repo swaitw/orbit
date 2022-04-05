@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { InputField, ListChoice, Popover } from "@kiwicom/orbit-components";
 
 export default {
@@ -6,6 +6,7 @@ export default {
     const [choice, setChoice] = React.useState("");
     return (
       <Popover
+        renderInPortal={false}
         content={
           <>
             <ListChoice
@@ -33,9 +34,5 @@ export default {
         <InputField label="To" inlineLabel value={choice} />
       </Popover>
     );
-  },
-  info: {
-    title: "Descriptions",
-    description: "The descriptions for list choices add additional context to the choices.",
   },
 };

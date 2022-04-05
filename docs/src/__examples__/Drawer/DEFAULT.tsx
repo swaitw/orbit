@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Drawer, Button, LinkList, TextLink } from "@kiwicom/orbit-components";
 import { MenuHamburger } from "@kiwicom/orbit-components/icons";
 
@@ -15,11 +15,15 @@ export default {
             shown={showDrawer}
           >
             <LinkList>
-              <TextLink href="https://orbit.kiwi/components/drawer/" external type="secondary">
+              <TextLink
+                href="https://orbit.kiwi/components/overlay/drawer/"
+                external
+                type="secondary"
+              >
                 Drawer guidelines
               </TextLink>
               <TextLink
-                href="https://orbit.kiwi/components/drawer/react/"
+                href="https://orbit.kiwi/components/overlay/drawer/react/"
                 external
                 type="secondary"
               >
@@ -45,8 +49,37 @@ export default {
       </>
     );
   },
-  info: {
-    title: "Default drawer",
-    description: "Drawers should appear on a user action and be closable.",
-  },
+  exampleKnobs: [
+    {
+      component: "Drawer",
+      knobs: [
+        {
+          name: "width",
+          type: "text",
+          defaultValue: "320px",
+        },
+        {
+          name: "fixedHeader",
+          type: "boolean",
+          defaultValue: false,
+        },
+        {
+          name: "position",
+          type: "select",
+          options: ["right", "left"],
+          defaultValue: "right",
+        },
+        {
+          name: "title",
+          type: "text",
+          defaultValue: "",
+        },
+        {
+          name: "suppressed",
+          type: "boolean",
+          defaultValue: false,
+        },
+      ],
+    },
+  ],
 };

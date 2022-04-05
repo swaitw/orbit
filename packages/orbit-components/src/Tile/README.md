@@ -19,6 +19,7 @@ Table below contains all types of the props available in Tile component.
 | Name            | Type                       | Default | Description                                                                                                                  |
 | :-------------- | :------------------------- | :------ | :--------------------------------------------------------------------------------------------------------------------------- |
 | children        | `React.Node`               |         | Content of expandable Tile.                                                                                                  |
+| as              | `string`                   | `"div"` | The element used for the root node.                                                                                          |
 | dataTest        | `string`                   |         | Optional prop for testing purposes.                                                                                          |
 | description     | `React.Node`               |         | The description of the Tile.                                                                                                 |
 | expandable      | `boolean`                  | `false` | If `true`, the Tile will be expandable.                                                                                      |
@@ -35,5 +36,5 @@ Table below contains all types of the props available in Tile component.
 
 ## Functional specs
 
-- When the `external` is specified, `noopener` and `noreferrer` values will automatically added to attribute `rel` for security reason.
+- When the `external` is specified, `noopener` value will be automatically added to attribute `rel` for security reason.
 - By passing the `href` prop into Tile, it will render into `a` element.

@@ -1,6 +1,8 @@
 // @flow
 declare module "@kiwicom/orbit-design-tokens/";
 
+export { default as convertHexToRgba } from "./convertHexToRgba";
+
 export type ProductColor = {
   light: string;
   lightHover: string;
@@ -41,6 +43,8 @@ export type CloudColor = {
   normalHover: string;
   normalActive: string;
   dark: string;
+  darkerHover: string;
+  darkerActive: string;
 };
 
 export type InkColor = {
@@ -61,6 +65,11 @@ export type SocialColor = {
   facebookActive: string;
 };
 
+export type BundleColor = {
+  basic: string;
+  medium: string;
+};
+
 export type Palette = {
   product: ProductColor;
   white: WhiteColor;
@@ -71,6 +80,7 @@ export type Palette = {
   green: StatusColor;
   blue: StatusColor;
   social: SocialColor;
+  bundle: BundleColor;
 };
 
 export type Base = {
@@ -270,6 +280,15 @@ export type Tokens = {
   backgroundButtonWhiteBordered: string;
   backgroundButtonWhiteBorderedHover: string;
   backgroundButtonWhiteBorderedActive: string;
+  backgroundButtonBundleBasic: string;
+  backgroundButtonBundleBasicHover: string;
+  backgroundButtonBundleBasicActive: string;
+  backgroundButtonBundleMedium: string;
+  backgroundButtonBundleMediumHover: string;
+  backgroundButtonBundleMediumActive: string;
+  backgroundButtonBundleTop: string;
+  backgroundButtonBundleTopHover: string;
+  backgroundButtonBundleTopActive: string;
   backgroundButtonLinkPrimary: string;
   backgroundButtonLinkPrimaryHover: string;
   backgroundButtonLinkPrimaryActive: string;
@@ -289,6 +308,9 @@ export type Tokens = {
   backgroundBadgeCritical: string;
   backgroundBadgeDark: string;
   backgroundBadgeWhite: string;
+  backgroundBadgeBundleBasic: string;
+  backgroundBadgeBundleMedium: string;
+  backgroundBadgeBundleTop: string;
   backgroundServiceLogo: string;
   backgroundIllustration: string;
   backgroundSeparator: string;
@@ -330,6 +352,7 @@ export type Tokens = {
   borderRadiusBadge: string;
   zIndexDefault: string;
   zIndexSticky: string;
+  zIndexDrawer: string;
   zIndexModalOverlay: string;
   zIndexModal: string;
   zIndexOnTheTop: string;
@@ -533,6 +556,9 @@ export type Tokens = {
   paletteCloudNormalHover: string;
   paletteCloudNormalActive: string;
   paletteCloudDark: string;
+  paletteCloudDarker: string;
+  paletteCloudDarkerHover: string;
+  paletteCloudDarkerActive: string;
   paletteInkLighter: string;
   paletteInkLighterHover: string;
   paletteInkLighterActive: string;
@@ -582,6 +608,8 @@ export type Tokens = {
   paletteBlueDarkHover: string;
   paletteBlueDarkActive: string;
   paletteBlueDarker: string;
+  paletteBundleBasic: string;
+  paletteBundleMedium: string;
   paletteSocialFacebook: string;
   paletteSocialFacebookHover: string;
   paletteSocialFacebookActive: string;
@@ -610,7 +638,9 @@ type CustomPalette = {
   green?: Partial<StatusColor>;
   blue?: Partial<StatusColor>;
   social?: Partial<SocialColor>;
+  bundle?: Partial<BundleColor>;
 };
+
 type CustomBase = Partial<Base>;
 
 type CustomFoundation = Partial<{

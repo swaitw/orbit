@@ -43,7 +43,7 @@ test.each([
   ['import { ListItem } from "@kiwicom/orbit-components";'],
   [
     // mixed
-    `import { Alert, ModalSection, mediaQueries } from "@kiwicom/orbit-components";
+    `import { Alert, ModalSection, mediaQueries, useRandomIdSeed } from "@kiwicom/orbit-components";
 import { Passengers, Invoice } from "@kiwicom/orbit-components/lib/icons";
 import { Accommodation } from "@kiwicom/orbit-components/icons";`,
   ],
@@ -53,6 +53,7 @@ import { Accommodation } from "@kiwicom/orbit-components/icons";`,
   ["import { Text, Stack, Grid } from '@kiwicom/orbit-components';"], // https://github.com/kiwicom/babel-plugin-orbit-components/issues/5
   ["import { Icon, Icons } from '@kiwicom/orbit-components'"], // https://github.com/kiwicom/babel-plugin-orbit-components/issues/6
   ["import { Grid } from '@kiwicom/orbit-components/icons'"],
+  ['import { rtl } from "@kiwicom/orbit-components";'],
 ])("transform imports as expected %#", rawInput => {
   const input = rawInput.trim();
   expect({

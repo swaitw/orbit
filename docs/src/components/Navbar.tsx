@@ -9,19 +9,22 @@ import {
   Portal,
   ModalHeader,
   ModalSection,
-  ModalFooter,
   Badge,
+  Modal,
   mediaQueries as mq,
 } from "@kiwicom/orbit-components";
-import { Search as SearchIcon, MenuHamburger, StarEmpty } from "@kiwicom/orbit-components/icons";
+import { MenuHamburger, StarEmpty, Logout } from "@kiwicom/orbit-components/icons";
+import GitHubButton from "react-github-btn";
 
 import Logo from "../images/orbit-logo.svg";
 import Glyph from "../images/orbit-glyph.svg";
 import Bookmarks from "./Bookmarks";
 import Search from "./Search";
-import Modal from "./Modal";
 import { useBookmarks } from "../services/bookmarks";
 import { MAX_CONTENT_WIDTH, CONTENT_PADDING } from "../consts";
+import { useKeyboard } from "../services/KeyboardProvider";
+import SearchNavbarButton from "./Search/SearchNavbarButton";
+import { isLoggedIn, logout } from "../services/auth";
 
 const StyledWrapper = styled.header`
   position: relative;
@@ -96,44 +99,66 @@ interface Props {
 }
 
 const Navbar = ({ location, docNavigation }: Props) => {
-  const [searchOpen, setSearchOpen] = React.useState<boolean>(false);
+  const [isSearchOpen, setSearchOpen] = useKeyboard();
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
   const [activeTab, setActiveTab] = React.useState<"navigation" | "bookmarks">("navigation");
   const isHome = location && location.pathname === "/";
   const { bookmarks } = useBookmarks();
-  const [editingBookmarks, setEditingBookmarks] = React.useState<boolean>(false);
-  const [selectedBookmarks, setSelectedBookmarks] = React.useState<string[]>([]);
 
   return (
     <StyledWrapper>
       <StyledInner>
-        <Link to="/" aria-label="Back to home page">
-          <StyledLogo width={192} height={44} />
-          <StyledLogoGlyph width={44} height={44} />
-        </Link>
-        <StyledRight>
-          {!isHome && (
-            <Button
-              type="white"
-              circled
-              title="Search…"
-              iconLeft={<SearchIcon />}
-              onClick={() => setSearchOpen(true)}
+        <Stack inline shrink align="center">
+          <Link to="/" aria-label="Back to home page">
+            <StyledLogo width={192} height={44} />
+            <StyledLogoGlyph width={44} height={44} />
+          </Link>
+          <span>&sdot;</span>
+          <div
+            css={css`
+              height: 22px;
+            `}
+          >
+            <GitHubButton
+              href="https://github.com/kiwicom/orbit"
+              data-show-count
+              data-icon="star"
+              title="kiwicom/orbit"
+              aria-label="orbit github"
             />
-          )}
-          {searchOpen && !isHome && <Search onClose={() => setSearchOpen(false)} />}
-          {docNavigation ? (
-            <>
-              <Hide block on={["largeDesktop"]}>
-                <Button
-                  type="white"
-                  circled
-                  title="Menu"
-                  iconLeft={<MenuHamburger />}
-                  onClick={() => setMenuOpen(true)}
-                />
-              </Hide>
-              <Hide block on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}>
+          </div>
+        </Stack>
+
+        <StyledRight>
+          <Stack inline spacing="XXSmall">
+            {!isHome && <SearchNavbarButton onClick={() => setSearchOpen(true)} />}
+            {isSearchOpen && !isHome && <Search onClose={() => setSearchOpen(false)} />}
+            {docNavigation ? (
+              <>
+                <Hide block on={["largeDesktop"]}>
+                  <Button
+                    type="white"
+                    circled
+                    title="Menu"
+                    iconLeft={<MenuHamburger />}
+                    onClick={() => setMenuOpen(true)}
+                  />
+                </Hide>
+                <Hide
+                  block
+                  on={["smallMobile", "mediumMobile", "largeMobile", "tablet", "desktop"]}
+                >
+                  <Button
+                    type="white"
+                    iconLeft={<StarEmpty />}
+                    circled
+                    title="Open bookmarks"
+                    onClick={() => setMenuOpen(true)}
+                  />
+                </Hide>
+              </>
+            ) : (
+              <>
                 <Button
                   type="white"
                   iconLeft={<StarEmpty />}
@@ -141,19 +166,12 @@ const Navbar = ({ location, docNavigation }: Props) => {
                   title="Open bookmarks"
                   onClick={() => setMenuOpen(true)}
                 />
-              </Hide>
-            </>
-          ) : (
-            <>
-              <Button
-                type="white"
-                iconLeft={<StarEmpty />}
-                circled
-                title="Open bookmarks"
-                onClick={() => setMenuOpen(true)}
-              />
-            </>
-          )}
+              </>
+            )}
+            {isLoggedIn() && (
+              <Button title="logout" iconLeft={<Logout />} type="white" circled onClick={logout} />
+            )}
+          </Stack>
           {menuOpen && (
             <Portal>
               <div
@@ -256,17 +274,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                               {docNavigation}
                             </div>
                           )}
-                          {activeTab === "bookmarks" && (
-                            <div
-                              tabIndex={0}
-                              role="tabpanel"
-                              // eslint-disable-next-line orbit-components/unique-id
-                              id="navbar-tabpanel-navigation"
-                              aria-labelledby="navbar-tab-navigation"
-                            >
-                              <Bookmarks />
-                            </div>
-                          )}
+                          {activeTab === "bookmarks" && <Bookmarks />}
                         </Hide>
                         <Hide
                           block
@@ -293,7 +301,8 @@ const Navbar = ({ location, docNavigation }: Props) => {
                       </ModalSection>
                     </>
                   )}
-                  <ModalFooter>
+                  {/* hiding this feature for now, we'll fully implement it later according to the design */}
+                  {/* <ModalFooter>
                     <Hide block on={["largeDesktop"]}>
                       {activeTab === "bookmarks" && editingBookmarks ? (
                         <>
@@ -352,7 +361,7 @@ const Navbar = ({ location, docNavigation }: Props) => {
                         </Stack>
                       )}
                     </Hide>
-                  </ModalFooter>
+                  </ModalFooter> */}
                 </Modal>
               </div>
             </Portal>

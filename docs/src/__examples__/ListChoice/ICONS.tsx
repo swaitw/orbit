@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { InputField, ListChoice, Popover } from "@kiwicom/orbit-components";
 import { AirplaneUp, Bus, Train } from "@kiwicom/orbit-components/icons";
 
@@ -7,6 +7,7 @@ export default {
     const [choice, setChoice] = React.useState("");
     return (
       <Popover
+        renderInPortal={false}
         content={
           <>
             <ListChoice
@@ -41,9 +42,5 @@ export default {
         <InputField label="To" inlineLabel value={choice} />
       </Popover>
     );
-  },
-  info: {
-    title: "Icons",
-    description: "List choices require only titles to display options for users to choose.",
   },
 };

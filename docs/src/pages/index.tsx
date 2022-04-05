@@ -1,21 +1,24 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Heading, Inline, Stack, Button } from "@kiwicom/orbit-components";
-import { NewWindow, Search as SearchIcon } from "@kiwicom/orbit-components/icons";
+import { Heading, Inline, Stack, Grid, Button } from "@kiwicom/orbit-components";
+import { NewWindow } from "@kiwicom/orbit-components/icons";
 import { css } from "styled-components";
 import { WindowLocation } from "@reach/router";
-import ModulePuzzleIcon from "@streamlinehq/streamlinehq/img/streamline-light/module-puzzle-hNE9va.svg";
-import ColorBrushIcon from "@streamlinehq/streamlinehq/img/streamline-light/color-brush-itsMso.svg";
-import ExpandDiagonalIcon from "@streamlinehq/streamlinehq/img/streamline-light/expand-diagonal-1-n8OXeu.svg";
-import LoveItTextIcon from "@streamlinehq/streamlinehq/img/streamline-light/love-it-text-9ULGdc.svg";
-import SpellingCheckIcon from "@streamlinehq/streamlinehq/img/streamline-light/spelling-check-9ULReF.svg";
-import ArrangeLetterIcon from "@streamlinehq/streamlinehq/img/streamline-light/arrange-letter-4pQIv2.svg";
-import ComputerBugIcon from "@streamlinehq/streamlinehq/img/streamline-light/computer-bug-rjtzBu.svg";
-import ConversationChatTextIcon from "@streamlinehq/streamlinehq/img/streamline-light/conversation-chat-text-jUAzcc.svg";
-import LoveBirdIcon from "@streamlinehq/streamlinehq/img/streamline-light/love-bird-T2F62M.svg";
-import StartupLaunchIcon from "@streamlinehq/streamlinehq/img/streamline-light/startup-launch-1-af7xxf.svg";
 
-import TypograhpyIcon from "../components/icons/Typography";
+import { RecentBookmarks } from "../components/Bookmarks";
+// temporarily extract images from @streamlinehq/streamlinehq until they fix the install script
+import ModulePuzzleIcon from "../images/streamline-light/module-puzzle.svg";
+import ColorBrushIcon from "../images/streamline-light/color-brush.svg";
+import ExpandDiagonalIcon from "../images/streamline-light/expand-diagonal-1.svg";
+import LoveItTextIcon from "../images/streamline-light/love-it-text.svg";
+import SpellingCheckIcon from "../images/streamline-light/spelling-check.svg";
+import ArrangeLetterIcon from "../images/streamline-light/arrange-letter.svg";
+import ComputerBugIcon from "../images/streamline-light/computer-bug.svg";
+import LoveBirdIcon from "../images/streamline-light/love-bird.svg";
+import StartupLaunchIcon from "../images/streamline-light/startup-launch-1.svg";
+import ReadArt from "../images/streamline-light/read-art.svg";
+import SearchButton from "../components/Search/SearchButton";
+import TypographyIcon from "../components/icons/Typography";
 import PuzzleIcon from "../components/icons/Puzzle";
 import FigmaIcon from "../components/icons/Figma";
 import GitHubIcon from "../components/icons/GitHub";
@@ -26,11 +29,13 @@ import RocketImage from "../components/RocketImage";
 import Tile from "../components/Tile";
 import BrandedTile from "../components/BrandedTile";
 import GitHubLogo from "../images/github-full.svg";
-import SpectrumLogo from "../images/spectrum.svg";
+import FigmaLogo from "../images/figma-logo.svg";
 import TwitterLogo from "../images/twitter.svg";
 import srcTequila from "../images/tequila.png";
 import { MAX_CONTENT_WIDTH } from "../consts";
 import ScreenReaderText from "../components/ScreenReaderText";
+import { useKeyboard } from "../services/KeyboardProvider";
+import { BookmarkProvider } from "../services/bookmarks";
 
 interface Props {
   location: WindowLocation;
@@ -42,196 +47,200 @@ function GatsbyLinkToButton({ href, ...props }: { href: string }) {
 }
 
 export default function Home({ location, path }: Props) {
-  const [searchOpen, setSearchOpen] = React.useState<boolean>(false);
-  return (
-    <Layout
-      location={location}
-      title="Orbit design system"
-      description="An open source design system for your next travel project."
-      path={path}
-      isHome
-    >
-      <RocketImage />
-      <div
-        css={css`
-          /* so that the rest of the content has a higher z-order than the image */
-          position: relative;
-          width: 100%;
-          max-width: ${MAX_CONTENT_WIDTH};
-          margin: 0 auto;
+  const [isSearchOpen, setSearchOpen] = useKeyboard();
 
-          > * + * {
-            margin-top: 5.25rem;
-          }
-        `}
+  return (
+    <BookmarkProvider page={path} location={location}>
+      <Layout
+        location={location}
+        title="Orbit design system"
+        description="An open source design system for your next travel project."
+        path="/"
+        isHome
       >
-        <>
-          <Heading type="display">
+        <RocketImage />
+        <div
+          css={css`
+            /* so that the rest of the content has a higher z-order than the image */
+            position: relative;
+            width: 100%;
+            max-width: ${MAX_CONTENT_WIDTH};
+            margin: 0 auto;
+
+            > * + * {
+              margin-top: 5.25rem;
+            }
+          `}
+        >
+          <>
+            <Heading type="display">
+              <div
+                css={css`
+                  max-width: 43rem;
+                  font-size: 3rem;
+                  line-height: 1.3;
+                `}
+              >
+                Open source design system for your next travel project.
+              </div>
+            </Heading>
+
             <div
               css={css`
-                max-width: 20ch;
-                font-size: 3rem;
-                line-height: 1.3;
+                margin-top: 3rem;
+                button,
+                a {
+                  height: 64px;
+                }
               `}
             >
-              Open source design system for your next travel project.
+              <Inline spacing="small">
+                <Button
+                  size="large"
+                  type="primary"
+                  circled
+                  iconRight={<ArrowRight />}
+                  // @ts-expect-error asComponent has wrong type declaration
+                  asComponent={GatsbyLinkToButton}
+                  href="/getting-started/"
+                >
+                  Get started
+                </Button>
+                <SearchButton onClick={() => setSearchOpen(true)} />
+                {isSearchOpen && <Search onClose={() => setSearchOpen(false)} />}
+              </Inline>
             </div>
-          </Heading>
+          </>
+          <RecentBookmarks />
+          <Stack
+            flex
+            direction="column"
+            justify="between"
+            largeMobile={{ direction: "row", align: "stretch" }}
+          >
+            <Tile
+              title="Components"
+              linkContent="See our components"
+              href="/components/"
+              icon={<PuzzleIcon />}
+            >
+              Our components are a collection of interface elements that can be reused across the
+              Orbit design system.
+            </Tile>
+            <Tile
+              title="Patterns"
+              linkContent="See our patterns"
+              href="/design-patterns/"
+              icon={<ModulePuzzleIcon />}
+            >
+              Make the most of our components by using our design patterns to address common design
+              problems.
+            </Tile>
+          </Stack>
 
           <div
             css={css`
-              margin-top: 3rem;
-              button,
-              a {
-                height: 64px;
+              > * + * {
+                margin-top: 2rem;
               }
             `}
           >
-            <Inline spacing="small">
-              <Button
-                size="large"
-                type="primary"
-                circled
-                iconRight={<ArrowRight />}
-                // @ts-expect-error asComponent has wrong type declaration
-                asComponent={GatsbyLinkToButton}
-                href="/getting-started/for-designers/"
+            <Heading as="h2">Foundation</Heading>
+            <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
+              <Tile
+                title="Colors"
+                linkContent="See our colors"
+                href="/foundation/color/"
+                icon={<ColorBrushIcon />}
               >
-                Get started
-              </Button>
-              <Button
-                size="large"
-                circled
-                iconLeft={<SearchIcon />}
-                type="primarySubtle"
-                onClick={() => setSearchOpen(true)}
+                Color is used to signal structure, highlight importance, and display different
+                states.
+              </Tile>
+              <Tile
+                title="Typography"
+                linkContent="See our typography"
+                href="foundation/typography/"
+                icon={<TypographyIcon />}
               >
-                Search
-              </Button>
-              {searchOpen && <Search onClose={() => setSearchOpen(false)} />}
-            </Inline>
-          </div>
-        </>
-
-        <Stack
-          flex
-          direction="column"
-          justify="between"
-          largeMobile={{ direction: "row", align: "stretch" }}
-        >
-          <Tile
-            title="Components"
-            linkContent="See our components"
-            href="/components/action/button/"
-            icon={<PuzzleIcon />}
-          >
-            Our components are a collection of interface elements that can be reused across the
-            Orbit design system.
-          </Tile>
-          <Tile
-            title="Patterns"
-            linkContent="See our patterns"
-            href="/design-patterns/progressive-disclosure/"
-            icon={<ModulePuzzleIcon />}
-          >
-            Missing description for patterns card.
-          </Tile>
-        </Stack>
-
-        <div
-          css={css`
-            > * + * {
-              margin-top: 2rem;
-            }
-          `}
-        >
-          <Heading as="h2">Foundation</Heading>
-          <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
-            <Tile
-              title="Colors"
-              linkContent="Learn more"
-              href="/foundation/color/"
-              icon={<ColorBrushIcon />}
+                Typography is critical for communicating the hierarchy of a page.
+              </Tile>
+              <Tile
+                title="Spacing"
+                linkContent="See our spacing"
+                href="foundation/spacing/"
+                icon={<ExpandDiagonalIcon />}
+              >
+                Consistent spacing makes an interface more clear and easy to scan.
+              </Tile>
+            </Stack>
+            <div
+              css={css`
+                display: flex;
+                justify-content: flex-end;
+              `}
             >
-              Color is used to signal structure on a page, to highlight or emphasize...
-            </Tile>
-            <Tile title="Typography" linkContent="Learn more" icon={<TypograhpyIcon />}>
-              Typography is critical for communicating the hierarchy of a page.
-            </Tile>
-            <Tile title="Spacings" linkContent="Learn more" icon={<ExpandDiagonalIcon />}>
-              Consistent spacing makes an interface more clear and easy to scan.
-            </Tile>
-          </Stack>
+              <Button href="/foundation/" size="large" circled type="primarySubtle">
+                See all items
+              </Button>
+            </div>
+          </div>
           <div
             css={css`
-              display: flex;
-              justify-content: flex-end;
+              margin-top: 0;
+              > * + * {
+                margin-top: 2rem;
+              }
             `}
           >
-            <Button size="large" circled type="primarySubtle">
-              Show all items
-            </Button>
+            <Heading as="h2">Content</Heading>
+            <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
+              <Tile
+                title="Voice & tone"
+                linkContent="See our voice"
+                href="/kiwi-use/content/voice-and-tone/"
+                icon={<LoveItTextIcon />}
+              >
+                How we write at Kiwi.com.
+              </Tile>
+              <Tile
+                title="Grammar & mechanics"
+                linkContent="See our standards"
+                href="/kiwi-use/content/grammar-and-mechanics/"
+                icon={<SpellingCheckIcon />}
+              >
+                Basic grammar guidelines for writing with Orbit.
+              </Tile>
+              <Tile
+                title="Glossary"
+                linkContent="See our terms"
+                href="/kiwi-use/content/glossary/"
+                icon={<ArrangeLetterIcon />}
+              >
+                A list of commonly used words and phrases in Kiwi.com products.
+              </Tile>
+            </Stack>
+            <div
+              css={css`
+                display: flex;
+                justify-content: flex-end;
+              `}
+            >
+              <Button href="/kiwi-use/content/" size="large" circled type="primarySubtle">
+                See all items
+              </Button>
+            </div>
           </div>
-        </div>
-        <div
-          css={css`
-            margin-top: 0;
-            > * + * {
-              margin-top: 2rem;
-            }
-          `}
-        >
-          <Heading as="h2">Content</Heading>
-          <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
-            <Tile
-              title="Voice & tone"
-              linkContent="Learn more"
-              href="/kiwi-use/content/specific-areas/social-media/"
-              icon={<LoveItTextIcon />}
-            >
-              How we write at Kiwi.com.
-            </Tile>
-            <Tile
-              title="Grammar & mechanics"
-              linkContent="Learn more"
-              href="/kiwi-use/content/grammar-and-mechanics/"
-              icon={<SpellingCheckIcon />}
-            >
-              Typography is critical for communicating the hierarchy of a page.Basic grammar
-              guidelines for writing with Orbit.
-            </Tile>
-            <Tile
-              title="Glossary"
-              linkContent="Learn more"
-              href="/kiwi-use/content/glossary/"
-              icon={<ArrangeLetterIcon />}
-            >
-              A list of most used words and phrases in Kiwi.com products.
-            </Tile>
-          </Stack>
+
           <div
             css={css`
-              display: flex;
-              justify-content: flex-end;
+              margin-top: 0;
+              > * + * {
+                margin-top: 2rem;
+              }
             `}
           >
-            <Button size="large" circled type="primarySubtle">
-              Show all items
-            </Button>
-          </div>
-        </div>
-
-        <div
-          css={css`
-            margin-top: 0;
-            > * + * {
-              margin-top: 2rem;
-            }
-          `}
-        >
-          <Heading as="h2">Support</Heading>
-          <Stack flex direction="column">
-            <Stack flex direction="column" tablet={{ direction: "row" }} align="stretch">
+            <Heading as="h2">Support</Heading>
+            <Grid columns="1fr" gap="1rem" desktop={{ columns: "1fr 1fr" }}>
               <BrandedTile
                 title="Report a bug"
                 icon={<ComputerBugIcon />}
@@ -243,39 +252,36 @@ export default function Home({ location, path }: Props) {
                   secondary: "#515C6C",
                 }}
               >
-                If you found any bugs in our components, report them on Github and we’ll fix them
-                asap. It’s the highest priority to have Orbit working as expected.
+                If you find any bugs in our components, report them on Github and we’ll fix them as
+                soon as possible. It’s our highest priority to have Orbit working as expected.
               </BrandedTile>
               <BrandedTile
-                title="Engage with us"
-                icon={<ConversationChatTextIcon />}
-                href="https://spectrum.chat/orbit"
-                linkContent="Go to Spectrum chat"
-                logo={<SpectrumLogo />}
+                title="Get the Figma library"
+                icon={<ReadArt />}
+                href="https://www.figma.com/@orbitbykiwi"
+                linkContent="Go to Figma profile"
+                logo={<FigmaLogo />}
                 color={{
-                  primary: "#330B94",
-                  secondary: "#7441F1",
+                  primary: "#D1431A",
+                  secondary: "#EC685A",
                 }}
               >
-                We aim to provide the best possible support for all designers and developers using
-                Orbit. That’s why we an Orbit community on Spectrum – an open discussion platform to
-                get feedback from you.
+                Visit our community profile and download all of our libraries and resources for
+                free.
               </BrandedTile>
-            </Stack>
-            <Stack flex direction="column" tablet={{ direction: "row" }} align="stretch">
               <BrandedTile
                 title="Follow us on Twitter"
                 icon={<LoveBirdIcon />}
                 href="https://twitter.com/OrbitKiwi"
-                linkContent="Go to Orbit.kiwi’s Twitter"
+                linkContent="Follow Orbit on Twitter"
                 logo={<TwitterLogo />}
                 color={{
                   primary: "#0989CF",
                   secondary: "#179CE3",
                 }}
               >
-                Twitter is one of the main platform for sharing, everything important that is
-                happening around Orbit is published on Twitter
+                Twitter is one of our main platforms for sharing. Everything important that is
+                happening around Orbit is published on Twitter.
               </BrandedTile>
               <BrandedTile
                 title="Connect Orbit to Tequila"
@@ -288,46 +294,47 @@ export default function Home({ location, path }: Props) {
                 Tequila is an online B2B platform powered by Kiwi.com that allows anyone to access
                 our content, technology, and services.
               </BrandedTile>
-            </Stack>
-          </Stack>
-        </div>
+            </Grid>
+          </div>
 
-        <div
-          css={css`
-            > * + * {
-              margin-top: 2rem;
-            }
-          `}
-        >
-          <Heading as="h2">Resources</Heading>
-          <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
-            <Tile
-              title="Figma library"
-              linkContent={
-                <>
-                  <ScreenReaderText>
-                    Open Orbit&apost;s public Figma library in a new window
-                  </ScreenReaderText>
-                  <NewWindow />
-                </>
+          <div
+            css={css`
+              margin-bottom: 4rem;
+              > * + * {
+                margin-top: 2rem;
               }
-              href="https://www.figma.com/@orbitbykiwi"
-              icon={<FigmaIcon />}
-            />
-            <Tile
-              title="Orbit repository"
-              linkContent={
-                <>
-                  <ScreenReaderText>Open GitHub repository in a new window</ScreenReaderText>
-                  <NewWindow />
-                </>
-              }
-              href="https://github.com/kiwicom/orbit"
-              icon={<GitHubIcon />}
-            />
-          </Stack>
+            `}
+          >
+            <Heading as="h2">Resources</Heading>
+            <Stack flex direction="column" tablet={{ direction: "row", align: "stretch" }}>
+              <Tile
+                title="Figma library"
+                linkContent={
+                  <>
+                    <ScreenReaderText>
+                      Open Orbit&apost;s public Figma library in a new window
+                    </ScreenReaderText>
+                    <NewWindow />
+                  </>
+                }
+                href="https://www.figma.com/@orbitbykiwi"
+                icon={<FigmaIcon />}
+              />
+              <Tile
+                title="Orbit repository"
+                linkContent={
+                  <>
+                    <ScreenReaderText>Open GitHub repository in a new window</ScreenReaderText>
+                    <NewWindow />
+                  </>
+                }
+                href="https://github.com/kiwicom/orbit"
+                icon={<GitHubIcon />}
+              />
+            </Stack>
+          </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </BookmarkProvider>
   );
 }

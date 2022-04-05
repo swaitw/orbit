@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Textarea";
-
 type Resize = "vertical" | "none";
 // InputEvent
 type Event = Common.Event<React.SyntheticEvent<HTMLTextAreaElement>>;
@@ -25,6 +23,7 @@ interface Props extends Common.Global, Common.Ref, Common.SpaceAfter {
   readonly error?: React.ReactNode;
   readonly resize?: Resize;
   readonly disabled?: boolean;
+  readonly helpClosable?: boolean;
   readonly maxLength?: number;
   readonly tabIndex?: string | number;
   readonly onChange?: Event;

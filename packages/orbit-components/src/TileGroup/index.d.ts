@@ -5,9 +5,8 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/TileGroup";
-
 interface Props extends Common.Global {
+  readonly as?: string;
   readonly children: React.ReactNode;
 }
 

@@ -3,13 +3,13 @@
 
 import * as React from "react";
 
+import { Carrier } from "../../CarrierLogo";
 import * as Common from "../../common/common";
-
-declare module "@kiwicom/orbit-components/lib/BadgePrimitive";
 
 export interface Props extends Common.Global {
   readonly children?: React.ReactNode;
   readonly icon?: React.ReactNode;
+  readonly carriers?: Carrier[];
   readonly ariaLabel?: string;
   readonly background?: string | undefined | null;
   readonly foregroundColor?: string | undefined | null;

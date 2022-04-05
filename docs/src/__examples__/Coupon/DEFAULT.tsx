@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Coupon, Text } from "@kiwicom/orbit-components";
 
 export default {
@@ -9,9 +9,4 @@ export default {
       when booking to add free baggage.
     </Text>
   ),
-  info: {
-    title: "Default coupon",
-    description:
-      "Coupons render their child text as a <code>&lt;mark&gt;</code> element styled as all caps.",
-  },
 };

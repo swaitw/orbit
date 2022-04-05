@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { CarrierLogo, Stack } from "@kiwicom/orbit-components";
 
 export default {
@@ -72,8 +72,4 @@ export default {
       />
     </Stack>
   ),
-  info: {
-    title: "Multiple carriers",
-    description: "Carrier logos can include up to four carriers.",
-  },
 };

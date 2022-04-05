@@ -12,44 +12,35 @@ env: # Set environment variables for every job and step in this workflow
   CLICOLOR: "1" # Enable colors for *NIX commands
   PY_COLORS: "1" # Enable colors for Python-based utilities
   FORCE_COLOR: "1" # Force colors in the terminal
+  STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
+  STREAMLINE_FAMILIES: ${{ secrets.STREAMLINE_FAMILIES }}
 
 jobs:
   general:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "15"
-      - name: Restore lerna
-        uses: actions/cache@v2
-        with:
-          path: "**/node_modules"
-          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
-          restore-keys: |
-            node-modules-${{ github.ref}}-
-            node-modules-
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      - name: Install dependencies
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Build
         env:
-          STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
-          STREAMLINE_FAMILIES: ${{ secrets.STREAMLINE_FAMILIES }}
-        run: yarn bootstrap:ci
-
-      - name: Compile design tokens
-        run: yarn orbit-design-tokens build:lib
-
-      - name: Compile components
-        run: yarn orbit-components build:lib
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        run: |
+          yarn tokens build
+          yarn components build
+          yarn tracking build
 
       - name: Check icons
-        run: npx lerna run --scope @kiwicom/orbit-components check:icons
+        run: yarn components check:icons
 
       - name: Flow
         run: yarn flow:check
 
       - name: TypeScript
-        run: npx tsc
+        run: yarn check-types
 
       - name: Lint
         run: |
@@ -62,18 +53,11 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "15"
-      - name: Restore lerna
-        uses: actions/cache@v2
-        with:
-          path: "**/node_modules"
-          key: node-modules-${{ github.ref}}-${{ hashFiles('**/yarn.lock', '.yarnclean') }}
-          restore-keys: |
-            node-modules-${{ github.ref}}-
-            node-modules-
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Node
+        uses: ./.github/actions/node
 
       - name: Restore Gatsby cache
         uses: actions/cache@v2
@@ -86,16 +70,37 @@ jobs:
             gatsby-${{ github.ref}}-
             gatsby-
 
-      - name: Install dependencies & Build
+      - name: Build
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-          STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
-          STREAMLINE_FAMILIES: ${{ secrets.STREAMLINE_FAMILIES }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
+          NODE_OPTIONS: "--max_old_space_size=4096"
+
         run: yarn orbit-kiwi:build
 
       - name: Check links
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: yarn check-links
+
+  cypress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Node
+        uses: ./.github/actions/node
+
+      - name: Build
+        run: |
+          yarn tokens build
+          yarn components build
+
+      - name: Cypress
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          working-directory: packages/orbit-components
+          start: yarn cy:dev

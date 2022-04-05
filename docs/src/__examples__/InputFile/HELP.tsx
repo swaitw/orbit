@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { InputFile } from "@kiwicom/orbit-components";
 
 export default {
@@ -18,10 +18,5 @@ export default {
         allowedFileTypes={fileTypes}
       />
     );
-  },
-  info: {
-    title: "Help messages",
-    description:
-      "Help text can guide users to selecting the proper file. Note that an error message will override the help text.",
   },
 };

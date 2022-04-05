@@ -3,9 +3,7 @@
 
 import * as React from "react";
 
-import { ButtonCommonProps } from "../../primitives/ButtonPrimitive/index";
-
-declare module "@kiwicom/orbit-components/lib/Alert/AlertButton";
+import { ButtonCommonProps } from "../../primitives/ButtonPrimitive";
 
 type Type =
   | "info"

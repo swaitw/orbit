@@ -4,7 +4,7 @@ redirect_from:
   - /components/popover/
 ---
 
-<ReactExample exampleId="Popover-default" />
+<ReactExample exampleId="Popover-default" height={240} />
 
 ## When to use
 
@@ -13,11 +13,11 @@ redirect_from:
 - For content that still might interest users and can be revealed through [progressive disclosure](/design-patterns/progressive-disclosure/).
 - To add interactions or choices in the context of the current screen.
 
-### When not to use
+## When not to use
 
 - For large and/or structured content---use a [modal](/components/overlay/modal/).
 - To interrupt the main flow---use a [modal](/components/overlay/modal/) or [dialog](/components/overlay/dialog/).
-- For one choice less related to current screen---use a [dialog](/components/overlay/dialog/).
+- For one choice less related to the current screen---use a [dialog](/components/overlay/dialog/).
 - For static, short information---use a [tooltip](/components/overlay/tooltip/).
 - To add hidden information to the screen itself---use a [collapse](/components/interaction/collapse/).
 
@@ -27,7 +27,7 @@ redirect_from:
 
 ## Content structure
 
-![Button: most common trigger to open popover, though other ways are possible; popover: wraps content and actions and can have a preferred position and alignment and/or overlap the button; content: wraps the main message or options; action area: optionally creates an area for actions associated with the whole popover, at least one of which should close the popover.](fileId:4QJZqvBvRrLu6t9mwObCkA;nodeId:143%3A0)
+![Button: most common trigger to open popover, though other ways are possible; popover: wraps content and actions and can have a preferred placement and/or overlap the button; content: wraps the main message or options; action area: optionally creates an area for actions associated with the whole popover, at least one of which should close the popover.](fileId:4QJZqvBvRrLu6t9mwObCkA;nodeId:143%3A0)
 
 ## Behavior
 
@@ -39,7 +39,7 @@ users need to know how they can get to that information.
 A common way to do this is a button with a chevron down icon on the right.
 This makes it clear that more information can pop down below the button.
 
-<ReactExample exampleId="Popover-trigger" />
+<ReactExample exampleId="Popover-trigger" height={240} />
 
 ### Minimize actions
 
@@ -47,13 +47,25 @@ Popovers have limited space outside the main flow.
 This means they're best for resolving single issues,
 not many things at once.
 
-<Guideline type="do" title="Focus actions">
+<GuidelineImages>
+
+<DoImage>
 
 ![A popover with the ability to add adult and child passengers and a single primary action.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:40%3A976)
 
+Focus on important actions.
+
+</DoImage>
+
+<DontImage>
+
 ![A popover with buttons to add passenger, add special meals, and add cabin bags.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:40%3A852)
 
-</Guideline>
+Don't include everything users can do at once.
+
+</DontImage>
+
+</GuidelineImages>
 
 ## Content
 

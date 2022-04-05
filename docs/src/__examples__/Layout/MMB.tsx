@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 import { Layout, LayoutColumn, Text } from "@kiwicom/orbit-components";
 
@@ -17,10 +17,5 @@ export default {
         </LayoutColumn>
       </Layout>
     );
-  },
-  info: {
-    title: "MMB layout",
-    description:
-      "The MMB layout is a one-column layout with the same visibility no matter the screen size.",
   },
 };

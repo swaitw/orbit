@@ -4,9 +4,7 @@
 import * as React from "react";
 
 import * as Common from "../common/common";
-import { Spacing } from "../Stack/index";
-
-declare module "@kiwicom/orbit-components/lib/LinkList";
+import { Spacing } from "../Stack";
 
 export interface Props extends Common.Global {
   readonly direction?: "column" | "row";

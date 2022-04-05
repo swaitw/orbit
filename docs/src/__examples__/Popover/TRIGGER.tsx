@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Popover, Button, ButtonLink, Stack } from "@kiwicom/orbit-components";
 import { ChevronDown } from "@kiwicom/orbit-components/icons";
 
@@ -26,16 +26,10 @@ export default {
           </ButtonLink>
         </Stack>
       }
-      preferredPosition="bottom"
     >
       <Button iconRight={<ChevronDown />} type="secondary">
         Learn more
       </Button>
     </Popover>
   ),
-  info: {
-    title: "Clear trigger",
-    description:
-      "Popovers hide information from the initial screen, so make it clear to users how they can get that information, such as with a button with a chevron down icon on the right.",
-  },
 };

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { LinkList, NavigationBar, ButtonLink, TextLink, Stack } from "@kiwicom/orbit-components";
 
 export default {
@@ -27,8 +27,10 @@ export default {
       </Stack>
     </NavigationBar>
   ),
-  info: {
-    title: "Default navigation bar",
-    description: "Drawers should appear on a user action and be closable.",
-  },
+  exampleKnobs: [
+    {
+      component: "NavigationBar",
+      knobs: [{ name: "hideOnScroll", type: "boolean", defaultValue: true }],
+    },
+  ],
 };

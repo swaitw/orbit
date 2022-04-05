@@ -8,8 +8,6 @@ import AlertButton from "./AlertButton";
 
 type Type = "info" | "success" | "warning" | "critical";
 
-declare module "@kiwicom/orbit-components/lib/Alert";
-
 export interface Props extends Common.Global, Common.SpaceAfter {
   readonly type?: Type;
   readonly children?: React.ReactNode;
@@ -18,6 +16,7 @@ export interface Props extends Common.Global, Common.SpaceAfter {
   readonly closable?: boolean;
   readonly inlineActions?: React.ReactNode;
   readonly onClose?: Common.Callback;
+  readonly suppressed?: boolean;
 }
 
 declare const Alert: React.FunctionComponent<Props>;

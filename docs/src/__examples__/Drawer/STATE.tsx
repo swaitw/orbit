@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ButtonLink, Heading, Stack, Text, Drawer, Tile } from "@kiwicom/orbit-components";
 import { QuestionCircle } from "@kiwicom/orbit-components/icons";
 
@@ -34,7 +34,7 @@ export default {
     switch (article) {
       case "cabin":
         title = "Cabin baggage";
-        content = "Cabin baggage is mall baggage you take into the plane with you.";
+        content = "Cabin baggage is small baggage you take into the plane with you.";
         tiles = (
           <Stack>
             {transferTile}
@@ -100,10 +100,5 @@ export default {
         </Stack>
       </>
     );
-  },
-  info: {
-    title: "State",
-    description:
-      "If the content of your drawer might change, keep the most recent state active even on open and close.",
   },
 };

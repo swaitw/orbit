@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { HorizontalScroll, Inline, Stack, Text, Tile } from "@kiwicom/orbit-components";
 import { BaggageCabin, BaggageChecked30, BaggagePersonal } from "@kiwicom/orbit-components/icons";
 
@@ -41,8 +41,45 @@ export default {
       </Tile>
     </HorizontalScroll>
   ),
-  info: {
-    title: "Default icon",
-    description: "By default, icons are primary unless they inherit a different color.",
-  },
+  exampleKnobs: [
+    {
+      component: "HorizontalScroll",
+      knobs: [
+        {
+          name: "minHeight",
+          type: "number",
+          defaultValue: "",
+        },
+        { name: "overflowElevation", type: "boolean", defaultValue: false },
+        { name: "elevationColor", type: "string", defaultValue: "paletteCloudDark" },
+        {
+          name: "scrollPadding",
+          type: "number",
+          defaultValue: "",
+        },
+        {
+          name: "scrollSnap",
+          type: "select",
+          options: ["mandatory", "proximity", "inline", "none"],
+          defaultValue: "none",
+        },
+        {
+          name: "spacing",
+          type: "select",
+          options: [
+            "none",
+            "XXXSmall",
+            "XXSmall",
+            "XSmall",
+            "small",
+            "medium",
+            "large",
+            "XLarge",
+            "XXLarge",
+          ],
+          defaultValue: "none",
+        },
+      ],
+    },
+  ],
 };

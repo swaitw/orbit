@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Button, Heading, Stack, WizardStep, Wizard, Box, Text } from "@kiwicom/orbit-components";
 
 export default {
@@ -68,9 +68,31 @@ export default {
       </>
     );
   },
-  info: {
-    title: "Default wizard",
-    description:
-      "Wizards show where users are in a specific process and allow them to navigate back to previous steps.",
-  },
+  exampleKnobs: [
+    {
+      component: "Wizard",
+      knobs: [
+        {
+          name: "activeStep",
+          type: "number",
+          defaultValue: "",
+        },
+        {
+          name: "completedSteps",
+          type: "number",
+          defaultValue: 2,
+        },
+      ],
+    },
+    {
+      component: "WizardStep",
+      knobs: [
+        {
+          name: "title",
+          type: "text",
+          defaultValue: "",
+        },
+      ],
+    },
+  ],
 };

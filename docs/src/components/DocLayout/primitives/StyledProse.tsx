@@ -1,13 +1,14 @@
 import { Box, mediaQueries } from "@kiwicom/orbit-components";
 import styled, { css } from "styled-components";
 
-import { StyledAnchorWrapper } from "../../HeadingWithLink";
+import { boxShadowDefault } from "../../mixins";
+import { StyledAnchor } from "../../HeadingWithLink";
 
 const StyledProse = styled(Box)`
   ${({ theme, elevation }) => css`
     font-size: ${theme.orbit.fontSizeTextNormal};
     ${mediaQueries.tablet(css`
-      border-radius: ${theme.orbit.spaceMedium} ${theme.orbit.spaceMedium} 0 0;
+      border-radius: ${theme.orbit.spaceMedium};
     `)};
     > * + * {
       margin-top: 16px;
@@ -28,13 +29,15 @@ const StyledProse = styled(Box)`
     }
     > p {
       font-size: 1rem;
+    }
+    p {
       line-height: 1.5;
     }
     > ul > li + li,
     > ol > li + li {
       margin-top: 12px;
     }
-    > ${StyledAnchorWrapper} {
+    > ${StyledAnchor} {
       margin-top: ${theme.orbit.spaceLarge};
 
       /* Handle spacing after headings through the heading,
@@ -48,8 +51,8 @@ const StyledProse = styled(Box)`
       margin-top: 0;
     }
     ${elevation === "raised" &&
-    `
-      box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
+    css`
+      ${boxShadowDefault}
     `}
   `}
 `;

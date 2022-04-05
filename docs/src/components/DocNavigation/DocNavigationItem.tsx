@@ -38,14 +38,7 @@ interface Props {
 }
 
 export default function DocNavigationItem({ devMode, currentUrl, level, item, onCollapse }: Props) {
-  const initialExpanded =
-    level === 1 &&
-    item.type === "branch" &&
-    item.items.some(it =>
-      it.type === "leaf"
-        ? currentUrl.startsWith(it.url)
-        : it.items.some(i => i.type === "leaf" && currentUrl.startsWith(i.url)),
-    );
+  const initialExpanded = level === 1 && item.type === "branch" && currentUrl.startsWith(item.url);
   const [expanded, setExpanded] = React.useState(initialExpanded);
   const theme = useTheme();
   const firstRenderRef = React.useRef<boolean>(true);
@@ -104,8 +97,7 @@ export default function DocNavigationItem({ devMode, currentUrl, level, item, on
     return (
       <StyledLink
         to={devMode && item.hasReactTab ? `${item.url}react/` : item.url}
-        active={currentUrl.startsWith(item.url)}
-        level={level}
+        $active={currentUrl.startsWith(item.url)}
       >
         {item.name}
       </StyledLink>

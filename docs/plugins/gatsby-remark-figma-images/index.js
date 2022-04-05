@@ -6,8 +6,9 @@ const fs = require("fs");
 const chalk = require("chalk");
 const axios = require("axios");
 const { createFileNode } = require("gatsby-source-filesystem/create-file-node");
+const dotenv = require("dotenv-safe");
 
-const { warnMissingFigmaToken } = require("../../utils/warnings");
+// const { warnMissingFigmaToken } = require("../../utils/warnings");
 
 const ALLOWED_ATTRS = ["fileId", "nodeId"];
 
@@ -31,13 +32,13 @@ module.exports = (props, pluginOptions) => {
   }
 
   try {
-    require("dotenv-safe").config({
+    dotenv.config({
       example: path.resolve(__dirname, `../../../.env.example`),
       path: path.resolve(__dirname, `../../../.env`),
       allowEmptyValues: true,
     });
   } catch (error) {
-    warnMissingFigmaToken(error);
+    // warnMissingFigmaToken(error);
   }
 
   const checkNodeContent = (content, filePath) => {
@@ -74,7 +75,7 @@ module.exports = (props, pluginOptions) => {
     function onError(err) {
       const triesLeft = tries - 1;
       if (!triesLeft) {
-        throw err;
+        return { data: { err } };
       }
       return wait(delay).then(() => fetchRetry(url, delay, triesLeft));
     }
@@ -115,7 +116,10 @@ module.exports = (props, pluginOptions) => {
       fetchNode(fileId, nodeId).then(({ data }) => {
         const { images, err } = data;
         if (err) {
-          reporter.error("An error occurred", err);
+          reporter.error(
+            `The Figma image with a file ID of ${fileId} and a node ID of ${nodeId} was not found.\nThe specific error was: ${err}.`,
+          );
+          return;
         }
         const result = Object.values(images);
         if (result.length !== 1 || err) {

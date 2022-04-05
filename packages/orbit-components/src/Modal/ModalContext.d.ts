@@ -3,19 +3,20 @@
 
 import * as React from "react";
 
-declare module "@kiwicom/orbit-components/lib/Modal";
-
 export interface Props {
   readonly setDimensions?: () => void;
   readonly decideFixedFooter?: () => void;
   readonly setHasModalTitle?: React.Dispatch<React.SetStateAction<boolean>>;
   readonly setHasModalSection?: () => void;
   readonly removeHasModalSection?: () => void;
+  readonly setFooterHeight?: React.Dispatch<React.SetStateAction<number>>;
   readonly manageFocus?: () => void;
   readonly hasModalSection?: boolean;
+  readonly hasMobileHeader?: boolean;
   readonly isMobileFullPage?: boolean;
   readonly isInsideModal?: boolean;
   readonly closable?: boolean;
+  readonly titleID?: string;
 }
 
 export const ModalContext: React.Context<Props>;

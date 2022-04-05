@@ -3,6 +3,848 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.17.1...@kiwicom/orbit-components@2.17.2) (2022-04-05)
+
+
+### Bug Fixes
+
+* **ErrorFormTooltip:** fix overflowing tooltip ([#3328](https://github.com/kiwicom/orbit/issues/3328)) ([e57dbea](https://github.com/kiwicom/orbit/commit/e57dbeae304124bb9a460665f09ed769c763003a))
+* **InputField:** use line-height token ([#3319](https://github.com/kiwicom/orbit/issues/3319)) ([de0f878](https://github.com/kiwicom/orbit/commit/de0f87858fe45637fd00ebf39702b4621154e1df))
+* **Toast:** desktop width set to initial ([#3322](https://github.com/kiwicom/orbit/issues/3322)) ([529c9b1](https://github.com/kiwicom/orbit/commit/529c9b120bf0fbb8c6340c26888ee089a6691030))
+
+
+
+
+
+## [2.17.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.17.0...@kiwicom/orbit-components@2.17.1) (2022-03-23)
+
+
+### Bug Fixes
+
+* **icons:** colored-whatsapp icon name ([6706b68](https://github.com/kiwicom/orbit/commit/6706b684c5c3aa734dcfcaec82652bccaff029e3))
+
+
+
+
+
+# [2.17.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.16.0...@kiwicom/orbit-components@2.17.0) (2022-03-22)
+
+
+### Bug Fixes
+
+* **FormLabel:** add missing types ([#3310](https://github.com/kiwicom/orbit/issues/3310)) ([b764dbb](https://github.com/kiwicom/orbit/commit/b764dbbfc0cfc728a8aa127341201c3eaead64a0))
+* **ItinerarySegmentStop:** time, station, city as React.Node ([08b7ec5](https://github.com/kiwicom/orbit/commit/08b7ec595ffc7bb3a45796cef8dc36c17892b546))
+* **ItineraryStatus:** fix icon import ([#3312](https://github.com/kiwicom/orbit/issues/3312)) ([d3d9e67](https://github.com/kiwicom/orbit/commit/d3d9e6778999e3ce6165cabb4527d698ae6c7216))
+* **ModalFooter:** fix padding ([#3311](https://github.com/kiwicom/orbit/issues/3311)) ([b4dc950](https://github.com/kiwicom/orbit/commit/b4dc950b381f3f1a6f0ee23edc6c4e8b5a0d0f11))
+* **Tag:** selected circle color ([#3314](https://github.com/kiwicom/orbit/issues/3314)) ([33e8b77](https://github.com/kiwicom/orbit/commit/33e8b7747bd999a80ad2ba3065378378d979d673))
+* **Toast:** remove min-width for mobile ([#3306](https://github.com/kiwicom/orbit/issues/3306)) ([c242c1f](https://github.com/kiwicom/orbit/commit/c242c1ff04d6d74aa5f35dab0f3c3216a7e1baaa))
+
+
+### Features
+
+* **icons:** android icon ([5d05f50](https://github.com/kiwicom/orbit/commit/5d05f5091f8eefa527a4c1a49cd866937cc8f6a8))
+* **icons:** dashboard, admin, ai icons ([72aedc6](https://github.com/kiwicom/orbit/commit/72aedc6b8b9501f9021fa364edd24ba5ca9583a6))
+* **icons:** social networks icons ([b5a537c](https://github.com/kiwicom/orbit/commit/b5a537c40059b0568e11dfaf0166af9f76ce56ab))
+* **ItinerarySegment:** actionable prop ([#3309](https://github.com/kiwicom/orbit/issues/3309)) ([efa18ff](https://github.com/kiwicom/orbit/commit/efa18ff7f457c578066c6ebaf85ccc25ae364751))
+* **ListChoice:** action prop ([#3313](https://github.com/kiwicom/orbit/issues/3313)) ([bac197f](https://github.com/kiwicom/orbit/commit/bac197fb1c7614fbc8b2f4f03886d48e4bea4fc1))
+
+
+
+
+
+# [2.16.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.15.1...@kiwicom/orbit-components@2.16.0) (2022-03-11)
+
+
+### Bug Fixes
+
+* **ItinerarySegmentDetail:** expandable, only if content is provided ([#3303](https://github.com/kiwicom/orbit/issues/3303)) ([d840627](https://github.com/kiwicom/orbit/commit/d840627294a5744838da2adb3beed4f5e50c2a3c))
+
+
+### Features
+
+* **Illustrations:** add new Chatbot, FareLock illustrations ([#3304](https://github.com/kiwicom/orbit/issues/3304)) ([31d5d82](https://github.com/kiwicom/orbit/commit/31d5d82e77e33204fcc2fc817af03afebc1a4e1b))
+
+
+
+
+
+## [2.15.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.15.0...@kiwicom/orbit-components@2.15.1) (2022-03-07)
+
+
+### Bug Fixes
+
+* **Tile:** fix tile anchor ([#3302](https://github.com/kiwicom/orbit/issues/3302)) ([68c0bfa](https://github.com/kiwicom/orbit/commit/68c0bfae3391fd22d70bef9d4b384dc638c2e049))
+
+
+
+
+
+# [2.15.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.14.2...@kiwicom/orbit-components@2.15.0) (2022-03-02)
+
+
+### Bug Fixes
+
+* **InputGroup:** pass and test forwardRef ([c1ef417](https://github.com/kiwicom/orbit/commit/c1ef41729822bacd07adafd2004cf3c9bbf727a1))
+* **ItinerarySegmentDetail:** fix click event for badges ([99305ae](https://github.com/kiwicom/orbit/commit/99305aef6344908fa5b6f2e27c4ccc8ceb4e95b8))
+* **List:** remove additional spacing ([#3299](https://github.com/kiwicom/orbit/issues/3299)) ([be2ac7c](https://github.com/kiwicom/orbit/commit/be2ac7c6b80d1aa079b22cf19f38b20a97cc8f48))
+
+
+### Features
+
+* **HorizontalScroll:** add onOverflow prop ([ec04d31](https://github.com/kiwicom/orbit/commit/ec04d319484a0d92bf7e1b486a5d6547c66bf533))
+
+
+
+
+
+## [2.14.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.14.1...@kiwicom/orbit-components@2.14.2) (2022-02-28)
+
+
+### Bug Fixes
+
+* **Alert:** fix content line-height ([485b67f](https://github.com/kiwicom/orbit/commit/485b67f54661da9e201201eece014bb24a6fe3fd))
+* **ChoiceGroup:** add forwardRef ([3158068](https://github.com/kiwicom/orbit/commit/3158068029efb48263fb1c3ed5bc5ae843a1b31a))
+* **Drawer:** autofocus close button when opened ([39dc39c](https://github.com/kiwicom/orbit/commit/39dc39c2cbf80ff978ef1e353ea703ee076d7b7e))
+* **Drawer:** close on ESC ([0de54ee](https://github.com/kiwicom/orbit/commit/0de54eea5c72e2847f1a9a455ad037dae4c0e9ee))
+* **Drawer:** use focus trap ([8291bd3](https://github.com/kiwicom/orbit/commit/8291bd3539905c97f407d72c02950e0a75850524))
+* **InputGroup:** add forwardRef ([78ff5f7](https://github.com/kiwicom/orbit/commit/78ff5f76ac93a98f65f8db53e24d0d025280496e))
+
+
+
+
+
+## [2.14.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.14.0...@kiwicom/orbit-components@2.14.1) (2022-02-21)
+
+
+### Bug Fixes
+
+* **Popover:** remove animation on desktop ([1b5d613](https://github.com/kiwicom/orbit/commit/1b5d613a4ae3a634a13ac019776d0b520cf6c04b))
+
+
+
+
+
+# [2.14.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.13.0...@kiwicom/orbit-components@2.14.0) (2022-02-21)
+
+
+### Bug Fixes
+
+* **Card:** change chevron icon color to secondary ([813c02f](https://github.com/kiwicom/orbit/commit/813c02fb04ab2d7e6252bcb469479909de8a40ce))
+* **Collapse:** change icon color to secondary ([ccc945b](https://github.com/kiwicom/orbit/commit/ccc945befffa0663717aee14009f8d2c72e043fc))
+* **Drawer:** new z-index value ([df4a571](https://github.com/kiwicom/orbit/commit/df4a5715fcb55e1a86eeeed3ca8960c53a760831))
+* **Drawer:** use new z-index value ([#3292](https://github.com/kiwicom/orbit/issues/3292)) ([b0c5a6d](https://github.com/kiwicom/orbit/commit/b0c5a6da773c74060842b299ec5b1a2518d091f6))
+* **ItinerarySegmentDetail:** change chevron to secondary color ([8b05f16](https://github.com/kiwicom/orbit/commit/8b05f165730c98495f3351a8435f42e08a48d47b))
+* **Select:** change icon color to InkLight ([4467e53](https://github.com/kiwicom/orbit/commit/4467e539ba2f047b3db6acd81403f73600d71255))
+* **Tag:** fix persistant focus ([#3287](https://github.com/kiwicom/orbit/issues/3287)) ([286088e](https://github.com/kiwicom/orbit/commit/286088ed81f25200d3aab94e103ec5b5d5dbde42))
+* **Tile:** change chevon icon color to secondary ([68cb181](https://github.com/kiwicom/orbit/commit/68cb181c31a5b390e2841e8163c955a2178697bc))
+* **useScrollLock:** return reserveScrollBarGap option ([#3286](https://github.com/kiwicom/orbit/issues/3286)) ([118a9cb](https://github.com/kiwicom/orbit/commit/118a9cb0956bda40625d5bb7f8cbe34609728d69))
+
+
+### Features
+
+* **NavigationBar:** add hideOnScroll prop ([#3282](https://github.com/kiwicom/orbit/issues/3282)) ([c253f23](https://github.com/kiwicom/orbit/commit/c253f23b46040af1917f71527037019e6a57c7a8))
+
+
+
+
+
+# [2.13.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.12.0...@kiwicom/orbit-components@2.13.0) (2022-02-10)
+
+
+### Features
+
+* **Alert:** visual alert component updates ([#3277](https://github.com/kiwicom/orbit/issues/3277)) ([b68b4a2](https://github.com/kiwicom/orbit/commit/b68b4a23c02707e8307547962b13eaf777191cfd))
+
+
+
+
+
+# [2.12.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.11.0...@kiwicom/orbit-components@2.12.0) (2022-02-09)
+
+
+### Bug Fixes
+
+* **InputField:** enable tooltip on hover when disabled ([#3274](https://github.com/kiwicom/orbit/issues/3274)) ([cb61420](https://github.com/kiwicom/orbit/commit/cb61420c5e826a8bdda86d9c661cf73cfe49d7a6))
+* **Itinerary:** fix overflowing badges ([#3275](https://github.com/kiwicom/orbit/issues/3275)) ([e894fce](https://github.com/kiwicom/orbit/commit/e894fcef7b5dae6ea2015ed15997b6361ecd7a6e))
+
+
+### Features
+
+* **Drawer:** add fixedHeader prop ([#3269](https://github.com/kiwicom/orbit/issues/3269)) ([a6658a4](https://github.com/kiwicom/orbit/commit/a6658a454614adbf0e65affceb6988c2aea66799))
+
+
+
+
+
+# [2.11.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.10.0...@kiwicom/orbit-components@2.11.0) (2022-02-07)
+
+
+### Bug Fixes
+
+* **ItinerarySegmentDetail:** fix overflowing badges ([5a4bea7](https://github.com/kiwicom/orbit/commit/5a4bea77bda557d666fd42bbd54640300fba67f8))
+
+
+### Features
+
+* **Badge:** add new bundle type ([1c92c62](https://github.com/kiwicom/orbit/commit/1c92c6276bd4871f794724e5e2eb1011dc085feb))
+* **Button:** add new bundle type ([ad7c435](https://github.com/kiwicom/orbit/commit/ad7c435ecfdf17e0cac3db3985b06e4bb07da56b))
+* **HorizontalScroll:** add elevationOverflow and elevationColor props ([8c7ce02](https://github.com/kiwicom/orbit/commit/8c7ce02a7ec5436cdc069bb3d0f4d3e4c5ea36bf))
+
+
+
+
+
+# [2.10.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.9.0...@kiwicom/orbit-components@2.10.0) (2022-02-02)
+
+
+### Bug Fixes
+
+* **InputGroup:** fix issue with long labels ([#3256](https://github.com/kiwicom/orbit/issues/3256)) ([9690e1e](https://github.com/kiwicom/orbit/commit/9690e1ec7b379d90cbc0688c91f12c5209c330d6))
+* **useTransition:** replace `enter` API with `state` ([ab239d4](https://github.com/kiwicom/orbit/commit/ab239d44dd7dbb0e5ede7791f6a6fc97dfddc47d))
+
+
+### Features
+
+* add new experimental hook `useTransition` ([#3191](https://github.com/kiwicom/orbit/issues/3191)) ([3758af5](https://github.com/kiwicom/orbit/commit/3758af591f0b8b63b722e93571276485ec0ea010))
+* **icons:** add new flash icon ([#3260](https://github.com/kiwicom/orbit/issues/3260)) ([574299e](https://github.com/kiwicom/orbit/commit/574299ee5a59d18f6635e29727d496b44c17131c))
+
+
+
+
+
+# [2.9.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.8.1...@kiwicom/orbit-components@2.9.0) (2022-01-24)
+
+
+### Bug Fixes
+
+* **ButtonPrimitive:** preserve `:hover` and `:active` styles ([6b67b24](https://github.com/kiwicom/orbit/commit/6b67b24ac1c6406d86f289a12f8e475d0ca2bcaa))
+* **ErrorFormTooltip:** help closable onBlur ([#3246](https://github.com/kiwicom/orbit/issues/3246)) ([9a0c04d](https://github.com/kiwicom/orbit/commit/9a0c04df8a1947448ba58d91c7f9d261516b7031))
+* **Itinerary:** truncate possible long texts ([#3247](https://github.com/kiwicom/orbit/issues/3247)) ([740c798](https://github.com/kiwicom/orbit/commit/740c798773e8761cdc3fdfa858d4f8afae162a12))
+* **Popover:** ensure rounded bottom corners when `actions` are defined ([f8f6e39](https://github.com/kiwicom/orbit/commit/f8f6e3982e1a5d5fb178398b1f9c6366589fedb6))
+
+
+### Features
+
+* **Separator:** add props `indent` and `align` ([e8f5bcb](https://github.com/kiwicom/orbit/commit/e8f5bcb067b05208c44981cc9bc113cf269daec3))
+* **SocialButton:** add chevron icons ([538a28a](https://github.com/kiwicom/orbit/commit/538a28a5806d83812528d0e384341b7c065fda98))
+
+
+
+
+
+## [2.8.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.8.0...@kiwicom/orbit-components@2.8.1) (2022-01-20)
+
+**Note:** Version bump only for package @kiwicom/orbit-components
+
+
+
+
+
+# [2.8.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.7.0...@kiwicom/orbit-components@2.8.0) (2022-01-20)
+
+
+### Bug Fixes
+
+* **components:** fixes after design reviews ([#3226](https://github.com/kiwicom/orbit/issues/3226)) ([281bea7](https://github.com/kiwicom/orbit/commit/281bea7b3a093316964385eb6f549ec6283f720f))
+* **ErrorFormTooltip:** close icon on top ([65b3a0f](https://github.com/kiwicom/orbit/commit/65b3a0fbee8a3731bef5eae7e827b74284c66d71))
+* **FormLabel:** change color from secondary to info ([a1c3e7d](https://github.com/kiwicom/orbit/commit/a1c3e7d56c7021f94e52361d457013e6cbf69b17))
+* **InputField:** inlineLabel color from secondary to info ([0b1b03a](https://github.com/kiwicom/orbit/commit/0b1b03ae54cb4bf08a246acdbbf73c68d666ea64))
+* **Toast:** align implementation with type declarations ([5d6fdb9](https://github.com/kiwicom/orbit/commit/5d6fdb950de779863e43c7977f08c4b608b5f933))
+* **Toast:** fix infinite loop in unit tests ([4fdbe0e](https://github.com/kiwicom/orbit/commit/4fdbe0e214ff6f3a19335dad0b469b3464033729)), closes [/github.com/timolins/react-hot-toast/issues/107#issuecomment-1017213020](https://github.com//github.com/timolins/react-hot-toast/issues/107/issues/issuecomment-1017213020)
+
+
+### Features
+
+* **ErrorForms:** add helpClosable prop ([f5a73cc](https://github.com/kiwicom/orbit/commit/f5a73cccfd0d5dc0a507e93cb21062edf3aff451))
+* **Tag:** add new colors and props ([#3232](https://github.com/kiwicom/orbit/issues/3232)) ([a896127](https://github.com/kiwicom/orbit/commit/a8961277967360a60045b0fdf8dd1534afb8e799))
+
+
+
+
+
+# [2.7.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.6.1...@kiwicom/orbit-components@2.7.0) (2022-01-14)
+
+
+### Bug Fixes
+
+* **Toast:** fix message type ([#3235](https://github.com/kiwicom/orbit/issues/3235)) ([75c2a5d](https://github.com/kiwicom/orbit/commit/75c2a5d444ce60232efa0a2a8ec4ed2cb85a3da0))
+
+
+### Features
+
+* **Illustration:** add new illustrations ([#3234](https://github.com/kiwicom/orbit/issues/3234)) ([f90da39](https://github.com/kiwicom/orbit/commit/f90da394dd2cf384ee65b859333d7fcb69aa2280))
+* **Layout:** accommodate breadcrumbs on booking ([cedef08](https://github.com/kiwicom/orbit/commit/cedef08607ba6f3136dec1924ceb06aeb0ef5c98))
+
+
+
+
+
+## [2.6.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.6.0...@kiwicom/orbit-components@2.6.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* **ButtonPrimitive:** remove line-height ([ea54b4e](https://github.com/kiwicom/orbit/commit/ea54b4ee5dd61dcb34451146f60b0ad0440c37f3))
+* **InputField:** fix placeholder type ([42a6244](https://github.com/kiwicom/orbit/commit/42a62445e2e536502d379eb73a55777075c234b6))
+
+
+
+
+
+# [2.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.5.1...@kiwicom/orbit-components@2.6.0) (2021-12-22)
+
+
+### Bug Fixes
+
+* **Checkbox:** fix design discrepancies in border width and radius ([24b9af2](https://github.com/kiwicom/orbit/commit/24b9af2b96ae6f0dd0d10e376fbd9e2adc6bf400))
+* fix background color for help tooltip in form components ([8ce16bd](https://github.com/kiwicom/orbit/commit/8ce16bdc9a00157a6c79a0e8eb4de4119ae2f3ba))
+* fix tooltip's padding in form components ([c7496c8](https://github.com/kiwicom/orbit/commit/c7496c8a0a78c23e148606f26079a49eba643d88))
+* increase font weight of labels in form components ([56fcaeb](https://github.com/kiwicom/orbit/commit/56fcaeb4a86a6e8162ac89380db4dc4d14a1bddd))
+* **Itinerary:** fix to match design ([#3222](https://github.com/kiwicom/orbit/issues/3222)) ([80fa090](https://github.com/kiwicom/orbit/commit/80fa090c0186789a99e73bd45d152bd659927262))
+* **Radio:** lower focus glow amount ([2a7012f](https://github.com/kiwicom/orbit/commit/2a7012f46ce068e7703a2cbe44f861db142f1614))
+
+
+### Features
+
+* **Toast:** introduce toast component ([#3216](https://github.com/kiwicom/orbit/issues/3216)) ([8157669](https://github.com/kiwicom/orbit/commit/8157669e30b89bf2f207287e410ba952509d6f98))
+
+
+
+
+
+## [2.5.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.5.0...@kiwicom/orbit-components@2.5.1) (2021-12-13)
+
+
+### Bug Fixes
+
+* remove norefferer from links ([#3217](https://github.com/kiwicom/orbit/issues/3217)) ([67353f0](https://github.com/kiwicom/orbit/commit/67353f083f84c96e68887b30008ea72211020938))
+* **Skeleton:** set fixed height for Text preset ([#3214](https://github.com/kiwicom/orbit/issues/3214)) ([c7a35c5](https://github.com/kiwicom/orbit/commit/c7a35c51ed5532955edff2b518f8567b0758ab4a))
+
+
+
+
+
+# [2.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.4.1...@kiwicom/orbit-components@2.5.0) (2021-12-07)
+
+
+### Bug Fixes
+
+* **getBreakpointWidth:** improve typings through overloading ([069cf86](https://github.com/kiwicom/orbit/commit/069cf8628f3f1e39fcefce72d0f8d702d23320f5))
+* **Heading:** add missing TypeScript definition for StyledHeading ([7bdb6e2](https://github.com/kiwicom/orbit/commit/7bdb6e27bbf78916fc5faf64c8ffe17a47c0ba1e))
+* **Heading:** temporary fix for `viewports` being `undefined` ([#3212](https://github.com/kiwicom/orbit/issues/3212)) ([4f3fb8d](https://github.com/kiwicom/orbit/commit/4f3fb8d2d03d84825898a2a0d28c7eb94033e465))
+* **Tooltip:** export interface ([#3210](https://github.com/kiwicom/orbit/issues/3210)) ([d393f9a](https://github.com/kiwicom/orbit/commit/d393f9ac321336bcdd3fbba54f9c92be8ac3b170))
+
+
+### Features
+
+* add tracking ([#3180](https://github.com/kiwicom/orbit/issues/3180)) ([29d01be](https://github.com/kiwicom/orbit/commit/29d01be68cd661254479e4dad1b49d36ba5abd47))
+
+
+
+
+
+## [2.4.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.4.0...@kiwicom/orbit-components@2.4.1) (2021-12-03)
+
+
+### Bug Fixes
+
+* **useMediaQuery:** add a fallback for older browsers ([3f51a3c](https://github.com/kiwicom/orbit/commit/3f51a3c22edcee80d55c077d9c688ee6aaeec47f))
+
+
+
+
+
+# [2.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.3.0...@kiwicom/orbit-components@2.4.0) (2021-12-01)
+
+
+### Bug Fixes
+
+* **InputField:** fix warning caused by the invalid `$width` attribute ([1afc9d2](https://github.com/kiwicom/orbit/commit/1afc9d293a4d359d8f6c071b1ccc76c8c989683e))
+* **InputStepper:** fix type definitions to export InputStepperStateless ([36549da](https://github.com/kiwicom/orbit/commit/36549da8122892eb09876d3b256263157030b565))
+* update `peerDependencies` to support both `styled-components` v4 and v5 ([f420ff8](https://github.com/kiwicom/orbit/commit/f420ff8b082e918d3c26a6d5c1783022e8704a0f))
+* **useFocusTrap:** export from root ([1df0f8f](https://github.com/kiwicom/orbit/commit/1df0f8f1e034fed20824260dfbb572e7a474a52f))
+
+
+### Features
+
+* **Box:** support `display="list-item"` ([b42662a](https://github.com/kiwicom/orbit/commit/b42662a3e66542d4ecc3b831c24966a3f8780b83))
+* export RTL utilities from root as `rtl` ([10f8d1f](https://github.com/kiwicom/orbit/commit/10f8d1f81a6c88a23ac47ee3740d388d3f23e6ff))
+
+
+
+
+
+# [2.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.2.0...@kiwicom/orbit-components@2.3.0) (2021-11-23)
+
+
+### Features
+
+* **Badge:** add border and carriers props ([e538b53](https://github.com/kiwicom/orbit/commit/e538b535418d2b76fb63b4279cf87d36a4b2b2b9))
+* **BadgePrimitive:** add carriers prop ([274795c](https://github.com/kiwicom/orbit/commit/274795ca8b6440ac14acda58472dabac5a7bca25))
+* **CarrierLogo:** add rounded prop ([55aaf50](https://github.com/kiwicom/orbit/commit/55aaf50d1f1c82626c83773b935d69765b988ac3))
+* **Itinerary:** init ([3a0d40e](https://github.com/kiwicom/orbit/commit/3a0d40e7bf9f63ed577519dd00535039713ca8c3))
+* **Text:** add font-weight medium ([1a361f2](https://github.com/kiwicom/orbit/commit/1a361f27edf166e52b59fbd840deee942573235f))
+* **Text:** add line-through ([2a74e2d](https://github.com/kiwicom/orbit/commit/2a74e2dec4d1bd37345178b07b527bd91310f6df))
+
+
+
+
+
+# [2.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.1.3...@kiwicom/orbit-components@2.2.0) (2021-11-22)
+
+
+### Bug Fixes
+
+* **Box:** flex-grow and flex-shrink, allow any number ([#3190](https://github.com/kiwicom/orbit/issues/3190)) ([0243bfa](https://github.com/kiwicom/orbit/commit/0243bfa8dac814f5edad292b21e4a19d825ee86e))
+* **Popover:** useClickOutside after isLargeMobile ([#3189](https://github.com/kiwicom/orbit/issues/3189)) ([02b1487](https://github.com/kiwicom/orbit/commit/02b14876bf69839d248d9ff846e86a3a6a4cf063))
+* prevent form tooltip from falling off-screen ([8c8a0a8](https://github.com/kiwicom/orbit/commit/8c8a0a8751daa8efb81ca7355a523170a4438c9f))
+* **SmartPassIllustration:** fix double id ([ada7a0b](https://github.com/kiwicom/orbit/commit/ada7a0b3c82272abea5665808ad454dad701b095))
+* **WizardStepIcon:** fix transient props ([#3184](https://github.com/kiwicom/orbit/issues/3184)) ([a560e0f](https://github.com/kiwicom/orbit/commit/a560e0f99ef9d084e3602fe428eec005c1849893))
+
+
+### Features
+
+* **icons:** added new icons ([#3199](https://github.com/kiwicom/orbit/issues/3199)) ([28f7575](https://github.com/kiwicom/orbit/commit/28f7575a93fc37d81d3f0d7c258ee107a8f92d16))
+
+
+
+
+
+## [2.1.3](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.1.2...@kiwicom/orbit-components@2.1.3) (2021-11-09)
+
+
+### Bug Fixes
+
+* **Heading:** fix error when passing unsupported props ([b52bcdb](https://github.com/kiwicom/orbit/commit/b52bcdb2984e92fb925e361a957a1d8717b938b8))
+
+
+
+
+
+## [2.1.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.1.1...@kiwicom/orbit-components@2.1.2) (2021-11-09)
+
+**Note:** Version bump only for package @kiwicom/orbit-components
+
+
+
+
+
+## [2.1.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.1.0...@kiwicom/orbit-components@2.1.1) (2021-11-05)
+
+
+### Bug Fixes
+
+* remove uneccessary condition ([#3181](https://github.com/kiwicom/orbit/issues/3181)) ([e79baab](https://github.com/kiwicom/orbit/commit/e79baabc51531a88796100a14efaf2495730e41b))
+
+
+
+
+
+# [2.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.0.1...@kiwicom/orbit-components@2.1.0) (2021-11-05)
+
+
+### Bug Fixes
+
+* **useMediaQuery:** optimize, support custom breakpoints, and make it work without context ([8a734fd](https://github.com/kiwicom/orbit/commit/8a734fd9d8db7d14725bf1c86b40652f50eeaf33))
+
+
+### Features
+
+* **Wizard:** close after click on WizardStep in compact ([#3176](https://github.com/kiwicom/orbit/issues/3176)) ([247e7ae](https://github.com/kiwicom/orbit/commit/247e7ae43a8e6983c183bd100806d64c3636b0a7))
+
+
+
+
+
+## [2.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@2.0.0...@kiwicom/orbit-components@2.0.1) (2021-11-03)
+
+
+### Bug Fixes
+
+* missing storybook provider ([#3173](https://github.com/kiwicom/orbit/issues/3173)) ([4967fb7](https://github.com/kiwicom/orbit/commit/4967fb7dc2f34a716db7fda30c48952992979562))
+* **useToggle:** make typings reflect initial param is optional ([95821c5](https://github.com/kiwicom/orbit/commit/95821c514e8ccf970ec606de219eff301309f914))
+
+
+
+
+
+# [2.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.6.1...@kiwicom/orbit-components@2.0.0) (2021-11-02)
+
+
+### Bug Fixes
+
+* **CountryFlag:** set "undefined" as default code ([#3100](https://github.com/kiwicom/orbit/issues/3100)) ([3e841c5](https://github.com/kiwicom/orbit/commit/3e841c526326c68140215e9e6afdec7bcb4cc29a))
+* refactor and properly initialize media queries ([#3138](https://github.com/kiwicom/orbit/issues/3138)) ([b566699](https://github.com/kiwicom/orbit/commit/b566699c00f0ca0e0c15e315f41121302b99cd69)), closes [#3149](https://github.com/kiwicom/orbit/issues/3149)
+
+
+### Code Refactoring
+
+* **TooltipPrimitive:** use Popper instead of custom logic ([#3129](https://github.com/kiwicom/orbit/issues/3129)) ([0e2271f](https://github.com/kiwicom/orbit/commit/0e2271f7389fd78ec541c60ec540668dff7b7351))
+
+
+### BREAKING CHANGES
+
+* **TooltipPrimitive:** replace props `preferredAlign` and `preferredPosition`
+with `placement`, and add new props `noFlip` and `offset`.
+* **CountryFlag:** The default code for CountryFlag is now `"undefined"`
+rather than `"anywhere"`, a gray flag with a question mark. This code is
+also used if the given code isn't supported.
+* media queries in `useMediaQuery` are now being
+properly initialized, in `useEffect` rather than directly in render, which
+should prevent some cryptic bugs, but there is a tiny chance that it will
+break code for those who have been relying on previous behavior, so it's
+important to be aware of this change.
+
+
+
+
+
+## [1.6.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.6.0...@kiwicom/orbit-components@1.6.1) (2021-10-27)
+
+
+### Bug Fixes
+
+* **cloneWithTooltip:** wrong type declaration ([52c2418](https://github.com/kiwicom/orbit/commit/52c2418c06fbd4f8ea4aae6765e29ff48c1b2963))
+
+
+
+
+
+# [1.6.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.5.0...@kiwicom/orbit-components@1.6.0) (2021-10-27)
+
+
+### Features
+
+* **InputField:** add width prop ([2a2fe0f](https://github.com/kiwicom/orbit/commit/2a2fe0f437a396cfc6c153d19546e3c039dd55d2))
+* **InputFile:** add width prop ([70d1d39](https://github.com/kiwicom/orbit/commit/70d1d397fce90d9160e44a4bc7147170a93414be))
+* **InputStepper:** add width prop ([c479f41](https://github.com/kiwicom/orbit/commit/c479f414370adb9f0f728d9d51d997cbdb02ca43))
+* **Select:** add width prop ([865d690](https://github.com/kiwicom/orbit/commit/865d690bfeaa97844601114bc8db95de2ab9c307))
+* **TextLink:** add active and focus colors ([3df1647](https://github.com/kiwicom/orbit/commit/3df1647bfa94bbd269e57b7b88b7f44c53b25ad0))
+
+
+
+
+
+# [1.5.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.4.0...@kiwicom/orbit-components@1.5.0) (2021-10-21)
+
+
+### Bug Fixes
+
+* bring back missing icon Flow declarations ([9c0dcac](https://github.com/kiwicom/orbit/commit/9c0dcacde636535371d48600cc3cbf32485908e8))
+* **ErrorForms:** fix font-size ([#3151](https://github.com/kiwicom/orbit/issues/3151)) ([323c480](https://github.com/kiwicom/orbit/commit/323c480e9de6a1232c4da9325eb093ec5659fe6c))
+* **useLockScrolling:** support nested scroll locks ([#3149](https://github.com/kiwicom/orbit/issues/3149)) ([8215c85](https://github.com/kiwicom/orbit/commit/8215c85c6ef237ff65cbcbe14e69d46b8e9af5d5))
+
+
+### Features
+
+* add new icon: deals v2 ([08edbf9](https://github.com/kiwicom/orbit/commit/08edbf921f6f59b38466f34326070c76270d6e28))
+
+
+### Reverts
+
+* Revert "feat: export Theme type from root (#3125)" ([c0754d9](https://github.com/kiwicom/orbit/commit/c0754d985f8a38e7fb434e884b9ebe987a689374)), closes [#3125](https://github.com/kiwicom/orbit/issues/3125)
+
+
+
+
+
+# [1.4.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.3.1...@kiwicom/orbit-components@1.4.0) (2021-10-20)
+
+
+### Bug Fixes
+
+* **ModalHeader:** remove margins from title ([e9ae04d](https://github.com/kiwicom/orbit/commit/e9ae04d2d5ca0098a12e38b37078e453992d31f9))
+
+
+### Features
+
+* export Theme type from root ([#3125](https://github.com/kiwicom/orbit/issues/3125)) ([0531faa](https://github.com/kiwicom/orbit/commit/0531faa9a34c628eefb3cb9619770b0d43380bd9))
+
+
+
+
+
+## [1.3.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.3.0...@kiwicom/orbit-components@1.3.1) (2021-10-18)
+
+
+### Bug Fixes
+
+* **Box:** fix width and height types ([#3145](https://github.com/kiwicom/orbit/issues/3145)) ([c60308a](https://github.com/kiwicom/orbit/commit/c60308a4f809a002512c27c26d6ce6e6e5e8c712))
+* **Modal:** improve accessibility and testability ([#3143](https://github.com/kiwicom/orbit/issues/3143)) ([c4c7bcb](https://github.com/kiwicom/orbit/commit/c4c7bcb198658abe64bacd2b648424a6837d9b7f))
+
+
+
+
+
+# [1.3.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.2.2...@kiwicom/orbit-components@1.3.0) (2021-10-14)
+
+
+### Bug Fixes
+
+* **useRandomId:** fix missing UIDReset ([d2e0ec8](https://github.com/kiwicom/orbit/commit/d2e0ec8c2ad158df747173f6dd468a69ca929b38))
+
+
+### Features
+
+* **Heading:** add align prop ([#3141](https://github.com/kiwicom/orbit/issues/3141)) ([7dcf2bf](https://github.com/kiwicom/orbit/commit/7dcf2bf5f640b0545ee5000e3f4fef572dce2fa8))
+* **Heading:** add mediaQuery properties ([#3135](https://github.com/kiwicom/orbit/issues/3135)) ([1ecaf64](https://github.com/kiwicom/orbit/commit/1ecaf649eb8fdb4b1c0ec4afb1f366e0fed0765e))
+
+
+
+
+
+## [1.2.2](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.2.1...@kiwicom/orbit-components@1.2.2) (2021-10-06)
+
+
+### Bug Fixes
+
+* **Skeleton:** fix default height ([cc02dd3](https://github.com/kiwicom/orbit/commit/cc02dd3a1bc060a81f38bd5b469f763acbb3ad33))
+
+
+
+
+
+## [1.2.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.2.0...@kiwicom/orbit-components@1.2.1) (2021-10-06)
+
+
+### Bug Fixes
+
+* **Card:** set description Text default as div ([#3132](https://github.com/kiwicom/orbit/issues/3132)) ([df60e73](https://github.com/kiwicom/orbit/commit/df60e7303ef63feaa70c80024039ed1802e79e69))
+* **Skeleton:** default as single rect ([#3134](https://github.com/kiwicom/orbit/issues/3134)) ([9e0bf27](https://github.com/kiwicom/orbit/commit/9e0bf270e2cb9562edeed20e90ab4be94d5eb9c1))
+
+
+
+
+
+# [1.2.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.1.0...@kiwicom/orbit-components@1.2.0) (2021-10-01)
+
+
+### Bug Fixes
+
+* **storybook:** logo url ([#3127](https://github.com/kiwicom/orbit/issues/3127)) ([455ded0](https://github.com/kiwicom/orbit/commit/455ded075bf366a2f702fd83037c134492a85bd6))
+* remove unnecessary declare module statements ([#3124](https://github.com/kiwicom/orbit/issues/3124)) ([32805a8](https://github.com/kiwicom/orbit/commit/32805a8ac51eec5a955ba6627b361c506fd35846))
+* **InputField:** label before tags ([c25ba7a](https://github.com/kiwicom/orbit/commit/c25ba7ad0afe213bd78104a20c7fb7dd3fbc72f9))
+* **Popover:** transform and transition ([33f73ad](https://github.com/kiwicom/orbit/commit/33f73ad87aa8bb9a1bb8c1716c0095dd96bdccb0))
+* **Popover:** ts type definition ([1e61a81](https://github.com/kiwicom/orbit/commit/1e61a8125dd87d576a048031a0b7ef39fe803f8c))
+
+
+### Features
+
+* **Skeleton:** allow string values for height and width ([43f51bb](https://github.com/kiwicom/orbit/commit/43f51bb1ab64ae129d5119e379808933a707c02f))
+* add component structure component ([8cacce0](https://github.com/kiwicom/orbit/commit/8cacce077e561b71b2419dea7a24ed6b2d68a587))
+* export `useRandomId` and `useRandomIdSeed` from root ([cf4dd14](https://github.com/kiwicom/orbit/commit/cf4dd1477492a908ab49c018250956f1b1ee57c6))
+* export useTheme hook from root ([a622f6d](https://github.com/kiwicom/orbit/commit/a622f6d4bc3f4a5c8b998404a18730a16cac0a2c))
+
+
+
+
+
+# [1.1.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.0.1...@kiwicom/orbit-components@1.1.0) (2021-09-22)
+
+
+### Bug Fixes
+
+* **Icon:** explicitly set expected `display` ([5babd1a](https://github.com/kiwicom/orbit/commit/5babd1a6babc426249eec4b2e569cae7d47e53ee))
+* **useLockScrolling:** ensure that scroll is locked by default ([bb2da46](https://github.com/kiwicom/orbit/commit/bb2da464bb18cef49ff7768c6343cdeb6e66f60e))
+
+
+### Features
+
+* **Alert:** properly style links in Alert ([8d3fff5](https://github.com/kiwicom/orbit/commit/8d3fff53ee8ade47727e55b54e46b2775d6f2745))
+
+
+
+
+
+## [1.0.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@1.0.0...@kiwicom/orbit-components@1.0.1) (2021-09-13)
+
+
+### Bug Fixes
+
+* **InputField:** remove aria-labelledby when label is provided ([#3103](https://github.com/kiwicom/orbit/issues/3103)) ([724163b](https://github.com/kiwicom/orbit/commit/724163bd70f52b35bafa381f4c4241b600fba12f))
+
+
+
+
+
+# [1.0.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.122.0...@kiwicom/orbit-components@1.0.0) (2021-09-10)
+
+
+### Code Refactoring
+
+* **Popover:** replace calculate logic with popper.js ([#3046](https://github.com/kiwicom/orbit/issues/3046)) ([9b4852d](https://github.com/kiwicom/orbit/commit/9b4852d531f1a9e25a7c1efc2c3f0faaa122f84b))
+* delete deprecated components ([#3084](https://github.com/kiwicom/orbit/issues/3084)) ([ee75f02](https://github.com/kiwicom/orbit/commit/ee75f0203f5c8afbf389d798db677c4e59d88706))
+
+
+### Features
+
+* error forms ([#2350](https://github.com/kiwicom/orbit/issues/2350)) ([480d565](https://github.com/kiwicom/orbit/commit/480d5652433758cbe7d024073c2a39a9088207ec))
+* update colour palette ([#3095](https://github.com/kiwicom/orbit/issues/3095)) ([acddb14](https://github.com/kiwicom/orbit/commit/acddb14bc0e371568fb53fc74977f0ad9617bd80)), closes [#BAC7D5](https://github.com/kiwicom/orbit/issues/BAC7D5) [#697D95](https://github.com/kiwicom/orbit/issues/697D95) [#4F5E71](https://github.com/kiwicom/orbit/issues/4F5E71)
+
+
+### BREAKING CHANGES
+
+* **Popover:**
+  - props `preferredPosition` and `preferredAlign` are replaced by single prop `placement`, which same as [popper.js's placement](https://popper.js.org/docs/v2/constructors/#placement) can have one of the following values:
+    - `"top-start"`
+    - `"top-end"`
+    - `"bottom-start"`
+    - `"bottom-end"`
+    - `"right-start"`
+    - `"right-end"`
+    - `"left-start"`
+    - `"left-end"`
+    - `"auto"`
+    - `"auto-start"`
+    - `"auto-end"`
+
+  - extended by two props:
+    - `noFlip`:  Turns off automatic flipping of the Popover when there is not enough space
+    - `allowOverflow`: Allows the Popover to be cut off instead of moving it while scrolling to keep it visible.
+
+* deletes deprecated components, their usage should be
+replaced with better existing or upcoming alternatives.
+
+
+
+
+
+# [0.122.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.121.0...@kiwicom/orbit-components@0.122.0) (2021-09-09)
+
+
+### Features
+
+* **Skeleton:** introduce Skeleton component ([#3071](https://github.com/kiwicom/orbit/issues/3071)) ([6a3cf3d](https://github.com/kiwicom/orbit/commit/6a3cf3d6c45945ff1e3a988a675d919da8fc757e))
+* **useLockScrolling:** allow specifying additional dependencies ([aac39f0](https://github.com/kiwicom/orbit/commit/aac39f0bcd20e92df1f09e3565b0315a024f95e2))
+* add `lockScrolling` theme flag ([abfe92c](https://github.com/kiwicom/orbit/commit/abfe92c2f50299f9d731c66a9ff2b424f53d060d))
+
+
+
+
+
+# [0.121.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.120.0...@kiwicom/orbit-components@0.121.0) (2021-09-07)
+
+
+### Bug Fixes
+
+* **Badge:** add border to type white ([#3085](https://github.com/kiwicom/orbit/issues/3085)) ([70264ee](https://github.com/kiwicom/orbit/commit/70264ee7160e55293b63babc28ad6067b127bd59))
+* **CountryFlag:** disallow `code` value null ([481b36c](https://github.com/kiwicom/orbit/commit/481b36cbbbd2814f9fd1d6202402003ac4af2ea6))
+* **Drawer:** fix iOS bug with scrolling content ([92827ab](https://github.com/kiwicom/orbit/commit/92827abcff5ab7e9938c0e5252cfa3c1e7233ffe))
+* **Modal:** fix bug with detached footer ([#3093](https://github.com/kiwicom/orbit/issues/3093)) ([d552b78](https://github.com/kiwicom/orbit/commit/d552b7826bdfd3687ac06a255ec8a0d7c4a06beb))
+* add missing TS definitions in ESM build ([90ec51a](https://github.com/kiwicom/orbit/commit/90ec51a5bfdf34b5d844c9e73278ca70a2207217))
+* use @kiwicom/orbit-design-tokens's ESM build ([a85a521](https://github.com/kiwicom/orbit/commit/a85a5210dce433f52b08d63c504316c847ff6178))
+
+
+### Features
+
+* new SSR-friendly useRandomId hook ([#3055](https://github.com/kiwicom/orbit/issues/3055)) ([1220d8f](https://github.com/kiwicom/orbit/commit/1220d8fd285103b191949caaca910a3ab122eeeb))
+* **Illustration:** add EVisa image ([#3091](https://github.com/kiwicom/orbit/issues/3091)) ([23d0ecd](https://github.com/kiwicom/orbit/commit/23d0ecd3278061e98d49ff34350082ae596a2983))
+
+
+### BREAKING CHANGES
+
+* **CountryFlag:** Flow and TypeScript type definitions no longer allow
+`null` as value for `CountryFlag`'s `code`.
+
+
+
+
+
+# [0.120.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.119.0...@kiwicom/orbit-components@0.120.0) (2021-08-19)
+
+
+### Bug Fixes
+
+* **useLockScrolling:** fix body positioning on iOS ([b780fde](https://github.com/kiwicom/orbit/commit/b780fde9deb8d93073a9a93e445814066aaddc70))
+
+
+### Features
+
+* **Drawer:** add lockScrolling ([#3072](https://github.com/kiwicom/orbit/issues/3072)) ([bdc4e58](https://github.com/kiwicom/orbit/commit/bdc4e5873ea3b5183243bae6cc929702cfadcbff))
+* **InputGroup:** add `disabled` prop ([61a7f01](https://github.com/kiwicom/orbit/commit/61a7f0124eb593b0f3997a3861147b676c576c86))
+
+
+
+
+
+# [0.119.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.118.1...@kiwicom/orbit-components@0.119.0) (2021-08-10)
+
+
+### Features
+
+* **Wizard:** add lockScrolling prop ([#3070](https://github.com/kiwicom/orbit/issues/3070)) ([38b6456](https://github.com/kiwicom/orbit/commit/38b6456610c37507278f776dcfe20e43ed2329d9))
+
+
+
+
+
+## [0.118.1](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.118.0...@kiwicom/orbit-components@0.118.1) (2021-08-05)
+
+
+### Bug Fixes
+
+* **Modal:** hide closeContainer with mobileHeader set to false ([#3065](https://github.com/kiwicom/orbit/issues/3065)) ([78c1a55](https://github.com/kiwicom/orbit/commit/78c1a5537a3c028521b72eb91f6a983be9f3201b))
+
+
+
+
+
+# [0.118.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.117.0...@kiwicom/orbit-components@0.118.0) (2021-08-05)
+
+
+### Bug Fixes
+
+* **ButtonLink:** use proper design tokens ([#3060](https://github.com/kiwicom/orbit/issues/3060)) ([2e035be](https://github.com/kiwicom/orbit/commit/2e035be52a6423e36ab4723886245a9d96cc9ad2))
+* **InputField:** value color in Safari ([#3062](https://github.com/kiwicom/orbit/issues/3062)) ([2c12957](https://github.com/kiwicom/orbit/commit/2c1295770d5c952ccd8c0b12520c6a53b21057c3))
+
+
+### Features
+
+* **Modal:** add mobileHeader prop ([#3063](https://github.com/kiwicom/orbit/issues/3063)) ([61065ef](https://github.com/kiwicom/orbit/commit/61065efaaacb623f190766268dde10bcc70a8df4))
+
+
+
+
+
+# [0.117.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.116.0...@kiwicom/orbit-components@0.117.0) (2021-07-22)
+
+
+### Bug Fixes
+
+* **ChoiceGroup:** use correct box sizing ([68c2303](https://github.com/kiwicom/orbit/commit/68c2303f0357435d9e5dfdb97e48c19a1c6a54cb))
+* **InputField:** add aria-required ([7d7f5ef](https://github.com/kiwicom/orbit/commit/7d7f5ef1cff154e88185f204990de5230c75742d))
+
+
+### Features
+
+* **Text:** allow `justify` value for `align` prop ([#3050](https://github.com/kiwicom/orbit/issues/3050)) ([c7704b2](https://github.com/kiwicom/orbit/commit/c7704b2ee0050d5964572cb4e44b5aa87e060d8b))
+* add lockScrolling prop ([#3045](https://github.com/kiwicom/orbit/issues/3045)) ([461139d](https://github.com/kiwicom/orbit/commit/461139df3ace314c04e11d01a7a5e4495a35e97f))
+* lock scrolling in components with overlay ([#3036](https://github.com/kiwicom/orbit/issues/3036)) ([b6c87ae](https://github.com/kiwicom/orbit/commit/b6c87aec9e3005fb76752390c9b4f909bc12f087))
+* **Grid:** add spaceAfter utility prop ([#3043](https://github.com/kiwicom/orbit/issues/3043)) ([c65ba9a](https://github.com/kiwicom/orbit/commit/c65ba9a86bcadb378c424c447c23694e67de6ac4))
+* **InputFile:** add aria-required ([ef47042](https://github.com/kiwicom/orbit/commit/ef470429c5c1748757d8e85bc7f9eca689162a49))
+* **TextLink:** add type "white" ([#3000](https://github.com/kiwicom/orbit/issues/3000)) ([6a101f1](https://github.com/kiwicom/orbit/commit/6a101f1a8dd5daae1e3a55315f6b4eab1617eb06))
+
+
+
+
+
+# [0.116.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.115.0...@kiwicom/orbit-components@0.116.0) (2021-06-24)
+
+
+### Bug Fixes
+
+* **CarrierLogo:** redirects ([#2972](https://github.com/kiwicom/orbit/issues/2972)) ([59287d9](https://github.com/kiwicom/orbit/commit/59287d9e198701934c099be45278a5f2cb3c8f6e))
+* **Wizard:** increase clickable area of steps ([#2988](https://github.com/kiwicom/orbit/issues/2988)) ([1c55aaa](https://github.com/kiwicom/orbit/commit/1c55aaac9723e3acfef274e0e935efffb9247a99))
+
+
+### Features
+
+* **ChoiceGroup:** increase rendering flexibility ([#2983](https://github.com/kiwicom/orbit/issues/2983)) ([9c2625b](https://github.com/kiwicom/orbit/commit/9c2625b5efd4d8de5bee8fc50492cfaee05ddf2e))
+
+
+
+
+
 # [0.115.0](https://github.com/kiwicom/orbit/compare/@kiwicom/orbit-components@0.114.2...@kiwicom/orbit-components@0.115.0) (2021-05-27)
 
 
@@ -431,8 +1273,8 @@ function App() {
 ### BREAKING CHANGES
 
 * **Modal:** size prop is changed, added new value
-CODEMODE: jscodeshift -t https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/transforms/Modal-size.js
-<pathToYourCode> --parser=flow|ts
+CODEMODE: `jscodeshift -t https://raw.githubusercontent.com/kiwicom/orbit/master/packages/orbit-components/transforms/Modal-size.js <pathToYourCode> --parser=flow|t`
+
 
 
 

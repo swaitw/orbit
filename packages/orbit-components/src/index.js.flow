@@ -1,5 +1,5 @@
 // @flow
-import type { GetTokens, FromPlainObject } from "@kiwicom/orbit-design-tokens/lib/index";
+import type { GetTokens, FromPlainObject } from "@kiwicom/orbit-design-tokens";
 
 import type { Theme } from "./defaultTheme";
 import typeof AccordionSectionType from "./Accordion/AccordionSection";
@@ -30,13 +30,7 @@ import typeof ClickOutsideType from "./ClickOutside";
 import typeof CollapseType from "./Collapse";
 import typeof CountryFlagType from "./CountryFlag";
 import typeof CouponType from "./Coupon";
-import typeof DeprecatedCardCardHeaderType from "./deprecated/Card/CardHeader";
-import typeof DeprecatedCardSectionType from "./deprecated/Card/CardSection";
-import typeof DeprecatedCardType from "./deprecated/Card";
-import typeof DeprecatedSeatType from "./deprecated/Seat";
 import typeof DesktopType from "./Desktop";
-import typeof DestinationCardType from "./deprecated/DestinationCard";
-import typeof DestinationHeaderType from "./deprecated/DestinationHeader";
 import typeof DialogType from "./Dialog";
 import typeof DrawerType from "./Drawer";
 import typeof FeatureIconType from "./FeatureIcon";
@@ -52,6 +46,12 @@ import typeof InputFileType from "./InputFile";
 import typeof InputGroupType from "./InputGroup";
 import typeof InputStepperStatelessType from "./InputStepper/InputStepperStateless";
 import typeof InputStepperType from "./InputStepper";
+import typeof ItinerarySegmentType from "./Itinerary/ItinerarySegment";
+import typeof ItineraryType from "./Itinerary";
+import typeof ItineraryStatusType from "./Itinerary/ItineraryStatus";
+import typeof ItineraryBadgeListType from "./Itinerary/ItineraryBadgeList";
+import typeof ItinerarySegmentStopType from "./Itinerary/ItinerarySegment/ItinerarySegmentStop";
+import typeof ItinerarySegmentDetailType from "./Itinerary/ItinerarySegment/ItinerarySegmentDetail";
 import typeof LayoutColumnType from "./Layout/LayoutColumn";
 import typeof LayoutType from "./Layout";
 import typeof LinkListType from "./LinkList";
@@ -59,6 +59,7 @@ import typeof ListChoiceType from "./ListChoice";
 import typeof ListItemType from "./List/ListItem";
 import typeof ListType from "./List";
 import typeof LoadingType from "./Loading";
+import typeof * as rtlType from "./utils/rtl";
 import typeof mediaQueriesType from "./utils/mediaQuery";
 import typeof MobileType from "./Mobile";
 import typeof ModalFooterType from "./Modal/ModalFooter";
@@ -77,6 +78,7 @@ import typeof RadioType from "./Radio";
 import typeof RatingStarsType from "./RatingStars";
 import typeof SeatType, { SeatLegend as SeatLegendType } from "./Seat";
 import typeof SelectType from "./Select";
+import typeof SkeletonType from "./Skeleton";
 import typeof SeparatorType from "./Separator";
 import typeof ServiceLogoType from "./ServiceLogo";
 import typeof SkipNavigationType from "./SkipNavigation";
@@ -112,14 +114,22 @@ import typeof TileType from "./Tile";
 import typeof TimelineStepType from "./Timeline/TimelineStep";
 import typeof TimelineType from "./Timeline";
 import typeof TooltipType from "./Tooltip";
+import typeof {
+  ToastRoot as ToastRootType,
+  createToast as createToastType,
+  createToastPromise as createToastPromiseType,
+} from "./Toast";
 import typeof TranslateType from "./Translate";
-import typeof TripDateType from "./deprecated/TripSector/TripDate";
-import typeof TripLayoverType from "./deprecated/TripSector/TripLayover";
-import typeof TripSectorType from "./deprecated/TripSector";
-import typeof TripSegmentType from "./deprecated/TripSegment";
 import typeof TruncateType from "./Truncate";
 import typeof WizardType, { WizardStep as WizardStepType } from "./Wizard";
 import typeof useMediaQueryType from "./hooks/useMediaQuery";
+import typeof useThemeType from "./hooks/useTheme";
+import typeof useLockScrollingType from "./hooks/useLockScrolling";
+import typeof useRandomIdType, {
+  useRandomIdSeed as useRandomIdSeedType,
+} from "./hooks/useRandomId";
+import typeof useFocusTrapType from "./hooks/useFocusTrap";
+import typeof useIntervalType from "./hooks/useInterval";
 
 declare export var FieldFeedback: any;
 declare export var Header: any;
@@ -148,10 +158,7 @@ declare export var Checkbox: CheckboxType;
 declare export var ChoiceGroup: ChoiceGroupType;
 declare export var Collapse: CollapseType;
 declare export var CountryFlag: CountryFlagType;
-declare export var DeprecatedSeat: DeprecatedSeatType;
 declare export var Desktop: DesktopType;
-declare export var DestinationCard: DestinationCardType;
-declare export var DestinationHeader: DestinationHeaderType;
 declare export var Dialog: DialogType;
 declare export var FeatureIcon: FeatureIconType;
 declare export var List: ListType;
@@ -162,9 +169,6 @@ declare export var PictureCard: PictureCardType;
 
 declare export var Card: CardType;
 declare export var CardSection: CardSectionType;
-declare export var DeprecatedCard: DeprecatedCardType;
-declare export var DeprecatedCardHeader: DeprecatedCardCardHeaderType;
-declare export var DeprecatedCardSection: DeprecatedCardSectionType;
 
 declare export var Accordion: AccordionType;
 declare export var AccordionSection: AccordionSectionType;
@@ -212,6 +216,12 @@ declare export var InputFile: InputFileType;
 declare export var InputGroup: InputGroupType;
 declare export var InputStepper: InputStepperType;
 declare export var InputStepperStateless: InputStepperStatelessType;
+declare export var Itinerary: ItineraryType;
+declare export var ItineraryStatus: ItineraryStatusType;
+declare export var ItineraryBadgeList: ItineraryBadgeListType;
+declare export var ItinerarySegment: ItinerarySegmentType;
+declare export var ItinerarySegmentStop: ItinerarySegmentStopType;
+declare export var ItinerarySegmentDetail: ItinerarySegmentDetailType;
 declare export var Loading: LoadingType;
 declare export var Text: TextType;
 declare export var TextLink: TextLinkType;
@@ -235,6 +245,7 @@ declare export var SmartPassV3: SmartPassV3Type;
 declare export var SmartPassV4: SmartPassV4Type;
 declare export var SmartPassV5: SmartPassV5Type;
 declare export var SocialButton: SocialButtonType;
+declare export var Skeleton: SkeletonType;
 declare export var Stack: StackType;
 declare export var Stepper: StepperType;
 declare export var StepperStateless: StepperStatelessType;
@@ -246,10 +257,9 @@ declare export var TileGroup: TileGroupType;
 declare export var Timeline: TimelineType;
 declare export var TimelineStep: TimelineStepType;
 declare export var Tooltip: TooltipType;
-declare export var TripDate: TripDateType;
-declare export var TripLayover: TripLayoverType;
-declare export var TripSector: TripSectorType;
-declare export var TripSegment: TripSegmentType;
+declare export var ToastRoot: ToastRootType;
+declare export var createToast: createToastType;
+declare export var createToastPromise: createToastPromiseType;
 declare export var Truncate: TruncateType;
 declare export var Wizard: WizardType;
 declare export var WizardStep: WizardStepType;
@@ -261,8 +271,15 @@ declare export var defaultTheme: Theme;
 declare export var getTokens: GetTokens;
 declare export var fromPlainObject: FromPlainObject;
 
+declare export var rtl: rtlType;
 declare export var mediaQueries: mediaQueriesType;
 declare export var useMediaQuery: useMediaQueryType;
+declare export var useTheme: useThemeType;
+declare export var useLockScrolling: useLockScrollingType;
+declare export var useRandomId: useRandomIdType;
+declare export var useRandomIdSeed: useRandomIdSeedType;
+declare export var useFocusTrap: useFocusTrapType;
+declare export var useInterval: useIntervalType;
 
 declare export var BadgePrimitive: BadgePrimitiveType;
 declare export var IllustrationPrimitive: IllustrationPrimitiveType;

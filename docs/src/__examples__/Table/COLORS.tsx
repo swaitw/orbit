@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   Heading,
   Inline,
@@ -134,9 +134,4 @@ export default {
       </Stack>
     </Stack>
   ),
-  info: {
-    title: "Sizes",
-    description:
-      "Tables can be either striped (the default with alternating background colors in rows) or now. They can also be either primary (the default) or secondary.",
-  },
 };

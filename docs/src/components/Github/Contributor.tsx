@@ -7,7 +7,7 @@ import { Contributor as ContributorData } from ".";
 const StyledImageWrapper = styled(({ url, children, ...props }) => {
   const Component = url ? "a" : "div";
   return (
-    <Component href={url} {...props}>
+    <Component href={url} target="_blank" rel="noopener noreferrer" {...props}>
       {children}
     </Component>
   );
@@ -15,7 +15,11 @@ const StyledImageWrapper = styled(({ url, children, ...props }) => {
   width: 60px;
 `;
 
-const Contributor = ({ avatar_url, name, html_url }: ContributorData) => {
+const Contributor = ({
+  avatar_url,
+  name,
+  github,
+}: Pick<ContributorData, "avatar_url" | "name" | "github">) => {
   return (
     <Stack
       inline
@@ -25,7 +29,7 @@ const Contributor = ({ avatar_url, name, html_url }: ContributorData) => {
       spacing="large"
       align="stretch"
     >
-      <StyledImageWrapper url={html_url}>
+      <StyledImageWrapper url={github}>
         <img
           src={avatar_url}
           alt={name}

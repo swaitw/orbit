@@ -25,6 +25,7 @@ Table below contains all types of the props available in the Modal component.
 | Name                | Type                       | Default    | Description                                                                                                                                                                                          |
 | :------------------ | :------------------------- | :--------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | children            | `React.Node`               |            | The content of the Modal. [See Subcomponents](#subcomponents)                                                                                                                                        |
+| lockScrolling       | `boolean`                  | `true`     | Whether to prevent scrolling of the rest of the page while Modal is open. This is on by default to provide a better user experience.                                                                 |
 | scrollingElementRef | ref (object or function)   |            | The scrolling element, which depends on the viewport                                                                                                                                                 |
 | dataTest            | `string`                   |            | Optional prop for testing purposes.                                                                                                                                                                  |
 | fixedFooter         | `boolean`                  | `false`    | If `true` the ModalFooter will be fixed to the bottom of window.                                                                                                                                     |
@@ -35,6 +36,7 @@ Table below contains all types of the props available in the Modal component.
 | hasCloseButton      | `boolean`                  | `true`     | Defines whether the Modal displays a close button. If you disable this, we recommend adding some kind of an alternative.                                                                             |
 | autoFocus           | `boolean`                  | `true`     | The autofocus attribute of the Modal, see [this docs](https://www.w3schools.com/tags/att_autofocus.asp).                                                                                             |
 | disableAnimation    | `boolean`                  | `false`    | Defines whether the Modal performs the slide in animation on mobile. If you want to improve your [CLS](https://web.dev/cls/) score, you might want to set this to `true`.                            |
+| mobileHeader        | `boolean`                  | `true`     | If `false` the ModalHeader will not have MobileHeader and CloseContainer                                                                                                                             |
 
 ### Modal enum
 

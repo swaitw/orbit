@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Loading, Stack } from "@kiwicom/orbit-components";
 
 export default {
@@ -9,8 +9,4 @@ export default {
       <Loading type="inlineLoader" text="Finding the best routes to get you there" />
     </Stack>
   ),
-  info: {
-    title: "Text",
-    description: "Use text to set user expectations.",
-  },
 };

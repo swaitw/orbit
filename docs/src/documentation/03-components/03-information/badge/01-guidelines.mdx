@@ -11,11 +11,11 @@ redirect_from:
 - To call attention to details in a way that makes it easy to scan.
 - To present information, such as status.
 
-### When not to use
+## When not to use
 
 - If there's an interaction (such as add/remove)---use a [tag](/components/interaction/tag/).
 - If the entire message has an associated action---use an [alert](/components/information/alert/).
-- For a circled badge for notifications--- use a [notification badge](/components/information/notificationbadge/)
+- For a circled badge for notifications---use a [notification badge](/components/information/notificationbadge/)
 
 ## Component status
 
@@ -23,7 +23,13 @@ redirect_from:
 
 ## Content structure
 
-![Label: works best when short; icon: supports the label.](fileId:4QJZqvBvRrLu6t9mwObCkA;nodeId:0%3A43)
+<FigmaIframe
+  height={300}
+  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F4QJZqvBvRrLu6t9mwObCkA%2FOrbit-Component-Content-Structure%3Fnode-id%3D286%253A46"
+/>
+
+**1. Icon** (Supports the label) <br />
+**2. Label** (Works best when short)
 
 ## Behavior
 
@@ -42,9 +48,9 @@ When doing so, make sure it's clear that the interaction is there.
 
 If you'd like to have an action, consider an [alert](/components/information/alert/) or a [button](/components/action/button/) instead.
 
-![An alert with the message 'Your booking failed' and a button labelled 'Get details'.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:25%3A40)
+![An alert with the message 'Your booking failed' and a button labeled 'Get details'.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:25%3A40)
 
-![A badge with the text: Booking failed. Get details. The second sentence is a link.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:25%3A40)
+![A badge with the text: Booking failed. Get details. The second sentence is a link.](fileId:fannvRpkOJK6uxxT33EKaa;nodeId:24%3A598)
 
 </Guideline>
 
@@ -103,33 +109,27 @@ Use progressive disclosure for other information.
 
 There are six basic types of badges. All except white badges have an inverted variant for use with different backgrounds.
 
+<ReactExample exampleId="Badge-types" />
+
 #### Neutral badges
 
 Neutral badges present information without adding any emotion.
 They're useful when the information isn't so important to the user's main flow.
 
-<ReactExample exampleId="Badge-neutral" />
-
 #### White badges
 
 White badges are useful when presenting neutral information within a dark context.
-
-<ReactExample exampleId="Badge-white" />
 
 #### Info badges
 
 Informational badges help to highlight some information as particularly important.
 They draw attention to the badge without stating whether it was positive or a potential problem.
 
-<ReactExample exampleId="Badge-info" />
-
 #### Success badges
 
 Success badges help to highlight something desirable has happened or will happen.
 You can use them in situations like a confirmation of a user action (such as booking a trip)
 or potentially attractive options (such as free baggage).
-
-<ReactExample exampleId="Badge-success" />
 
 #### Warning badges
 
@@ -138,11 +138,7 @@ but isn't critical.
 They're associated with negative emotions
 so only use them occasionally to stop potential problems before they happen.
 
-<ReactExample exampleId="Badge-warning" />
-
 #### Critical badges
 
 Critical badges call attention to problems that require immediate attention from the user.
 These badges create feelings of stress so only use them for issues where they're truly necessary.
-
-<ReactExample exampleId="Badge-critical" />

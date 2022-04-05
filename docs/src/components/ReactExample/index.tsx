@@ -1,54 +1,47 @@
 import React from "react";
-import { LiveProvider, LiveEditor } from "react-live";
 import { useStaticQuery, graphql } from "gatsby";
-import styled, { css } from "styled-components";
-import dracula from "prism-react-renderer/themes/dracula";
-import * as Components from "@kiwicom/orbit-components";
-import * as Icons from "@kiwicom/orbit-components/lib/icons";
+import { Text } from "@kiwicom/orbit-components";
 
-import Board from "./Board";
-import Preview from "./Preview";
-import ViewportsRuler from "./ViewportsRuler";
+import { copyImports } from "./helpers";
+import Example from "./Example";
 
-interface Props {
+export type BgType = "white" | "dark" | "grid";
+export interface Props {
   exampleId: string;
-  minHeight?: number;
+  responsive?: boolean;
+  height?: number;
+  background?: BgType;
 }
 
-const StyledExampleWrapper = styled.div`
-  ${({ theme }) => `
-    box-shadow: ${theme.orbit.boxShadowRaisedSubtle};
-    border-radius: 12px;
-    overflow: hidden;
-  `};
-`;
+const ReactExample = ({ exampleId, responsive = true, background = "white", height }: Props) => {
+  const [code, setCode] = React.useState("");
+  const [origin, setOrigin] = React.useState("");
+  const key = exampleId.toLowerCase();
 
-const StyledEditor = styled(LiveEditor)`
-  ${({ theme }) => `
-    border-radius: 0 0 ${theme.orbit.borderRadiusLarge} ${theme.orbit.borderRadiusLarge};
-  `};
-`;
-
-const ReactExample = ({ exampleId, minHeight }: Props) => {
-  const [isEditorOpened, setOpenEditor] = React.useState(false);
-  const [width, setPreviewWidth] = React.useState(0);
-
-  const getCurrentWidth = React.useCallback(size => setPreviewWidth(size), []);
-
-  const { allFile } = useStaticQuery(
+  const { allExample } = useStaticQuery(
     graphql`
       query ExamplesQuery {
-        allFile(filter: { absolutePath: { regex: "/__examples__/" } }) {
+        allExample {
           nodes {
             id
-            relativePath
-            fields {
-              example_id
-              example
-              scope {
+            example
+            example_id
+            scope {
+              name
+              path
+              default
+            }
+            exampleVariants {
+              name
+              code
+            }
+            exampleKnobs {
+              component
+              knobs {
+                defaultValue
+                options
                 name
-                path
-                default
+                type
               }
             }
           }
@@ -57,47 +50,42 @@ const ReactExample = ({ exampleId, minHeight }: Props) => {
     `,
   );
 
-  const example = allFile.nodes.find(n => n.fields.example_id === exampleId);
+  React.useEffect(() => {
+    if (code) window.localStorage.setItem(key, code);
 
-  if (!example)
-    return <Components.Text>{`Could not find example with the id: ${exampleId}`}</Components.Text>;
+    setOrigin(window.location.origin);
 
-  const { fields } = example;
+    return () => window.localStorage.removeItem(key);
+  }, [code, exampleId, setOrigin, key]);
 
-  const modules = fields.scope.reduce((acc, { name: moduleName, path }) => {
-    if (path.match(/@kiwicom\/orbit-components\/icons/)) {
-      return {
-        ...acc,
-        [moduleName]: Icons[moduleName],
-      };
+  React.useEffect(() => {
+    if (window.localStorage.getItem(key)) {
+      setCode(window.localStorage.getItem(key) || "");
     }
+  }, [setCode, key]);
 
-    return {
-      ...acc,
-      [moduleName]: Components[moduleName],
-    };
-  }, {});
+  const example = allExample.nodes.find(({ example_id }) => example_id === exampleId.toLowerCase());
 
-  const scopeOutput = fields.scope
-    .map(({ path, name: moduleName, default: isDefault }) => {
-      if (isDefault) return `import ${moduleName} from ${path}`;
-      return `import { ${moduleName} }  from ${path}`;
-    })
-    .join("\n");
+  if (!example) return <Text>Could not find example with the id: {exampleId}</Text>;
+
+  const imports = copyImports(example.scope);
+  const codeWithImports = [imports, code].join("\n");
 
   return (
-    <LiveProvider code={fields.example} scope={{ ...modules, styled, css }} theme={dracula}>
-      <StyledExampleWrapper>
-        <ViewportsRuler onChangeSize={getCurrentWidth} />
-        <Preview width={width} minHeight={minHeight} />
-        <Board
-          isEditorOpened={isEditorOpened}
-          onOpenEditor={() => setOpenEditor(!isEditorOpened)}
-          code={[scopeOutput, fields.example].join("\n\n")}
-        />
-        {isEditorOpened && <StyledEditor />}
-      </StyledExampleWrapper>
-    </LiveProvider>
+    <Example
+      responsive={responsive}
+      height={height}
+      background={background}
+      origin={origin}
+      exampleKnobs={example.exampleKnobs}
+      exampleVariants={example.exampleVariants}
+      code={codeWithImports}
+      exampleId={example.id}
+      exampleName={exampleId}
+      fullPageExampleId={exampleId.toLowerCase()}
+      example={example.example}
+      onChangeCode={c => setCode(c)}
+    />
   );
 };
 

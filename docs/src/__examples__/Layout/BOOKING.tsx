@@ -1,11 +1,10 @@
-import * as React from "react";
+import React from "react";
 import { Layout, LayoutColumn, Text } from "@kiwicom/orbit-components";
-import { CSSProperties } from "styled-components";
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 
 export default {
   Example: () => {
-    const divStyle: CSSProperties = {
+    const divStyle: React.CSSProperties = {
       minHeight: `${defaultTheme.orbit.heightIllustrationMedium}`,
       background: `${defaultTheme.orbit.backgroundBody}`,
     };
@@ -28,10 +27,5 @@ export default {
         </LayoutColumn>
       </Layout>
     );
-  },
-  info: {
-    title: "Booking layout",
-    description:
-      "The Booking layout is a two-column layout on larger screens. On smaller screens, the second column is placed underneath the first.",
   },
 };

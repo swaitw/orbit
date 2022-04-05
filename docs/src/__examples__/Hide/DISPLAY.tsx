@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Text, Stack, Hide, Separator } from "@kiwicom/orbit-components";
 
 export default {
@@ -26,9 +26,4 @@ export default {
       </Hide>
     </Stack>
   ),
-  info: {
-    title: "Display block",
-    description:
-      'Hide components display by default as <code>inline-block</code>. Set this to <code>block</code> by passing the <code>block</code> prop. This is especially important for <a href="https://orbit.kiwi/components/separator/">Separator</a> compoennts, which otherwise would not display.',
-  },
 };

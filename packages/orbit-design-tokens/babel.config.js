@@ -1,5 +1,10 @@
 // @noflow
 
 module.exports = {
-  presets: ["@babel/preset-env", "@babel/preset-flow"],
+  presets: [require.resolve("@babel/preset-env"), require.resolve("@babel/preset-flow")],
+  env: {
+    esm: {
+      presets: [[require.resolve("@babel/preset-env"), { modules: false }]],
+    },
+  },
 };

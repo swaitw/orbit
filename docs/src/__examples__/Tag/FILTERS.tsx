@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   Airplane,
   BaggageCabin,
@@ -47,6 +47,7 @@ export default {
         </Stack>
         <Stack direction="row" spacing="small">
           <Popover
+            renderInPortal={false}
             content={
               <Stack>
                 <Stack justify="center" grow>
@@ -89,6 +90,7 @@ export default {
             </Tag>
           </Popover>
           <Popover
+            renderInPortal={false}
             content={
               <ChoiceGroup label="Stops" onChange={event => setStops(event.currentTarget.name)}>
                 <Radio name="non" label="Any" checked={stops === "any" || false} />
@@ -112,6 +114,7 @@ export default {
             </Tag>
           </Popover>
           <Popover
+            renderInPortal={false}
             content={
               <ChoiceGroup
                 label="Transport"
@@ -200,9 +203,5 @@ export default {
         )}
       </Stack>
     );
-  },
-  info: {
-    title: "Filters",
-    description: "Use tags to show categories of filters that can and/or have been applied.",
   },
 };

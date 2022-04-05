@@ -1,5 +1,5 @@
 // @flow
-import type { ResolveColor } from "./resolveColor.js.flow";
+import type { ResolveColor } from "./resolveColor";
 
 const resolveColor: ResolveColor = ({
   removable: removableColor,
@@ -8,6 +8,7 @@ const resolveColor: ResolveColor = ({
 }) => ({ theme, selected, removable }) => {
   if (removable && !selected) return theme.orbit[removableColor];
   if (selected) return theme.orbit[selectedColor];
+
   return theme.orbit[normalColor];
 };
 

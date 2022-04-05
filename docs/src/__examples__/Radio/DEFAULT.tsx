@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Button, Stack, Radio } from "@kiwicom/orbit-components";
 
 export default {
@@ -13,8 +13,17 @@ export default {
       </Stack>
     );
   },
-  info: {
-    title: "Default radio",
-    description: "A default radio should have a label to make it clear what it relates to.",
-  },
+  exampleKnobs: [
+    {
+      component: "Radio",
+      knobs: [
+        { name: "label", type: "text", defaultValue: "Direct connections" },
+        { name: "info", type: "text", defaultValue: "" },
+        { name: "value", type: "text", defaultValue: "" },
+        { name: "disabled", type: "boolean", defaultValue: false },
+        { name: "hasError", type: "boolean", defaultValue: false },
+        { name: "checked", type: "boolean", defaultValue: false },
+      ],
+    },
+  ],
 };

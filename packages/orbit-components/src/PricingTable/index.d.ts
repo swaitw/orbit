@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/PricingTable";
-
 export interface Props extends Common.Global {
   readonly children: React.ReactNode;
   readonly activeElement?: number | undefined | null;
@@ -15,4 +13,4 @@ export interface Props extends Common.Global {
 }
 
 export const PricingTable: React.FunctionComponent<Props>;
-export { PricingTableItem } from "./PricingTableItem/index";
+export { PricingTableItem } from "./PricingTableItem";

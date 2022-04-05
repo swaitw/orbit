@@ -1,5 +1,5 @@
-import * as React from "react";
-import { InformationCircle } from "@kiwicom/orbit-components/icons";
+import React from "react";
+import { InformationCircle, NewWindow } from "@kiwicom/orbit-components/icons";
 import { CallOutBanner, Button, Stack, TextLink, Illustration } from "@kiwicom/orbit-components";
 
 export default {
@@ -10,7 +10,13 @@ export default {
       illustration={<Illustration name="Accommodation" />}
       actions={
         <Stack flex align="center">
-          <Button size="small" type="secondary" href="https://rooms.kiwi.com" external>
+          <Button
+            size="small"
+            type="secondary"
+            href="https://rooms.kiwi.com"
+            external
+            iconRight={<NewWindow ariaLabel="Opens in new window" />}
+          >
             Find a room
           </Button>
           <TextLink iconLeft={<InformationCircle />} size="small" standAlone>
@@ -20,8 +26,21 @@ export default {
       }
     />
   ),
-  info: {
-    title: "Default callout banner",
-    description: "Callout banners use illustrations and titles to draw attention to actions.",
-  },
+  exampleKnobs: [
+    {
+      component: "CallOutBanner",
+      knobs: [
+        {
+          name: "title",
+          type: "text",
+          defaultValue: "Accommodation in Warsaw",
+        },
+        {
+          name: "description",
+          type: "text",
+          defaultValue: "Select the perfect place to rest during your stay in Warsaw.",
+        },
+      ],
+    },
+  ],
 };

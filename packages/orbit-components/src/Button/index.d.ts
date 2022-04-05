@@ -3,11 +3,18 @@
 
 import * as React from "react";
 
-import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive/index";
+import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
 
-declare module "@kiwicom/orbit-components/lib/Button";
-
-type Type = "primary" | "secondary" | "critical" | "primarySubtle" | "criticalSubtle" | "white";
+type Type =
+  | "primary"
+  | "secondary"
+  | "critical"
+  | "primarySubtle"
+  | "criticalSubtle"
+  | "white"
+  | "bundleBasic"
+  | "bundleMedium"
+  | "bundleTop";
 
 export interface Props extends ButtonCommonProps {
   readonly type?: Type;

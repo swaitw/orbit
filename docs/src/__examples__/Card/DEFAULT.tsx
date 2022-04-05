@@ -1,21 +1,37 @@
-import * as React from "react";
-import { Card, CardSection, Inline } from "@kiwicom/orbit-components";
-import { GenderWoman } from "@kiwicom/orbit-components/icons";
+import React from "react";
+import { Card, CardSection } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
     <Card title="Passenger info" description="All passengers in this itinerary">
-      <CardSection>
-        <Inline>
-          <GenderWoman ariaLabel="female" />
-          Yasmin Karenth
-        </Inline>
-      </CardSection>
+      <CardSection title="Yasmin Karenth" description="1st class" />
     </Card>
   ),
-  info: {
-    title: "Default card",
-    description:
-      "Cards can have titles and descriptions that cover all of their contents plus sections for organization.",
-  },
+  exampleKnobs: [
+    {
+      component: "Card",
+      knobs: [
+        { name: "icon", type: "icon", defaultValue: "" },
+        { name: "loading", type: "boolean", defaultValue: false },
+        { name: "title", type: "text", defaultValue: "Passenger info" },
+        { name: "description", type: "text", defaultValue: "All passengers in this itinerary" },
+      ],
+    },
+    {
+      component: "CardSection",
+      knobs: [
+        { name: "icon", type: "icon", defaultValue: "" },
+        { name: "noSeparator", type: "boolean", defaultValue: false },
+        { name: "initialExpanded", type: "boolean", defaultValue: false },
+        { name: "title", type: "text", defaultValue: "Yasmin Karenth" },
+        { name: "description", type: "text", defaultValue: "1st class" },
+        {
+          name: "titleAs",
+          type: "select",
+          defaultValue: "h2",
+          options: ["h1", "h2", "h3", "h4", "h5", "h6", "div"],
+        },
+      ],
+    },
+  ],
 };

@@ -1,21 +1,21 @@
-import * as React from "react";
+import React from "react";
 import { Separator, LinkList, TextLink } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
     <LinkList>
-      <TextLink href="https://orbit.kiwi/components/separator/" external type="secondary">
+      <TextLink href="https://orbit.kiwi/components/structure/separator/" external type="secondary">
         Guidelines
       </TextLink>
-      <TextLink href="https://orbit.kiwi/components/separator/react/" external type="secondary">
-        React API
-      </TextLink>
-      <Separator />
       <TextLink
-        href="https://orbit.kiwi/getting-started/channels/team-and-contributors/"
+        href="https://orbit.kiwi/components/structure/separator/react/"
         external
         type="secondary"
       >
+        React API
+      </TextLink>
+      <Separator />
+      <TextLink href="https://orbit.kiwi/getting-started/support/team/" external type="secondary">
         About us
       </TextLink>
       <TextLink href="https://code.kiwi.com/" external type="secondary">
@@ -30,8 +30,29 @@ export default {
       </TextLink>
     </LinkList>
   ),
-  info: {
-    title: "Default separator",
-    description: "Separators present a visual and semantic break between groups of content.",
-  },
+  exampleKnobs: [
+    {
+      component: "Separator",
+      knobs: [
+        {
+          name: "spaceAfter",
+          type: "select",
+          defaultValue: "none",
+          options: ["none", "smallest", "small", "normal", "medium", "large", "largest"],
+        },
+        {
+          name: "indent",
+          type: "select",
+          defaultValue: "none",
+          options: ["none", "small", "medium", "large", "XLarge", "XXLarge"],
+        },
+        {
+          name: "align",
+          type: "select",
+          defaultValue: "right",
+          options: ["left", "right", "center"],
+        },
+      ],
+    },
+  ],
 };

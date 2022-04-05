@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import InputField from "@kiwicom/orbit-components/lib/InputField";
 
 export default {
@@ -16,9 +16,5 @@ export default {
         onChange={event => setValue(event.currentTarget.value)}
       />
     );
-  },
-  info: {
-    title: "",
-    description: "",
   },
 };

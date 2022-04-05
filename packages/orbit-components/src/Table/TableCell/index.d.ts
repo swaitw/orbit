@@ -1,9 +1,7 @@
 // Type definitions for @kiwicom/orbit-components
 // Project: http://github.com/kiwicom/orbit
 
-import { SharedProps } from "../index";
-
-declare module "@kiwicom/orbit-components/lib/Table/TableCell";
+import { SharedProps } from "..";
 
 type Align = "left" | "center" | "right";
 type As = "th" | "td";

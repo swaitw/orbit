@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://orbit.kiwi" target="_blank">
-    <img alt="orbit-components" src="https://orbit.kiwi/files/orbit-components.png" srcset="https://orbit.kiwi/files/orbit-components@2x.png 2x" height="150px" />
+    <img alt="orbit-components" src="https://images.kiwi.com/common/orbit-logo-full.png" srcset="https://images.kiwi.com/common/orbit-logo-full@2x.png 2x" />
   </a>
 </div>
 
@@ -9,6 +9,8 @@
 <div align="center">
 
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+
+[![minified and gzipped size](https://img.shields.io/bundlephobia/minzip/@kiwicom/orbit-components@latest)](https://bundlephobia.com/package/@kiwicom/orbit-components)
 
 <strong>Orbit-components is a React component library which provides developers with the easiest possible way of building Kiwi.com’s products.</strong>
 
@@ -34,7 +36,7 @@ npm install @kiwicom/orbit-components
 yarn add @kiwicom/orbit-components
 ```
 
-Don't forget to install the [styled-components](https://github.com/styled-components/styled-components/) `^4.0.0` also.
+Don't forget to install the [styled-components](https://github.com/styled-components/styled-components/)
 
 ## Usage
 

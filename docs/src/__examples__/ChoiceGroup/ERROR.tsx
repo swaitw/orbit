@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ChoiceGroup, Checkbox, Radio, Stack } from "@kiwicom/orbit-components";
 
 export default {
@@ -30,10 +30,5 @@ export default {
         </ChoiceGroup>
       </Stack>
     );
-  },
-  info: {
-    title: "Errors",
-    description:
-      "When passed an error string, choice groups will display the string for the whole group and turn empty choices red. Note that this overrides any errors on individual choices.",
   },
 };

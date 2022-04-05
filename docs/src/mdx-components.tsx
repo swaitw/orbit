@@ -12,6 +12,8 @@ import {
   TableCell,
 } from "@kiwicom/orbit-components";
 import { NewWindow } from "@kiwicom/orbit-components/icons";
+import type { SpaceAfter } from "@kiwicom/orbit-components/lib/common/common";
+import type { Type } from "@kiwicom/orbit-components/lib/Heading";
 import { Link } from "gatsby";
 import { css } from "styled-components";
 
@@ -19,59 +21,52 @@ import BlockQuote from "./components/BlockQuote";
 import HeadingWithLink from "./components/HeadingWithLink";
 import { InlineCode, CodeBlock } from "./components/Code";
 import useIsUrlExternal from "./hooks/useIsUrlExternal";
+import { getTextFromChildren } from "./utils/common";
+import { useTableOfContentsRegister } from "./services/table-of-contents";
 
 export const p = ({ children }: React.HTMLAttributes<HTMLParagraphElement>) => (
   <Text>{children}</Text>
 );
 
-export const h1 = () => null;
+type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-export const h2 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <HeadingWithLink spaceAfter="normal">
-    <Heading as="h2" type="title2">
-      {children}
-    </Heading>
-  </HeadingWithLink>
-);
+function createHeadingComponent(
+  tag: HeadingTag,
+  { type, spaceAfter }: { type: Type } & SpaceAfter,
+) {
+  const HeadingComponent = ({ noId, children }: { noId?: boolean; children: React.ReactNode }) => {
+    const level = Number(tag.slice(1)) - 2;
+    useTableOfContentsRegister({
+      title: getTextFromChildren(children),
+      level,
+    });
 
-export const h3 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <HeadingWithLink spaceAfter="small">
-    <Heading as="h3" type="title3">
-      {children}
-    </Heading>
-  </HeadingWithLink>
-);
+    return (
+      <HeadingWithLink level={level} noId={noId} spaceAfter={spaceAfter}>
+        <Heading as={tag} type={type}>
+          {children}
+        </Heading>
+      </HeadingWithLink>
+    );
+  };
 
-export const h4 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <HeadingWithLink spaceAfter="smallest">
-    <Heading as="h4" type="title4">
-      {children}
-    </Heading>
-  </HeadingWithLink>
-);
+  HeadingComponent.displayName = `TOC(${tag})`;
+  return HeadingComponent;
+}
 
-export const h5 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <HeadingWithLink>
-    <Heading as="h5" type="title5">
-      {children}
-    </Heading>
-  </HeadingWithLink>
-);
-
-export const h6 = ({ children }: React.HTMLAttributes<HTMLHeadingElement>) => (
-  <HeadingWithLink>
-    <Heading as="h6" type="title5">
-      {children}
-    </Heading>
-  </HeadingWithLink>
-);
+export const h1 = createHeadingComponent("h1", { type: "title1", spaceAfter: "small" });
+export const h2 = createHeadingComponent("h2", { type: "title2", spaceAfter: "small" });
+export const h3 = createHeadingComponent("h3", { type: "title3", spaceAfter: "normal" });
+export const h4 = createHeadingComponent("h4", { type: "title4", spaceAfter: "smallest" });
+export const h5 = createHeadingComponent("h5", { type: "title5" });
+export const h6 = createHeadingComponent("h6", { type: "title5" });
 
 export const hr = () => <Separator spaceAfter="largest" />;
 
 export const ol = ({ children }: React.OlHTMLAttributes<HTMLOListElement>) => (
   <ol
     css={css`
-      list-style: outside none decimal;
+      list-style: decimal none outside;
       margin-left: ${({ theme }) => theme.orbit.spaceMedium};
       ol,
       ul {
@@ -128,7 +123,7 @@ export const th = ({ children, align }: React.ThHTMLAttributes<HTMLTableHeaderCe
 export const ul = ({ children }: React.HTMLAttributes<HTMLUListElement>) => (
   <ul
     css={css`
-      list-style: outside none disc;
+      list-style: disc none outside;
       margin-left: ${({ theme }) => theme.orbit.spaceMedium};
       ol,
       ul {
@@ -177,37 +172,23 @@ const LinkForOrbitTextLink = ({ href, ...props }: { href: string }) => (
 export const a = function Anchor({
   children,
   href,
-}: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+  orbitType,
+}: React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+  orbitType?: React.ComponentProps<typeof TextLink>["type"];
+}) {
   const isExternal = useIsUrlExternal(href);
   const useExternalIcon = isExternal && typeof children === "string";
   return (
-    <span
-      css={css`
-        a {
-          /* TextLink's line-height affects nested elements like <code> */
-          line-height: normal;
-          /* TextLink's display as inline-flex cause long links to break paragraphs */
-          display: inherit;
-          /* Ensure the icon stays inline */
-          span {
-            display: inline;
-            svg {
-              display: inline;
-            }
-          }
-        }
-      `}
+    <TextLink
+      // @ts-expect-error type declaration is not permissive enough
+      asComponent={isExternal ? "a" : LinkForOrbitTextLink}
+      type={orbitType}
+      href={href}
+      external={isExternal}
+      iconRight={useExternalIcon && <NewWindow ariaLabel="Opens in new window" />}
     >
-      <TextLink
-        // @ts-expect-error type declaration is not permissive enough
-        asComponent={isExternal ? "a" : LinkForOrbitTextLink}
-        href={href}
-        external={isExternal}
-        iconRight={useExternalIcon && <NewWindow ariaLabel="Opens in new window" />}
-      >
-        {children}
-      </TextLink>
-    </span>
+      {children}
+    </TextLink>
   );
 };
 

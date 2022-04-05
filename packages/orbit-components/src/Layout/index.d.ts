@@ -5,8 +5,6 @@ import * as React from "react";
 
 import * as Common from "../common/common";
 
-declare module "@kiwicom/orbit-components/lib/Layout";
-
 type Type = "Search" | "Booking" | "MMB";
 
 export interface Props extends Common.Global {
@@ -16,4 +14,4 @@ export interface Props extends Common.Global {
 
 declare const Layout: React.FunctionComponent<Props>;
 export { Layout, Layout as default };
-export { LayoutColumn } from "./LayoutColumn/index";
+export { LayoutColumn } from "./LayoutColumn";

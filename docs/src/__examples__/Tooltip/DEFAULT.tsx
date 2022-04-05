@@ -1,15 +1,48 @@
-import * as React from "react";
+import React from "react";
 import { Button, Text, Tooltip } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
-    <Tooltip renderInPortal={false} content={<Text>Select a flight before continuing.</Text>}>
-      <Button disabled>Book</Button>
+    <Tooltip content={<Text>Select a flight before continuing.</Text>}>
+      <Button>Book</Button>
     </Tooltip>
   ),
-  info: {
-    title: "Default tooltip",
-    description:
-      "By default, tooltips will open on hover over their child on large devices and a click on the child on smaller devices. By default, preference is given to aligning to the right and in the center of the child.",
-  },
+  exampleKnobs: [
+    {
+      component: "Tooltip",
+      knobs: [
+        { name: "block", type: "boolean", defaultValue: false },
+        { name: "removeUnderlinedText", type: "boolean", defaultValue: false },
+        { name: "enabled", type: "boolean", defaultValue: true },
+        {
+          name: "placement",
+          type: "select",
+          options: [
+            "auto",
+            "auto-start",
+            "auto-end",
+            "top",
+            "top-start",
+            "top-end",
+            "bottom",
+            "bottom-start",
+            "bottom-end",
+            "right",
+            "right-start",
+            "right-end",
+            "left",
+            "left-start",
+            "left-end",
+          ],
+          defaultValue: "bottom",
+        },
+        {
+          name: "size",
+          type: "select",
+          options: ["small", "medium"],
+          defaultValue: "small",
+        },
+      ],
+    },
+  ],
 };

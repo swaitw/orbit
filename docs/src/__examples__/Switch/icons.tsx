@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Heading, Stack, Switch } from "@kiwicom/orbit-components";
 import { NotificationOn, NotificationOff } from "@kiwicom/orbit-components/icons";
 
@@ -18,12 +18,15 @@ export default {
           ariaLabelledby="label"
           checked={notifications}
           onChange={handleChange}
-          icon={notifications ? <NotificationOn /> : <NotificationOff />}
+          icon={
+            notifications ? (
+              <NotificationOn ariaLabel="Notifications are on" />
+            ) : (
+              <NotificationOff ariaLabel="Notifications are off" />
+            )
+          }
         />
       </Stack>
     );
-  },
-  info: {
-    title: "Default Switch",
   },
 };

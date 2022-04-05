@@ -1,13 +1,5 @@
 import React from "react";
 
-export const omitNumbers = (str: string) =>
-  str
-    .split("/")
-    .map(s => s.replace(/^\d+-\s*/g, ""))
-    .join("/");
-
-export const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
-
 export const pascalize = (str: string) =>
   str
     .replace(/-(.)/g, (_match, chartacter: string) => chartacter.toUpperCase())
@@ -24,7 +16,7 @@ export const slugify = (str: string) => {
   return "";
 };
 
-export const getTextFromChildren = (children?: React.ReactNode) => {
+export const getTextFromChildren = (children?: React.ReactNode): string => {
   if (typeof children === "string") return children;
   if (typeof children === "number") return children.toString();
   if (Array.isArray(children)) return children.map(child => getTextFromChildren(child)).join(" ");

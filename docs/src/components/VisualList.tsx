@@ -8,11 +8,10 @@ import {
   Stack,
   Text,
   Tile,
-  Heading,
 } from "@kiwicom/orbit-components";
 import { Search } from "@kiwicom/orbit-components/icons";
 
-import HeadingWithLink from "./HeadingWithLink";
+import { h3 as H3 } from "../mdx-components";
 import { IllustrationObjectShape } from "./IllustrationList";
 import { IconObjectShape } from "./IconList";
 import { CodeBlock } from "./Code";
@@ -85,11 +84,7 @@ const Visual = ({
         <Card>
           <CardSection>
             <Stack>
-              <HeadingWithLink noId>
-                <Heading as="h3" type="title3">
-                  {visualName}
-                </Heading>
-              </HeadingWithLink>
+              <H3 noId>{visualName}</H3>
               <CodeBlock className="language-jsx">{exampleCode(visualName)}</CodeBlock>
               {actions(visualObject, copied, copy)}
             </Stack>
@@ -108,12 +103,13 @@ const VisualList = ({ actions, exampleCode, getImgSource, list, smallVisual }: V
   const allVisualNames = Object.keys(list);
   const [openedVisual, setOpenedVisual] = useState("");
   const [filter, setFilter] = useState("");
+  const filterRe = new RegExp(filter, "i");
 
   useEffect(() => {
     if (typeof window !== "undefined") setOpenedVisual(window.location.hash.replace("#", ""));
   }, []);
 
-  const filteredVisualNames = allVisualNames.filter(name => name.includes(filter.toLowerCase()));
+  const filteredVisualNames = allVisualNames.filter(name => filterRe.test(name));
 
   return (
     <Stack spacing="large">

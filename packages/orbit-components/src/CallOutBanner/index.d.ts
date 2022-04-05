@@ -4,9 +4,7 @@
 import * as React from "react";
 
 import * as Common from "../common/common";
-import Illustration from "../Illustration/index";
-
-declare module "@kiwicom/orbit-components/lib/CallOutBanner";
+import Illustration from "../Illustration";
 
 export interface Props {
   readonly tabIndex?: string | number;

@@ -1,20 +1,38 @@
-import * as React from "react";
-import { Passengers, Train } from "@kiwicom/orbit-components/icons";
+import React from "react";
 import { Stack, Badge } from "@kiwicom/orbit-components";
 
 export default {
   Example: () => (
     <Stack direction="column">
       <Badge>Tip</Badge>
-      <Badge ariaLabel="Train" icon={<Train />} />
-      <Badge ariaLabel="4 passengers" icon={<Passengers />}>
-        4
-      </Badge>
     </Stack>
   ),
-  info: {
-    title: "Default badges",
-    description:
-      "Badges should present simple and short static information. They can be just text, just an icon, or an icon and text.",
-  },
+  exampleKnobs: [
+    {
+      component: "Badge",
+      knobs: [
+        { name: "icon", type: "icon", defaultValue: null },
+        {
+          name: "type",
+          type: "select",
+          defaultValue: "",
+          options: [
+            "neutral",
+            "dark",
+            "info",
+            "success",
+            "critical",
+            "warning",
+            "infoInverted",
+            "criticalInverted",
+            "successInverted",
+            "warningInverted",
+            "bundleBasic",
+            "bundleMedium",
+            "bundleTop",
+          ],
+        },
+      ],
+    },
+  ],
 };

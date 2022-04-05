@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gatsby-node registering documents should create trail nodes 1`] = `
+Array [
+  Object {
+    "file": "01-getting-started/01-for-designers/01-kiwi.mdx",
+    "trail": Array [
+      Object {
+        "name": "Getting started",
+        "url": "/getting-started/",
+      },
+      Object {
+        "name": "For designers",
+        "url": "/getting-started/for-designers/",
+      },
+    ],
+  },
+  Object {
+    "file": "01-getting-started/02-for-developers.mdx",
+    "trail": Array [
+      Object {
+        "name": "Getting started",
+        "url": "/getting-started/",
+      },
+      Object {
+        "name": "For developers",
+        "url": "/getting-started/for-developers/",
+      },
+    ],
+  },
+]
+`;

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { defaultTheme, Stack, Switch, Text } from "@kiwicom/orbit-components";
 
 export default {
@@ -17,7 +17,7 @@ export default {
             : defaultTheme.orbit.paletteCloudLight,
         }}
       >
-        <Stack flex>
+        <Stack align="center">
           <Switch ariaLabelledby="darkmode" checked={darkMode} onChange={handleChange} />
           <Text id="darkmode" type={darkMode ? "white" : "primary"}>
             Dark mode
@@ -26,7 +26,15 @@ export default {
       </div>
     );
   },
-  info: {
-    title: "Default Switch",
-  },
+  exampleKnobs: [
+    {
+      component: "Switch",
+      knobs: [
+        { name: "icon", type: "icon", defaultValue: "" },
+        { name: "checked", type: "boolean", defaultValue: false },
+        { name: "disabled", type: "boolean", defaultValue: false },
+        { name: "ariaLabelledby", type: "text", defaultValue: "darkmode" },
+      ],
+    },
+  ],
 };

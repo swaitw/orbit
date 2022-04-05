@@ -4,9 +4,7 @@
 import * as React from "react";
 
 import * as Common from "../common/common";
-import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive/index";
-
-declare module "@kiwicom/orbit-components/lib/ButtonLink";
+import { ButtonCommonProps, Size } from "../primitives/ButtonPrimitive";
 
 type Type = "primary" | "secondary" | "critical";
 

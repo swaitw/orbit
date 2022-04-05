@@ -3,11 +3,11 @@
 
 import { Tokens } from "@kiwicom/orbit-design-tokens";
 
-declare module "@kiwicom/orbit-components/theme";
-
 export interface ThemeShape {
   readonly orbit: Tokens;
   readonly transitions?: boolean;
+  readonly lockScrolling?: boolean;
+  readonly lockScrollingBarGap?: boolean;
   readonly rtl?: boolean;
 }
 
